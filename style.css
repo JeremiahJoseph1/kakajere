@@ -305,8 +305,6 @@ animation: hamburger_puls 1s infinite;
     padding: 30px;
     border-radius: 10px;
     background-image: url(images/img10.jpg);
-    /* background-size: 100% 200%;
-    background-position: top; */
     background-size: cover;
     margin: 10px 5%;
     position: relative;
@@ -614,8 +612,14 @@ transition: .3 ease box-shadow;
     /* Service */
     #services .service-bottom .service-item {
         flex-basis: 45%;
-        margin: 2.5%
+        margin: 2.5%;
     }
+        /* #services .service-item {
+        height: 100%;
+        margin: 0;
+    }  */
+
+
     /* End Service */
 
     /* Project */
@@ -720,25 +724,7 @@ padding-left: 20px;
     #header .hamburger {
         display: none;
     }
-    /* 
-    #header .nav-list ul {
-    list-style: none;
-    position: absolute;
-    background-color:rgb(31, 30, 30);
-    width: 100vw;
-    height: 100vh;
-    left: 100%;
-    left: 100%;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    z-index: 1;
-    overflow-x: hidden;
-    transition: .5s ease left;
-}
-    */
+    
     #header .nav-list ul {
         position: initial;
         background-color: transparent;
@@ -773,6 +759,10 @@ font-size: 1rem;
 
 
     /* Services */
+    #services .service-item {
+        height: 500px;
+    }
+
     #services .services .service-bottom .service-item {
 flex-basis: 22%;
 margin: 1.5%;    
