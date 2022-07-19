@@ -532,6 +532,9 @@ transition: .3 ease box-shadow;
     letter-spacing: .1rem;
     margin-top: 10px;
     margin-bottom: 10px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
 }
 #footer .social-icon {
     display: flex;
