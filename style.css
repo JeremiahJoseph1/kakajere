@@ -1,5 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+/* montserrat-300 - latin */
+  /* montserrat-regular - latin */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/montserrat-v25-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../fonts/montserrat-v25-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/montserrat-v25-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/montserrat-v25-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/montserrat-v25-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/montserrat-v25-latin-regular.svg#Montserrat') format('svg'); /* Legacy iOS */
+  }
+  /* montserrat-700 - latin */
 
+  
 * {
     margin: 0;
     padding: 0;
@@ -104,6 +119,15 @@ p {
 }
 
 .brand h1 span {
+    color: crimson;
+}
+.brand h6 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: white;
+}
+
+.brand h6 span {
     color: crimson;
 }
 
@@ -281,7 +305,7 @@ p {
     justify-content: flex-start;
 }
 
-#hero h1 {
+#hero h6 {
     display: block;
     width: fit-content;
     font-size: 4rem;
@@ -291,20 +315,20 @@ p {
     animation-delay: 1.5s;
 }
 
-#hero h1:nth-child(1) {
+#hero h6:nth-child(1) {
     animation-delay: 1s;
 }
 
-#hero h1:nth-child(2) {
+#hero h6:nth-child(2) {
     animation-delay: 2s;
 }
 
-#hero h1:nth-child(3) {
+#hero h6:nth-child(3) {
     animation: text_reveal_name 0.5s ease forwards;
     animation-delay: 3s;
 }
 
-#hero h1 span {
+#hero h6 span {
     position: absolute;
     left: 0;
     top: 0;
@@ -315,15 +339,15 @@ p {
     animation-delay: 1s;
 }
 
-#hero h1:nth-child(1) span {
+#hero h6:nth-child(1) span {
     animation-delay: .5s;
 }
 
-#hero h1:nth-child(2) span {
+#hero h6:nth-child(2) span {
     animation-delay: 1.5s;
 }
 
-#hero h1:nth-child(3) span {
+#hero h6:nth-child(3) span {
     animation-delay: 2.5s;
 }
 
@@ -419,7 +443,7 @@ p {
     padding: 100px 0;
 }
 
-#projects .projects-header h1 {
+#projects .projects-header h6 {
     margin-bottom: 50px;
 }
 
@@ -454,7 +478,7 @@ p {
     color: white;
 }
 
-#projects .project-info h1 {
+#projects .project-info h6 {
     font-size: 4rem;
     font-weight: 500;
 }
@@ -591,7 +615,7 @@ p {
     font-size: 8rem;
 }
 
-#contact .contact-info h1 {
+#contact .contact-info h6 {
     font-size: 2.5rem;
     font-weight: 500;
     margin-bottom: 5px;
@@ -709,12 +733,12 @@ p {
         padding: 20px 60px;
     }
 
-    h1.section-title {
+    h6.section-title {
         font-size: 5rem;
     }
 
     /* Hero */
-    #hero h1 {
+    #hero h6 {
         font-size: 5rem;
     }
 
@@ -782,7 +806,7 @@ p {
         padding: 30px;
     }
 
-    #about .col-right h1 {
+    #about .col-right h6 {
         text-align: left;
     }
 
@@ -888,12 +912,12 @@ p {
         /* font-size: 17.5px; */
     }
 
-    h1.section-title {
+    h6.section-title {
         font-size: 4rem;
     }
 
     /* Hero */
-    #hero h1 {
+    #hero h6 {
         font-size: 4rem;
     }
 
