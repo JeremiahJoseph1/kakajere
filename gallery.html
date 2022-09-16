@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div id="bodyElem"> -->
+    <div id="goUser">
+        <label id="labelUn" for="uName">
+
+            <p>Please input your ID password</p>
+            <p>Tell kaka Jere...</p>
+        </label>
+        <input type="password" id="uName" value="" oninput="chkVal(this.value)">
+        <div class="welcome">
+            <!-- placeholder="Enter ID pass..." -->
+        </div>
+    </div>
+    <!-- </div> -->
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #goUser,
+        .welcome {
+            height: 200px;
+            width: 80vw;
+            max-width: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: black;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome {
+            position: absolute;
+            color: white;
+            font-size: 40px;
+            display: none;
+            transition: all .3s ease;
+            animation-name: show;
+            animation-duration: 2s;
+        }
+
+        @keyframes show {
+            0% {
+                transform: scale(0);
+            }
+            25% {}
+            50% {}
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #labelUn {
+            color: white;
+            font-size: 20px;
+            font-weight: 300;
+            position: absolute;
+            width: 100;
+            top: 0;
+            left: 0;
+            background-color: brown;
+            padding: 20px 20px;
+            text-align: center;
+            word-wrap: break-word;
+        }
+
+        #uName {
+            color: black;
+            font-size: 20px;
+            font-weight: 300;
+            position: absolute;
+            width: 70%;
+            height: 20px;
+            bottom: 20%;
+            left: 50;
+            background-color: white;
+            padding: 2px 2px;
+            text-align: center;
+            word-wrap: break-word;
+            border-radius: 20px;
+            outline: none;
+            border-style: none;
+
+        }
+
+        #uName:focus {
+            box-shadow: 0 0 10px red;
+            background-color: red;
+
+        }
+
+        @media only screen and (min-width: 481px) and (max-width: 1200px) {
+            #labelUn {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (min-width: 1200px) {
+            #labelUn {
+                width: 100%;
+            }
+        }
+    </style>
+    <div id="mtu" class="welcome">
+        <p>Welcome Mr. Mtu</p>
+    </div>
+    <div id="mtove" class="welcome">
+        <p>Welcome Mr. Mtove</p>
+    </div>
+    <div id="GBTC" class="welcome">
+        <p>Welcome GBTC participant</p>
+    </div>
+    <script>
+        function chkVal(e) {
+            if (e == 'mtoveABC') {
+                document.querySelector('#uName').style.backgroundColor = 'green';
+                document.querySelector('#mtove').style.display = 'flex';
+                setTimeout(() => {
+                    document.location = 'galleryKakaJere/gallery_Mtove/index.html';
+                }, 3000);
+            } else if (e == 'mtuABC') {
+                document.querySelector('#uName').style.backgroundColor = 'green';
+                document.querySelector('#mtu').style.display = 'flex';
+                setTimeout(() => {
+                    document.location = 'galleryMtu.html';
+                }, 3000);
+            } else if (e == 'Yesuanaipendagbtc') {
+                document.querySelector('#uName').style.backgroundColor = 'green';
+                document.querySelector('#GBTC').style.display = 'flex';
+                setTimeout(() => {
+                    document.location = 'galleryKakaJere/gallery_GBTC/galleryGBTC/index.html';
+                }, 3000);
+            }
+        }
+        window.addEventListener('pageshow', ()=>{
+            document.querySelector('#uName').value = '';
+        })
+    </script>
+
+</body>
+
+</html>
