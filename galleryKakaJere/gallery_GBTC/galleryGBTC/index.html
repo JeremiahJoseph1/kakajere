@@ -23,19 +23,34 @@
             }
 
             @media only screen and (max-width: 768px) {
+                #sideMenu .userDet {
+                    height: 30%;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    flex-direction: column;
+                    border-bottom: .5px solid var(--transparency);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    padding-bottom: 5%;
+                }
+
                 #sideMenu .userDet img {
                     background-image: url(imagePlaceholder.jpg);
-                    height: 40%;
+                    height: 25%;
                     max-width: 100%;
                     border-radius: 50%;
                     object-fit: cover;
-                    margin-bottom: 1%;
+                    margin-bottom: 8%;
                     margin-top: 1%;
                 }
 
                 #sideMenu .userDet .userName {
                     margin-top: 3%;
-                    font-size: 1.3rem;
+                    font-size: 1rem;
                     color: var(--color4);
                     padding: 5% 5%;
                     background: var(--blur);
@@ -53,8 +68,8 @@
                     width: 100%;
                     background-color: var(--blur);
                     position: absolute;
-                    top: 40vh;
-                    height: calc(100vh - 40vh);
+                    top: 25vh;
+                    height: calc(100vh - 30vh);
                     overflow-y: auto;
                     z-index: -2;
                     user-select: none;
@@ -73,10 +88,11 @@
                     line-height: 25px;
                     background-color: var(--blur);
                     border-bottom: 1px solid var(--transparency2);
-                    font-size: 1rem;
+                    font-size: 0.85rem;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-around;
+                    text-align: center;
                     align-items: center;
                 }
 
@@ -102,7 +118,22 @@
                     padding-left: 0px;
                     margin-right: 0;
                     color: var(--color3);
-                    font-size: 5rem;
+                    font-size: 3rem;
+                }
+
+                #menuHolder {
+                    cursor: none;
+                }
+
+                #sideMenu .sideMenBut ul li.active {
+                    border-right: 5px solid var(--color3);
+                    background-color: var(--color3);
+                }
+
+                #sideMenu .sideMenBut ul li.active *:first-child {
+                    border-right: 5px solid var(--color3);
+                    background-color: var(--color3);
+                    color: white;
                 }
 
             }
@@ -194,6 +225,20 @@
         }
     </style> -->
     </section>
+    <script>
+        function cclass(elem) {
+            $(elem).addClass('active').siblings().removeClass('active');
+            var ky = $(elem).attr('data-part');
+            var kyz = '#' + ky
+            $(kyz).css('display', 'flex').siblings().css('display', 'none');
+        }
+    </script>
+    <style>
+        .hideFirst {
+            display: none;
+        }
+    </style>
+
 
     <section id="centerContent">
         <section id="sideMenu">
@@ -202,13 +247,14 @@
                 <span class="userName">GBTC Arusha</span>
             </div>
             <div class="sideMenBut">
-                <ul>
-                    <li> <i class="fas fa-chart-bar"></i> Snapshots</li> 
-                    <li> <i class="fas fa-user"></i>Candidates</li>
-                    <li class="active"><i class="fas fa-image"></i>Photos</li>
-                    <li> <i class="fas fa-play"></i>Videos</li>
-                    <li> <i class="fas fa-music"></i> Songs</li>
-                    <li> <i class="fas fa-download"></i> Downloads</li>
+                <ul id="menuHolder">
+                    <li data-part="snapshots" onclick="cclass(this)"> <i class="fas fa-chart-bar"></i> Snapshots</li>
+                    <li data-part="everyKitu" onclick="cclass(this)" class="active"><i class="fas fa-image"></i>Profiles
+                    </li>
+                    <li data-part="downloads" onclick="cclass(this)"> <i class="fas fa-download"></i> Downloads</li>
+                    <li data-part="academics" onclick="cclass(this)"> <i class="fas fa-pen"></i>Academics</li>
+                    <li data-part="videos" onclick="cclass(this)"> <i class="fas fa-play"></i>Videos</li>
+                    <li data-part="audios" onclick="cclass(this)"> <i class="fas fa-music"></i> Audios</li>
                 </ul>
             </div>
         </section>
@@ -359,10 +405,260 @@
                     </div>
                 </div>
             </div>
+            <div id="snapshots" class="hideFirst allThings">kaka jere haven't put something here about snapshots yet but he is working on it</div>
+            <div id="downloads" class="hideFirst allThings">
+
+                <p>Download Notes</p>
+
+
+                <!-- Basic Christian Doctrine -->
+<a class="sub1"href="../GBTC-Subjects/English/Basic Christian Doctrine/Basic Christian Doctrine - Lesson 1.pdf" download>Basic Christian Doctrine - Lesson 1<i class="fas fa-download"></i></a>
+<a class="sub1"href="../GBTC-Subjects/English/Basic Christian Doctrine/Basic Christian Doctrine - Lesson 2.pdf" download>Basic Christian Doctrine - Lesson 2<i class="fas fa-download"></i></a>
+<a class="sub1"href="../GBTC-Subjects/English/Basic Christian Doctrine/Basic Christian Doctrine - Lesson 3.pdf" download>Basic Christian Doctrine - Lesson 3<i class="fas fa-download"></i></a>
+<a class="sub1"href="../GBTC-Subjects/English/Basic Christian Doctrine/Basic Christian Doctrine - Lesson 4.pdf" download>Basic Christian Doctrine - Lesson 4<i class="fas fa-download"></i></a>
+<a class="sub1"href="../GBTC-Subjects/English/Basic Christian Doctrine/Basic Christian Doctrine - Lesson 5.pdf" download>Basic Christian Doctrine - Lesson 5<i class="fas fa-download"></i></a>
+<a class="sub1"href="../GBTC-Subjects/English/Basic Christian Doctrine/Basic Christian Doctrine - Lesson 6.pdf" download>Basic Christian Doctrine - Lesson 6<i class="fas fa-download"></i></a>
+               <!-- End Basic Christian Doctrine -->
+
+               <!-- Basic Christian Doctrine Swh -->
+<a class="sub1"href="../GBTC-Subjects/Swahili/Basic Christian Doctrine - Swahili/Basic Christian Doctrine - Lesson 1 Swahili_edit.pdf" download>Basic Christian Doctrine - Lesson 1 (Swh)<i class="fas fa-download"></i></a>
+<a class="sub1"href="../GBTC-Subjects/Swahili/Basic Christian Doctrine - Swahili/Basic Christian Doctrine - Lesson 2 Swahili_edit.pdf" download>Basic Christian Doctrine - Lesson 2 (Swh)<i class="fas fa-download"></i></a>
+<a class="sub1"href="../GBTC-Subjects/Swahili/Basic Christian Doctrine - Swahili/Basic Christian Doctrine - Lesson 3 Swahili_edit.pdf" download>Basic Christian Doctrine - Lesson 3 (Swh)<i class="fas fa-download"></i></a>
+<a class="sub1"href="../GBTC-Subjects/Swahili/Basic Christian Doctrine - Swahili/Basic Christian Doctrine - Lesson 4 Swahili_edit.pdf" download>Basic Christian Doctrine - Lesson 4 (Swh)<i class="fas fa-download"></i></a>
+<a class="sub1"href="../GBTC-Subjects/Swahili/Basic Christian Doctrine - Swahili/Basic Christian Doctrine - Lesson 5 Swahili_edit.pdf" download>Basic Christian Doctrine - Lesson 5 (Swh)<i class="fas fa-download"></i></a>
+<a class="sub1"href="../GBTC-Subjects/Swahili/Basic Christian Doctrine - Swahili/Basic Christian Doctrine - Lesson 6 Swahili_edit.pdf" download>Basic Christian Doctrine - Lesson 6 (Swh)<i class="fas fa-download"></i></a>
+                <!-- End Basic Christian Doctrine Swh-->
+
+                <!-- Bible study methods -->
+<a class="sub2" href="../GBTC-Subjects/English/Bible Study Methods/Bible Study Methods - Lesson 1.pdf" download>Bible Study Methods - Lesson 1<i class="fas fa-download"></i></a>
+<a class="sub2" href="../GBTC-Subjects/English/Bible Study Methods/Bible Study Methods - Lesson 2.pdf" download>Bible Study Methods - Lesson 2<i class="fas fa-download"></i></a>
+<a class="sub2" href="../GBTC-Subjects/English/Bible Study Methods/Bible Study Methods - Lesson 3.pdf" download>Bible Study Methods - Lesson 3<i class="fas fa-download"></i></a>
+<a class="sub2" href="../GBTC-Subjects/English/Bible Study Methods/Bible Study Methods - Lesson 4.pdf" download>Bible Study Methods - Lesson 4<i class="fas fa-download"></i></a>
+                <!-- End Bible study methods -->
+
+                <!-- Bible study methods Swh -->
+<a class="sub2" href="../GBTC-Subjects/Swahili/Bible Study Methods - Swahili/Bible Study Methods - Lesson 1 Swahili.pdf" download>Bible Study Methods - Lesson 1 (Swh)<i class="fas fa-download"></i></a>
+<a class="sub2" href="../GBTC-Subjects/Swahili/Bible Study Methods - Swahili/Bible Study Methods - Lesson 2 Swahili.pdf" download>Bible Study Methods - Lesson 2 (Swh)<i class="fas fa-download"></i></a>
+<a class="sub2" href="../GBTC-Subjects/Swahili/Bible Study Methods - Swahili/Bible Study Methods - Lesson 3 Swahili.pdf" download>Bible Study Methods - Lesson 3 (Swh)<i class="fas fa-download"></i></a>
+<a class="sub2" href="../GBTC-Subjects/Swahili/Bible Study Methods - Swahili/Bible Study Methods - Lesson 4 Swahili.pdf" download>Bible Study Methods - Lesson 4 (Swh)<i class="fas fa-download"></i></a>
+                <!-- End Bible study methods Swh-->
+
+                <!-- Bible survey -->
+<a clas="sub3" href="../GBTC-Subjects/English/Bible Survey/Bible Survey - Lesson 1.pdf" download>Bible Survey - Lesson 1<i class="fas fa-download"></i></a>
+<a clas="sub3" href="../GBTC-Subjects/English/Bible Survey/Bible Survey - Lesson 2.pdf" download>Bible Survey - Lesson 2<i class="fas fa-download"></i></a>
+<a clas="sub3" href="../GBTC-Subjects/English/Bible Survey/Bible Survey - Lesson 3.pdf" download>Bible Survey - Lesson 3<i class="fas fa-download"></i></a>
+                <!-- End Bible survey -->
+
+                <!-- Bible survey Swh -->
+<a clas="sub3" href="../GBTC-Subjects/Swahili/Bible Survey - Swahili/Bible Survey - Lesson 1 Swahili_edit.pdf" download>Bible Survey - Lesson 1 (Swh)<i class="fas fa-download"></i></a>
+<a clas="sub3" href="../GBTC-Subjects/Swahili/Bible Survey - Swahili/Bible Survey - Lesson 2 Swahili_edit.pdf" download>Bible Survey - Lesson 2 (Swh)<i class="fas fa-download"></i></a>
+<a clas="sub3" href="../GBTC-Subjects/Swahili/Bible Survey - Swahili/Bible Survey - Lesson 3 Swahili_edit.pdf" download>Bible Survey - Lesson 3 (Swh)<i class="fas fa-download"></i></a>
+                <!-- End Bible survey Swh-->
+
+                <!-- Christian Character -->
+<a class="sub4" href="../GBTC-Subjects/English/Christian Character/Christian Character - Lesson 1.pdf" download>Christian Character - Lesson 1<i class="fas fa-download"></i></a>
+<a class="sub4" href="../GBTC-Subjects/English/Christian Character/Christian Character - Lesson 2.pdf" download>Christian Character - Lesson 2<i class="fas fa-download"></i></a>
+<!-- End Christian Character --2
+
+                <!-- Christian Character -->
+<a class="sub4" href="../GBTC-Subjects/Swahili/Christian Character - 1 Swahili/Christian Character - Lesson 1 Swahili_edit.pdf" download>Christian Character - Lesson 1 (Swh)<i class="fas fa-download"></i></a>
+<a class="sub4" href="../GBTC-Subjects/Swahili/Christian Character - 1 Swahili/Christian Character - Lesson 2 Swahili_edit.pdf" download>Christian Character - Lesson 2 (Swh)<i class="fas fa-download"></i></a>
+<!-- End Christian Character -->
+
+<!-- Christian Leadership Swh -->
+<a class="sub5" href="../GBTC-Subjects/English/Christian Leadership/Leadership Principles - Lesson 1.pdf" download>Christian Leadership Principles - Lesson 1<i class="fas fa-download"></i></a>
+<a class="sub5" href="../GBTC-Subjects/English/Christian Leadership/Leadership Principles - Lesson 2.pdf" download>Christian Leadership Principles - Lesson 2<i class="fas fa-download"></i></a>
+<a class="sub5" href="../GBTC-Subjects/English/Christian Leadership/Leadership Principles - Lesson 3.pdf" download>Christian Leadership Principles - Lesson 3<i class="fas fa-download"></i></a>
+<a class="sub5" href="../GBTC-Subjects/English/Christian Leadership/Leadership Principles - Lesson 4.pdf" download>Christian Leadership Principles - Lesson 4<i class="fas fa-download"></i></a>
+<!-- End Christian Leadership Swh-->
+
+<!-- Christian Leadership Swh -->
+<a class="sub5" href="../GBTC-Subjects/Swahili/Leadership Principles - 1 Swahili/Leadership Principles - Lesson 1 Swahili_edit.pdf" download>Christian Leadership Principles - Lesson 1 (Swh)<i class="fas fa-download"></i></a>
+<a class="sub5" href="../GBTC-Subjects/Swahili/Leadership Principles - 1 Swahili/Leadership Principles - Lesson 2 Swahili_edit.pdf" download>Christian Leadership Principles - Lesson 2 (Swh)<i class="fas fa-download"></i></a>
+<a class="sub5" href="../GBTC-Subjects/Swahili/Leadership Principles - 1 Swahili/Leadership Principles - Lesson 3 Swahili_edit.pdf" download>Christian Leadership Principles - Lesson 3 (Swh)<i class="fas fa-download"></i></a>
+<a class="sub5" href="../GBTC-Subjects/Swahili/Leadership Principles - 1 Swahili/Leadership Principles - Lesson 4 Swahili_edit.pdf" download>Christian Leadership Principles - Lesson 4 (Swh)<i class="fas fa-download"></i></a>
+<!-- End Christian Leadership Swh-->
+
+<!-- Evangelism and Discipleship4-->
+<a class="sub6" href="../GBTC-Subjects/English/Evangelism and Discipleship/Evangelism & Discipleship - Lesson 1.pdf" download>Evangelism & Discipleship - Lesson 1<i class="fas fa-download"></i></a>
+<a class="sub6" href="../GBTC-Subjects/English/Evangelism and Discipleship/Evangelism & Discipleship - Lesson 2.pdf" download>Evangelism & Discipleship - Lesson 2<i class="fas fa-download"></i></a>
+<a class="sub6" href="../GBTC-Subjects/English/Evangelism and Discipleship/Evangelism & Discipleship - Lesson 3.pdf" download>Evangelism & Discipleship - Lesson 3<i class="fas fa-download"></i></a>
+<!-- End Evangelism and Discipleship -->
+
+<!-- Evangelism and Discipleship Swh-->
+<a class="sub6" href="../GBTC-Subjects/Swahili/Evangelism & Discipleship - Swahili/Evangelism & Discipleship - Lesson 1 Swahili.pdf" download>Evangelism & Discipleship - Lesson 1 Swh<i class="fas fa-download"></i></a>
+<a class="sub6" href="../GBTC-Subjects/Swahili/Evangelism & Discipleship - Swahili/Evangelism & Discipleship - Lesson 2 Swahili.pdf" download>Evangelism & Discipleship - Lesson 2 Swh<i class="fas fa-download"></i></a>
+<a class="sub6" href="../GBTC-Subjects/Swahili/Evangelism & Discipleship - Swahili/Evangelism & Discipleship - Lesson 3 Swahili.pdf" download>Evangelism & Discipleship - Lesson 3 Swh<i class="fas fa-download"></i></a>
+<!-- End Evangelism and Discipleship Swh-->
+
+<!-- Course outline -->
+<a class="sub7" href="../GBTC-Subjects/English/Introductory Courses/Introduction & Course Overview .pdf" download>Introduction & Course Overview<i class="fas fa-download"></i></a>
+<a class="sub7" href="../GBTC-Subjects/English/Introductory Courses/The Bible.pdf" download>The Bible<i class="fas fa-download"></i></a>
+<!-- End Course outline -->
+
+<!-- Course outline Swh-->
+<a class="sub7" href="../GBTC-Subjects/Swahili/Introductory Courses/Introduction & Course Overview .pdf" download>Introduction & Course Overview (Swh)<i class="fas fa-download"></i></a>
+<a class="sub7" href="../GBTC-Subjects/Swahili/Introductory Courses/The Bible.pdf" download>The Bible (Swh)<i class="fas fa-download"></i></a>
+<!-- End Course outline Swh-->
+
+<!-- Timetable -->
+<a class="sub8"href="../GBTC-Subjects/English/Lecture Time Table - Arusha_Batch 1_June 2022 .pdf" download>Lecture Time Table<i class="fas fa-download"></i></a>
+<!-- End Timetable -->
+
+
+<!-- Timetable Swh -->
+<a class="sub8"href="../GBTC-Subjects/Swahili/Lecture Time Table - Arusha_Batch 1_June 2022 .pdf" download>Lecture Time Table (Swh)<i class="fas fa-download"></i></a>
+<!-- End Timetable Swh-->
+
+<!-- Prayer and intercession -->
+
+<a class="sub9" href="../GBTC-Subjects/English/Prayer Intercession/Prayer & Intercession - Lesson 1.pdf" download>Prayer & Intercession - Lesson 1<i class="fas fa-download"></i></a>
+<a class="sub9" href="../GBTC-Subjects/English/Prayer Intercession/Prayer & Intercession - Lesson 2.pdf" download>Prayer & Intercession - Lesson 2<i class="fas fa-download"></i></a>
+<a class="sub9" href="../GBTC-Subjects/English/Prayer Intercession/Prayer & Intercession - Lesson 3_Postures.pdf" download>Prayer & Intercession - Lesson 3<i class="fas fa-download"></i></a>
+<a class="sub9" href="../GBTC-Subjects/English/Prayer Intercession/Prayer & Intercession - Lesson 4_Levels.pdf" download>Prayer & Intercession - Lesson 4<i class="fas fa-download"></i></a>
+<a class="sub9" href="../GBTC-Subjects/English/Prayer Intercession/Prayer & Intercession - Lesson 5_Fasting.pdf" download>Prayer & Intercession - Lesson 5<i class="fas fa-download"></i></a>
+<!-- End of Prayer and intercession -->
+
+
+<!-- Prayer and intercession Swh-->
+
+<a class="sub9" href="../GBTC-Subjects/English/Prayer Intercession/Prayer & Intercession - Lesson 1.pdf" download>Prayer & Intercession - Lesson 1 (Swh)<i class="fas fa-download"></i></a>
+<a class="sub9" href="../GBTC-Subjects/English/Prayer Intercession/Prayer & Intercession - Lesson 2.pdf" download>Prayer & Intercession - Lesson 2 (Swh)<i class="fas fa-download"></i></a>
+<a class="sub9" href="../GBTC-Subjects/English/Prayer Intercession/Prayer & Intercession - Lesson 3_Postures.pdf" download>Prayer & Intercession - Lesson 3 (Swh)<i class="fas fa-download"></i></a>
+<a class="sub9" href="../GBTC-Subjects/English/Prayer Intercession/Prayer & Intercession - Lesson 4_Levels.pdf" download>Prayer & Intercession - Lesson 4 (Swh)<i class="fas fa-download"></i></a>
+<a class="sub9" href="../GBTC-Subjects/English/Prayer Intercession/Prayer & Intercession - Lesson 5_Fasting.pdf" download>Prayer & Intercession - Lesson 5 (Swh)<i class="fas fa-download"></i></a>
+<!-- End of Prayer and intercession Swh-->
+
+<!-- Spiritual gifts -->
+<a class="sub10" href="../GBTC-Subjects/English/Spiritual Gifts/Spiritual Gifts - Lesson 1.pdf"download>Spiritual Gifts - Lesson 1<i class="fas fa-download"></i></a>
+<a class="sub10" href="../GBTC-Subjects/English/Spiritual Gifts/Spiritual Gifts - Lesson 2.pdf"download>Spiritual Gifts - Lesson 2<i class="fas fa-download"></i></a>
+<a class="sub10" href="../GBTC-Subjects/English/Spiritual Gifts/Spiritual Gifts - Lesson 3.pdf"download>Spiritual Gifts - Lesson 3<i class="fas fa-download"></i></a>
+<a class="sub10" href="../GBTC-Subjects/English/Spiritual Gifts/Spiritual Gifts - Lesson 4.pdf"download>Spiritual Gifts - Lesson 4<i class="fas fa-download"></i></a>
+<!-- End Spiritual gifts -->
+
+
+<!-- Spiritual gifts Swh -->
+<a class="sub10" href="../GBTC-Subjects/English/Spiritual Gifts/Spiritual Gifts - Lesson 1.pdf"download>Spiritual Gifts - Lesson 1 (Swh)<i class="fas fa-download"></i></a>
+<a class="sub10" href="../GBTC-Subjects/English/Spiritual Gifts/Spiritual Gifts - Lesson 2.pdf"download>Spiritual Gifts - Lesson 2 (Swh)<i class="fas fa-download"></i></a>
+<a class="sub10" href="../GBTC-Subjects/English/Spiritual Gifts/Spiritual Gifts - Lesson 3.pdf"download>Spiritual Gifts - Lesson 3 (Swh)<i class="fas fa-download"></i></a>
+<a class="sub10" href="../GBTC-Subjects/English/Spiritual Gifts/Spiritual Gifts - Lesson 4.pdf"download>Spiritual Gifts - Lesson 4 (Swh)<i class="fas fa-download"></i></a>
+<!-- End Spiritual gifts Swh-->
+
+<style>
+    #downloads a {
+padding: 20px;
+background-color: rgb(49, 45, 45);
+color: white;
+border-radius: 10px;
+height: 50px;
+width: 250px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 2px;
+font-size: 1rem;
+flex-wrap: wrap;
+/* word-wrap: normal;
+word-break: break-all; */
+text-decoration: none;
+flex-direction: column;
+    }
+
+    #downloads p {
+
+display: block;
+width: 100%;
+font-size: 3rem;
+text-align: center;
+            }
+    #downloads a * {
+font-size: 1.8rem;
+color: green;
+    }
+    #downloads .sub1 {
+background-color: rgb(10, 10, 51);
+    }
+    #downloads .sub2 {
+background-color:purple;
+    }
+    #downloads .sub3 {
+background-color:rgb(49, 45, 45);
+    }
+    #downloads .sub4 {
+background-color: green;
+    }
+    #downloads .sub4 *{
+color: rgb(10, 10, 51);
+    }
+    #downloads .sub5 {
+background-color: rgb(10, 10, 51);
+    }
+    #downloads .sub6 {
+background-color: purple;
+    }
+    #downloads .sub7 {
+background-color:rgb(49, 45, 45);
+    }
+    #downloads .sub8 {
+background-color: green;
+    }
+    #downloads .sub8 *{
+color: rgb(10, 10, 51);
+    }
+    #downloads .sub9 {
+background-color: rgb(10, 10, 51);
+    }
+    #downloads .sub10 {
+background-color:purple;
+    }
+</style>    
+
+                <!-- <a class="pict" href="../Passports/Adam.jpg" download>adam</a>
+                <a class="pict" href="../Passports/Jeremiah.png" download>jeremiah</a>
+                <a class="pict" href="../Passports/Joseph.png" download>jeremiah</a>
+                <button type="button" onclick="filess()"> Zote tatu</button>
+            </div>
+            <script>
+                var fileA = "../Passports/Jeremiah"
+                var fileA = "../Passports/Joseph"
+                var fileA = "../Passports/Judith"
+                function filess() {
+                    var fil = document.querySelectorAll('.pict');
+                    fil.forEach((elt)=>{
+                        elt.click()
+                    })
+                }
+
+            </script> -->
+        </div>
+            <div id="academics" class="hideFirst allThings">Academics Results</div>
+            <div id="videos" class="hideFirst allThings">Learning Videos</div>
+            <div id="audios" class="hideFirst allThings">Learning Audio Lectures</div>
+
         </section>
     </section>
     <section id="footer">
     </section>
+    <style>
+        body * {
+            transition: all .3s ease;
+            animation-name: njooAnime;
+            animation-duration: .5s;
+        }
+
+        @keyframes njooAnime {
+            0% {
+                transform: scale(0.3);
+            }
+
+            50% {}
+
+            100% {
+                transform: scale(1);
+
+            }
+        }
+    </style>
     <script src="script.js"></script>
     <script src="fontawasome5/js/all.js"></script>
     <script src="jquery-3.6.0.js"></script>
