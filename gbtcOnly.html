@@ -149,7 +149,7 @@ body {
     </div>
     <script>
         function chkVal(e) {
-            if (e == 'Yesuanaipendagbtc') {
+            if (e == 'Yesuanaipendagbtc' || e == 'Godlovesgbtc') {
                 document.querySelector('#uName').style.backgroundColor = 'green';
                 document.querySelector('#GBTC').style.display = 'flex';
                 setTimeout(() => {
@@ -159,6 +159,12 @@ body {
         }
         window.addEventListener('pageshow', () => {
             document.querySelector('#uName').value = '';
+
+            var welcomeBox = document.querySelectorAll('.welcome');
+                welcomeBox.forEach((elementt) => {
+                elementt.style.display = 'none';
+            });
+
         })
     </script>
 

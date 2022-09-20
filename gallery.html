@@ -64,8 +64,11 @@
             0% {
                 transform: scale(0);
             }
+
             25% {}
+
             50% {}
+
             100% {
                 transform: scale(1);
             }
@@ -131,21 +134,30 @@
     <div id="GBTC" class="welcome">
         <p>Welcome GBTC participant</p>
     </div>
+    <div id="JPE" class="welcome">
+        <p>Welcome JPE personnel</p>
+    </div>
     <script>
         function chkVal(e) {
             if (e == 'mtoveABC') {
                 document.querySelector('#uName').style.backgroundColor = 'green';
                 document.querySelector('#mtove').style.display = 'flex';
                 setTimeout(() => {
-                    document.location = 'galleryKakaJere/gallery_Mtove/index.html';
+                    document.location = 'galleryKakaJere/gallery_winfredMtove/index.html';
                 }, 3000);
-            } else if (e == 'mtuABC') {
+            } else if (e == 'memberABC') {
                 document.querySelector('#uName').style.backgroundColor = 'green';
                 document.querySelector('#mtu').style.display = 'flex';
                 setTimeout(() => {
-                    document.location = 'galleryMtu.html';
+                    document.location = 'galleryKakaJere/gallery_newMember/index.html';
                 }, 3000);
-            } else if (e == 'Yesuanaipendagbtc') {
+            } else if (e == 'jpeABC') {
+                document.querySelector('#uName').style.backgroundColor = 'green';
+                document.querySelector('#JPE').style.display = 'flex';
+                setTimeout(() => {
+                    document.location = 'galleryKakaJere/gallery_jpeConsult/index.html';
+                }, 3000);
+            } else if (e == 'Yesuanaipendagbtc' || e == 'Godlovesgbtc') {
                 document.querySelector('#uName').style.backgroundColor = 'green';
                 document.querySelector('#GBTC').style.display = 'flex';
                 setTimeout(() => {
@@ -153,8 +165,13 @@
                 }, 3000);
             }
         }
-        window.addEventListener('pageshow', ()=>{
+        window.addEventListener('pageshow', () => {
             document.querySelector('#uName').value = '';
+
+            var welcomeBox = document.querySelectorAll('.welcome');
+                welcomeBox.forEach((elementt) => {
+                elementt.style.display = 'none';
+            });
         })
     </script>
 
