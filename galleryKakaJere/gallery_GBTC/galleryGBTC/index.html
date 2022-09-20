@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="fontawasome5/css/all.css">
     <link rel="stylesheet" href="style.css">
-    <title>Gallery</title>
+    <title>Gallery GBTC</title>
 </head>
 
 <body>
@@ -22,7 +22,9 @@
                 justify-content: center;
             }
 
-            @media only screen and (max-width: 768px) {
+            @media only screen and (max-width: 1200px) {
+
+                /* @media only screen and (max-width: 768px) { */
                 #sideMenu .userDet {
                     height: 30%;
                     width: 100%;
@@ -137,93 +139,184 @@
                 }
 
             }
+
+            @media only screen and (max-width: 768px) {
+
+                /* snapshot for mobile */
+                body .snap {
+                    display: flex;
+                    flex-direction: column;
+                    height: 150px;
+                    width: 300px;
+                    background-color: rgb(49, 45, 45);
+                    border-radius: 50px;
+                    position: relative;
+                    overflow: hidden;
+                    margin: 10px;
+                    margin-left: 2px !important;
+                }
+
+                body .snap .upper {
+                    display: flex;
+                    flex-direction: row;
+                    font-size: 60px;
+                    padding: 10% 10% 12% 10%;
+                    justify-content: center;
+                    height: 67%;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    background-color: white;
+                    color: var(--color1);
+
+                }
+
+                body .snap .upper .iconn {
+                    width: 50%;
+                    margin-left: 10px;
+                    font-size: 80px;
+
+
+                }
+
+                body .snap .upper .number {
+                    width: 50%;
+                    margin-right: 50px;
+                    margin-left: 10px;
+                }
+
+                body .snap .lower {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 30px;
+                    flex-direction: row;
+                    height: 33%;
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    background-color: rgb(49, 45, 45);
+                    color: white
+                }
+
+                /* end for mobile snapshot */
+
+
+                /* mobile video*/
+                body #videos .videoCont {
+                    width: 90% !important;
+                    height: 300px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                    margin: 30px 10px;
+
+                }
+
+
+                body #videos video {
+                    width: 100%;
+                    height: 300px;
+                    border-radius: 10px 10px 0 0;
+                    background-color: var(--blur);
+
+
+                }
+
+
+                body #videos .download {
+                    width: 100%;
+                    background-color: var(--blur);
+                    padding: 5px;
+                    display: flex;
+                    justify-content: center !important;
+                    align-items: center;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                    border-radius: 0 0 10px 10px;
+
+
+                }
+
+                body #videos .download a {
+                    color: var(--color4);
+                    font-size: 20px;
+                    text-decoration: none;
+                    text-align: center;
+                }
+
+                body #videos .download a * {
+                    margin: 5px 5px;
+                    font-size: 20px;
+                    float: right;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center !important;
+                    align-items: center;
+                    text-align: center;
+                }
+
+                /* end for mobile video */
+
+
+                /* mobile audio */
+
+                body #audios .audioCont {
+                    width: 90% !important;
+                    height: fit-content;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                    margin: 20px 10px;
+                    border-radius: 30px 30px 0 0;
+                }
+
+
+                body #audios audio {
+                    width: 100%;
+                    background-color: var(--blur);
+                    border-radius: 30px 30px 0 0;
+                }
+
+
+                body #audios .download {
+                    width: 100%;
+                    background-color: var(--blur);
+                    padding: 5px;
+                    display: flex;
+                    justify-content: center !important;
+                    align-items: center;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                    border-radius: 0 0 10px 10px;
+                }
+
+                body #audios .download a {
+                    color: var(--color4);
+                    font-size: 20px;
+                    text-decoration: none;
+                }
+
+                body #audios .download a * {
+                    margin: 5px 5px;
+                    font-size: 20px;
+                    float: right;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center !important;
+                    align-items: center;
+                }
+
+
+                /* end mobile audio */
+            }
         </style>
-        <!-- <div class="hamburger">
-            <div class="bar"></div>
-        </div>
-        <ul>
-            <li><a href="#hero" data-after="About GBTC">About GBTC</a></li>
-            <li><a href="#services" data-after="Services">Faculties</a></li>
-            <li><a href="#projects" data-after="Projects">Projects</a></li>
-            <li><a href="#contact" data-after="Contact">Contact</a></li>
-            <li><a href="#pictures" data-after="Pictures" target="_blank">Pictures</a></li>
-        </ul>
-
-    <style>
-        #headerTop ul {
-            text-decoration: none;
-            list-style-type: none;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            justify-content: space-around;
-            flex-direction: row;
-            width: 100%;
-            height: 100%;
-            margin-top: 0;
-            margin-left: 0;
-            overflow: hidden;
-            /* background-color: red; */
-        }
-
-        #headerTop ul li {
-            padding: 20px;
-            background-color: var(--blur);
-            margin: auto 2px;
-
-        }
-
-        #headerTop ul li {
-            padding: 20px;
-            background-color: var(--blur);
-            margin: auto 2px;
-        }
-
-        #headerTop ul li a {
-            text-decoration: none;
-            color: var(--color3);
-            font-size: 20px;
-        }
-
-        @media only screen and (max-width: 768px) {
-            #headerTop ul {
-                text-decoration: none;
-                list-style-type: none;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                width: 80vw;
-                height: 100vh;
-                margin-top: 0;
-                margin-left: 0;
-                overflow: hidden;
-                background-color: red;
-                position: absolute;
-                z-index: 1006666066666666666666666666666;
-            }
-
-            #headerTop ul li {
-                padding: 20px;
-                background-color: var(--blur);
-                margin: auto 2px;
-
-            }
-
-            #headerTop ul li {
-                padding: 20px;
-                background-color: var(--blur);
-                margin: auto 2px;
-            }
-
-            #headerTop ul li a {
-                text-decoration: none;
-                color: var(--color3);
-                font-size: 20px;
-            }
-
-        }
-    </style> -->
     </section>
     <script>
         function cclass(elem) {
@@ -231,6 +324,9 @@
             var ky = $(elem).attr('data-part');
             var kyz = '#' + ky
             $(kyz).css('display', 'flex').siblings().css('display', 'none');
+
+            var elt = document.querySelector('body #mainContent');
+            elt.scrollTo(0, 0)
         }
     </script>
     <style>
@@ -405,8 +501,174 @@
                     </div>
                 </div>
             </div>
-            <div style="display: none" id="snapshots" class="hideFirst allThings">kaka jere didn't put something here about snapshots yet but
-                he is working on it</div>
+            <div style="display: none" id="snapshots" class="hideFirst allThings">
+                <div class="snap">
+                    <div class="upper">
+                        <i style="color: rgba(117, 173, 12, 0.788)" class="iconn fas fa-users"></i>
+                        <div class="number">37</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Registered</span>
+                    </div>
+                </div>
+                <div class="snap">
+                    <div class="upper">
+                        <i style="color: rgb(111, 18, 139)" class="iconn fas fa-image"></i>
+                        <div class="number">16</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Pictures</span>
+                    </div>
+                </div>
+                <div class="snap">
+                    <div class="upper">
+                        <i style="color: rgb(192, 5, 5)" class="iconn fas fa-file-pdf"></i>
+                        <div class="number">0</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">PDF Files</span>
+                    </div>
+                </div>
+                <div class="snap">
+                    <div class="upper">
+                        <i style="color: blue" class="iconn fas fa-file-word"></i>
+                        <div class="number">0</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Word Files</span>
+                    </div>
+                </div>
+                <div class="snap">
+                    <div class="upper">
+                        <i style="color: green" class="iconn fas fa-file-excel"></i>
+                        <div class="number">0</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Excel Files</span>
+                    </div>
+                </div>
+                <div class="snap">
+                    <div class="upper">
+                        <i style="color: brown" class="iconn fas fa-file-powerpoint"></i>
+                        <div class="number">0</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">P.Point Files</span>
+                    </div>
+                </div>
+                <div class="snap">
+                    <div class="upper">
+                        <i style="color: rgb(167, 164, 7)" class="iconn fas fa-music"></i>
+                        <div class="number">0</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Audios</span>
+                    </div>
+                </div>
+                <div class="snap">
+                    <div class="upper">
+                        <i style="color: rgb(10, 65, 78)" class="iconn fas fa-video"></i>
+                        <div class="number">0</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Movies</span>
+                    </div>
+                </div>
+                <div class="snap">
+                    <div class="upper">
+                        <i style="color: rgb(255, 115, 0)" class="iconn fas fa-tv"></i>
+                        <div class="number">0</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Documentaries</span>
+                    </div>
+                </div>
+                <div class="snap">
+                    <div class="upper">
+                        <i style="color: rgb(110, 40, 8)" class="iconn fas fa-film"></i>
+                        <div class="number">0</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Video Songs</span>
+                    </div>
+                </div>
+                <div class="snap">
+                    <div class="upper">
+                        <i style="color: rgb(21, 32, 36)" class="iconn fas fa-file-video"></i>
+                        <div class="number">0</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Clips</span>
+                    </div>
+                </div>
+                <div class="snap">
+                    <div class="upper">
+                        <i style="color: rgb(255, 0, 76)" class="iconn fas fa-bell"></i>
+                        <div class="number">0</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">KakaJere Notices</span>
+                    </div>
+                </div>
+                <style>
+                    body .snap {
+                        display: flex;
+                        flex-direction: column;
+                        height: 150px;
+                        width: 300px;
+                        background-color: rgb(49, 45, 45);
+                        border-radius: 50px;
+                        position: relative;
+                        overflow: hidden;
+                        margin: 10px;
+                    }
+
+                    body .snap .upper {
+                        display: flex;
+                        flex-direction: row;
+                        font-size: 60px;
+                        padding: 10% 10% 12% 10%;
+                        justify-content: center;
+                        height: 67%;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        background-color: white;
+                        color: var(--color1);
+
+                    }
+
+                    body .snap .upper .iconn {
+                        width: 50%;
+                        margin-left: 10px;
+                        font-size: 80px;
+
+
+                    }
+
+                    body .snap .upper .number {
+                        width: 50%;
+                        margin-right: 50px;
+                        margin-left: 10px;
+                    }
+
+                    body .snap .lower {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 30px;
+                        flex-direction: row;
+                        height: 33%;
+                        width: 100%;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        background-color: rgb(49, 45, 45);
+                        color: white
+                    }
+                </style>
+            </div>
             <div style="display: none" id="downloads" class="hideFirst allThings">
 
                 <p>Download Notes</p>
@@ -754,9 +1016,286 @@ word-break: break-all; */
 
             </script> -->
             </div>
-            <div  style="display: none" id="academics" class="hideFirst allThings">Academics Results</div>
-            <div  style="display: none" id="videos" class="hideFirst allThings">Learning Videos</div>
-            <div  style="display: none" id="audios" class="hideFirst allThings">Learning Audio Lectures</div>
+            <div style="display: none" id="academics" class="hideFirst allThings">
+                <div class="snap2">
+                    <div class="upper">
+                        <p>No results yet</p>
+                        <!-- <p>No results yet</p> -->
+                    </div>
+                    <div class="lower">
+                        <i class="iconn fas fa-sticky-note"></i>
+                        <span class="title">Examination Results</span>
+                    </div>
+                </div>
+                <style>
+                    body .snap2 {
+                        display: flex;
+                        flex-direction: column;
+                        height: 150px;
+                        width: 300px;
+                        background-color: white;
+                        border-radius: 50px;
+                        position: relative;
+                        overflow: hidden;
+                        margin: 10px;
+                    }
+
+                    body .snap2 .upper {
+                        display: flex;
+                        flex-direction: row;
+                        font-size: 20px;
+                        justify-content: center;
+                        height: 67%;
+                        position: absolute;
+                        bottom: 0;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        background-color: white;
+                        color: var(--color1);
+                        /* padding: 10px; */
+                    }
+
+                    body .snap2 .upper p {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        margin: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                    }
+
+                    body .snap2 .lower .iconn {
+                        margin-right: 5px;
+                        font-size: 20px;
+                    }
+
+                    body .snap2 .lower {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 20px;
+                        flex-direction: row;
+                        height: 33%;
+                        width: 100%;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        background-color: rgb(49, 45, 45);
+                        color: white
+                    }
+                </style>
+
+            </div>
+            <div style="display: none" id="videos" class="hideFirst allThings">
+                <div class="videoCont">
+                    <video src="../videos/Timi Dakolo - Everything (Amen) (Official Video).webm" controls
+                        controlslist='download'> </video>
+                    <span class="download">
+                        <a href="../videos/Timi Dakolo - Everything (Amen) (Official Video).webm" download>Timi Dakolo -
+                            Everything (Amen)<i class="fas fa-download"></i></a></span>
+                </div>
+                <div class="videoCont">
+                    <video src="../videos/Timi Dakolo - Everything (Amen) (Official Video).webm" controls
+                        controlslist='download'> </video>
+                    <span class="download">
+                        <a href="../videos/Timi Dakolo - Everything (Amen) (Official Video).webm" download>Timi Dakolo -
+                            Everything (Amen)<i class="fas fa-download"></i></a></span>
+                </div>
+                <div class="videoCont">
+                    <video src="../videos/Timi Dakolo - Everything (Amen) (Official Video).webm" controls
+                        controlslist='download'> </video>
+                    <span class="download">
+                        <a href="../videos/Timi Dakolo - Everything (Amen) (Official Video).webm" download>Timi Dakolo -
+                            Everything (Amen)<i class="fas fa-download"></i></a></span>
+                </div>
+                <div class="videoCont">
+                    <video src="../videos/Timi Dakolo - Everything (Amen) (Official Video).webm" controls
+                        controlslist='download'> </video>
+                    <span class="download">
+                        <a href="../videos/Timi Dakolo - Everything (Amen) (Official Video).webm" download>Timi Dakolo -
+                            Everything (Amen)<i class="fas fa-download"></i></a></span>
+                </div>
+                <div class="videoCont">
+                    <video src="../videos/Timi Dakolo - Everything (Amen) (Official Video).webm" controls
+                        controlslist='download'> </video>
+                    <span class="download">
+                        <a href="../videos/Timi Dakolo - Everything (Amen) (Official Video).webm" download>Timi Dakolo -
+                            Everything (Amen)<i class="fas fa-download"></i></a></span>
+                </div>
+
+                <style>
+                    body #videos .videoCont {
+                        width: 45%;
+                        height: 300px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        box-sizing: border-box;
+                        margin: 30px 10px;
+
+                    }
+
+
+                    body #videos video {
+                        width: 100%;
+                        height: 300px;
+                        border-radius: 10px 10px 0 0;
+                        background-color: var(--blur);
+
+
+                    }
+
+
+                    body #videos .download {
+                        width: 100%;
+                        background-color: var(--blur);
+                        padding: 5px;
+                        display: flex;
+                        justify-content: center !important;
+                        align-items: center;
+                        flex-direction: column;
+                        box-sizing: border-box;
+                        border-radius: 0 0 10px 10px;
+
+
+                    }
+
+
+                    body #videos .download a {
+                        color: var(--color4);
+                        font-size: 20px;
+                        text-decoration: none;
+                        text-align: center;
+                    }
+
+                    body #videos .download a * {
+                        margin: 5px 5px;
+                        font-size: 20px;
+                        float: right;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center !important;
+                        align-items: center;
+                        text-align: center;
+
+
+                    }
+                </style>
+                <script>
+                    var videoss = document.querySelectorAll('#videos video');
+                    videoss.forEach((vidd) => {
+                        vidd.addEventListener('play', () => {
+                            var stp1 = $(vidd).parent().siblings().children('video');
+                            stp1.pause();
+                        })
+                    })
+                </script>
+
+            </div>
+            <div style="display: none" id="audios" class="hideFirst allThings">
+                <div class="audioCont">
+                    <audio src="../Audios/enock jonas   baraka.mp3" controls></audio>
+                    <span class="download">
+                        <a href="../Audios/enock jonas   baraka.mp3" download>Enock Jonas (Baraka)<i class="fas fa-download"></i></a></span>
+                </div>
+
+                <div class="audioCont">
+                    <audio src="../Audios/enock jonas   baraka.mp3" controls></audio>
+                    <span class="download">
+                        <a href="../Audios/enock jonas   baraka.mp3" download>Enock Jonas (Baraka)<i class="fas fa-download"></i></a></span>
+                </div>
+
+                <div class="audioCont">
+                    <audio src="../Audios/enock jonas   baraka.mp3" controls></audio>
+                    <span class="download">
+                        <a href="../Audios/enock jonas   baraka.mp3.webm" download>Enock Jonas (Baraka)<i class="fas fa-download"></i></a></span>
+                </div>
+
+                <div class="audioCont">
+                    <audio src="../Audios/enock jonas   baraka.mp3" controls></audio>
+                    <span class="download">
+                        <a href="../Audios/enock jonas   baraka.mp3" download>Enock Jonas (Baraka)<i class="fas fa-download"></i></a></span>
+                </div>
+
+                <div class="audioCont">
+                    <audio src="../Audios/enock jonas   baraka.mp3" controls></audio>
+                    <span class="download">
+                        <a href="../Audios/enock jonas   baraka.mp3" download>Enock Jonas (Baraka)<i class="fas fa-download"></i></a></span>
+                </div>
+
+                <div class="audioCont">
+                    <audio src="../Audios/enock jonas   baraka.mp3" controls></audio>
+                    <span class="download">
+                        <a href="../Audios/enock jonas   baraka.mp3" download>Enock Jonas (Baraka)<i class="fas fa-download"></i></a></span>
+                </div>
+                <script>
+                    var audioss = document.querySelectorAll('#audios audio');
+                    audioss.forEach((audd) => {
+                        audd.addEventListener('play', (this) => {
+                            var stp = $(audd).parent().siblings().children('audio');
+                            stp.pause();
+                        })
+                    })
+                </script>
+                <style>
+                    body #audios .audioCont {
+                        width: 45%;
+                        height: fit-content;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        box-sizing: border-box;
+                        margin: 20px 10px;
+                        border-radius: 30px 30px 0 0;
+
+                    }
+
+
+                    body #audios audio {
+                        width: 100%;
+                        background-color: var(--blur);
+                        border-radius: 30px 30px 0 0;
+                    }
+
+
+                    body #audios .download {
+                        width: 100%;
+                        background-color: var(--blur);
+                        padding: 5px;
+                        display: flex;
+                        justify-content: center !important;
+                        align-items: center;
+                        flex-direction: column;
+                        box-sizing: border-box;
+                        border-radius: 0 0 10px 10px;
+                    }
+
+                    body #audios .download a {
+                        color: var(--color4);
+                    font-size: 20px;
+                    text-decoration: none;
+                    text-align: center;
+                    }
+
+                    body #audios .download a * {
+                        margin: 5px 5px;
+                    font-size: 20px;
+                    float: right;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center !important;
+                    align-items: center;
+                    text-align: center;
+                    }
+                </style>
+            </div>
 
         </section>
     </section>
