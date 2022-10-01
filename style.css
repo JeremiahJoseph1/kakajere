@@ -84,6 +84,7 @@ p {
     color: crimson;
     background-color: transparent;
     border: 2px solid crimson;
+    border-radius: 10px;
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: .1rem;
@@ -208,6 +209,7 @@ p {
     cursor: pointer;
     transform: scale(.8);
     margin-right: -7px;
+    user-select: none;
 }
 
 #header .hamburger:after {
@@ -218,6 +220,7 @@ p {
     border-radius: inherit;
     border: 1px solid white;
     animation: hamburger_puls 1s infinite;
+    user-select: none;
 }
 
 #header .hamburger .bar {
@@ -225,7 +228,8 @@ p {
     width: 30px;
     position: relative;
     background-color: white;
-    z-index: -1
+    z-index: -1;
+    user-select: none;
 }
 
 #header .hamburger .bar::after,
@@ -238,6 +242,8 @@ p {
     left: 0;
     transition: .3s ease;
     transition-property: top, bottom;
+    user-select: none;
+
 }
 
 #header .hamburger .bar::after {
@@ -409,6 +415,8 @@ p {
     color: white;
     margin-bottom: 10px;
     text-transform: uppercase;
+    /* text-align: center; */
+    align-self: center;
 }
 
 /* #services .service-item p {
