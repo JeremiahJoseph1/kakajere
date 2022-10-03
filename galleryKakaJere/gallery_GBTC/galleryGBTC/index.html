@@ -21,21 +21,21 @@
                 <p class="descTxt">Elezea marekebisho yako hapa</p>
                 <i class="icon fas fa-window-close" onclick="(hideThis2())"></i>
             </div>
-            <form id="formm" class="formm">
+            <form id="formm" action="https://formspree.io/f/xpznrdqk" method="POST" class="formm">
                 <label for="servCat">Chagua aina ya marekebisho yako</label>
-                <select name="servCat" id="servCat">
+                <select name="Service Category" id="servCat">
                     <option value="picture">Picha ibadilishwe</option>
                     <option value="name">Jina libadilishwe</option>
                     <option value="picture and name">Picha na jina vibadilishwe</option>
                 </select>
                 <label for="servDesc">Andika jina lako kwa usahihi hapa</label>
-                <input type="text" name="servDesc" id="servDesc" placeholder="eg. I wanted computer networking">
+                <input type="text" name="Service Descriptions" id="servDesc" placeholder="eg. I wanted computer networking">
                 <label for="numberr">Andika simu itakayotafutwa kwa maelezo zaidi</label>
-                <input type="tel" name="numberr" id="numberr" placeholder="eg. 0757835930" validate>
+                <input type="tel" name="Phone Number" id="numberr" placeholder="eg. 0757835930" validate>
                 <label for="email">Andika barua pepe yako hapa</label>
                 <input type="email" name="email" id="email" placeholder="eg. someone@domain.com" validate>
 
-                <button id="serReq" type="button" onclick="sendReq()">Send Service Request</button>
+                <button id="serReq" type="submit" onclick="sendReq()">Send Service Request</button>
             </form>
             <!-- <script>
                 var problemType = document.getElementById('servCat').value;
