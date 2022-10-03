@@ -10,8 +10,361 @@
     <title>Gallery GBTC</title>
 </head>
 
-<body>
-    <section id="headerTop" class="nav-list">Welcome GBTC
+<body onload="removeUnwantedd()" onpageshow="removeUnwantedd()">
+    <!-- Hire Me Dialog -->
+
+
+
+    <div id="hireMeDialg">
+        <div class="sendBox">
+            <div id="heading" class="heading">
+                <p class="descTxt">Elezea marekebisho yako hapa</p>
+                <i class="icon fas fa-window-close" onclick="(hideThis2())"></i>
+            </div>
+            <form id="formm" class="formm">
+                <label for="servCat">Chagua aina ya marekebisho yako</label>
+                <select name="servCat" id="servCat">
+                    <option value="picture">Picha ibadilishwe</option>
+                    <option value="name">Jina libadilishwe</option>
+                    <option value="picture and name">Picha na jina vibadilishwe</option>
+                </select>
+                <label for="servDesc">Andika jina lako kwa usahihi hapa</label>
+                <input type="text" name="servDesc" id="servDesc" placeholder="eg. I wanted computer networking">
+                <label for="numberr">Andika simu itakayotafutwa kwa maelezo zaidi</label>
+                <input type="tel" name="numberr" id="numberr" placeholder="eg. 0757835930" validate>
+                <label for="email">Andika barua pepe yako hapa</label>
+                <input type="email" name="email" id="email" placeholder="eg. someone@domain.com" validate>
+
+                <button id="serReq" type="button" onclick="sendReq()">Send Service Request</button>
+            </form>
+            <!-- <script>
+                var problemType = document.getElementById('servCat').value;
+                var correctedName = document.getElementById('servDesc').value;
+                var telNumber = document.getElementById('numberr').value;
+                var emailAddress = document.getElementById('email').value;
+            </script> -->
+            <style>
+                #hireMeDialg .sendBox #formm label {
+                    margin-top: 20px;
+                }
+
+                #hireMeDialg .sendBox .formm input,
+                #hireMeDialg .sendBox .formm select {
+                    display: block;
+                    width: 80%;
+                    height: 30px;
+                    align-self: center;
+                    margin: 8px;
+                    border-radius: 20px;
+                    padding: 5px
+                }
+
+                #hireMeDialg .sendBox .formm select {
+                    border-radius: 20px;
+                    height: 35px;
+                    accent-color: crimson !important;
+                    padding-right: 5px;
+                }
+
+                #hireMeDialg .sendBox .formm select option {
+                    accent-color: crimson !important;
+                    margin: 10px;
+                    padding: 10px;
+                }
+
+                #hireMeDialg .sendBox .formm button {
+                    display: block;
+                    width: 80%;
+                    height: 50px;
+                    align-self: center;
+                    background-color: crimson;
+                    border-radius: 20px;
+                    margin-top: 20px;
+                }
+            </style>
+        </div>
+        <style>
+            #hireMeDialg {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                width: 100vw;
+                backdrop-filter: blur(4px);
+                z-index: 20000;
+                color: white;
+                justify-content: center;
+                align-items: center;
+                transition: all .3s ease;
+                animation-name: appear;
+                animation-fill-mode: forwards;
+                animation-duration: .3s;
+                animation-timing-function: ease-in-out;
+
+            }
+
+            #hireMeDialg .sendBox {
+                height: 600px;
+                width: 400px;
+                border: 1px solid crimson;
+                border-radius: 7px;
+                overflow: hidden;
+                background-color: black;
+            }
+
+            #hireMeDialg .sendBox .heading {
+                height: 15%;
+                min-width: 80%;
+                background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 3%;
+            }
+
+            #hireMeDialg .sendBox .heading p {
+                font-size: 20px;
+                color: white;
+            }
+
+            #hireMeDialg .sendBox .formm {
+                height: 85%;
+                min-width: 80%;
+                object-fit: cover;
+                background-image: white;
+                font-size: 15px;
+                color: white;
+                display: flex;
+                /* align-items: flex-start; */
+                /* justify-content: center; */
+                text-align: center;
+                flex-direction: column;
+            }
+
+            #hireMeDialg .sendBox .heading .icon {
+                font-size: 40px;
+                color: crimson;
+            }
+
+            #hireMeDialg .sendBox .heading .icon:hover {
+                font-size: 40px;
+                color: red;
+            }
+
+            #thankss {
+                display: none;
+                width: fit-content;
+                height: fit-content;
+                padding: 50px;
+                position: fixed;
+                /* top: 0;
+                    left: 0; */
+                z-index: 9000000;
+                background-color: rgba(220, 20, 60, .9);
+                align-items: center;
+                justify-content: center;
+                color: white;
+                border-radius: 20px;
+                font-size: 30px;
+                text-align: center;
+                /* animation-name: thanks; */
+                animation-duration: 2s;
+                animation-fill-mode: forwards;
+                transform: scale(0);
+            }
+
+            @keyframes thanks {
+                0% {
+                    display: flex;
+                    transform: scale(0.2);
+                }
+
+                50% {
+                    transform: scale(.7);
+
+                }
+
+                100% {
+                    transform: scale(0);
+                    display: none;
+                }
+            }
+
+            @keyframes appear {
+                0% {
+                    display: flex;
+                    transform: scale(0.1);
+                }
+
+                50% {}
+
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+            @keyframes disappear {
+                0% {}
+
+                50% {}
+
+                100% {
+                    transform: scale(0);
+                    display: none;
+                }
+            }
+        </style>
+        <script>
+            // codee = "sample";
+            let targetPerson = "";
+
+            var dlg2 = document.getElementById('hireMeDialg');
+
+            function hideThis2() {
+                dlg2.style.animationName = 'disappear';
+            }
+            function showThisCustTst() {
+                var ownerName = document.getElementById('ownerName');
+                var codeep = document.getElementById('codeep');
+                var passEnter = document.getElementById('passEnter');
+                var successEdit = document.getElementById('successEdit');
+
+                var codee = document.getElementById('codee').value;
+
+                ownerName.style.display = 'none';
+                codeep.style.display = '';
+
+                document.getElementById('codee').focus({ focusVisible: true })
+
+                if (codee == '1594_Kavishe' || codee == '2450_Jeremiah' || codee == '8976_Safisha') {
+                    var codeep = document.getElementById('codeep');
+                    var successEdit = document.getElementById('successEdit');
+                    successEdit.style.display = '';
+                    codeep.style.display = 'none';
+                } else {
+                    alert(`Please provide the password to send the modification request`)
+                }
+            }
+            function showThisCust(cust) {
+                var codee = document.getElementById('codee').value;
+                if (codee == '1594_Kavishe' || codee == '2450_Jeremiah' || codee == '8976_Safisha') {
+                    removAnim()
+                    // alert(codee)
+                    var personID = $(cust).attr('onplaying');
+
+                    dlg2.style.display = 'flex';
+                    dlg2.style.animationName = 'appear';
+
+                    var personID = $(cust).attr('onplaying');
+                    targetPerson = personID;
+                    // alert(personID)
+                } else {
+                    showThisCustTst()
+                }
+            }
+            function thanks() {
+                document.getElementById('thankss').style.display = 'flex';
+                document.getElementById('thankss').style.animationName = 'thanks';
+            }
+            function removAnim() {
+                document.getElementById('thankss').style.animationName = '';
+                document.getElementById('thankss').style.display = 'none';
+            }
+            function sendReq() {
+                thanks();
+                hideThis2();
+                // removAnim()
+
+                seeAll()
+                var ownerName = document.getElementById('ownerName');
+                var successEdit = document.getElementById('successEdit');
+
+                ownerName.style.display = '';
+                successEdit.style.display = 'none';
+            }
+
+            function removeUnwantedd() {
+                document.getElementById('thankss').style.display = 'none';
+            }
+            function seeAll() {
+                var pT = document.getElementById('servCat').value;
+                var personToEdit = " of " + targetPerson;
+
+                var subject = `'This email refer's to "Registration Details Change" of a GBTC(Arusha) student with the name ` + personToEdit;
+
+                var codee = document.getElementById('codee').value;
+                adminWhoSentTheRequest = "The GBTC(Arusha) leader who sent this request is " + codee + ". ";
+
+                var problemType = "I am hereby requesting that you please edit the " + pT;
+
+                var pT = document.getElementById('servCat').value;
+                var personToEdit = " of " + targetPerson;
+
+                var correctedName = " to " + document.getElementById('servDesc').value + ". You may please call this student if there is any detail that you need further via phone number:";
+
+                var telNumber = document.getElementById('numberr').value + " or email address: ";
+
+                var emailAddress = document.getElementById('email').value;
+
+                var myEmail = 'jictoejeremiah@gmail.com';
+                var myEmailb = "This email is sent to you " + 'jictoejeremiah@gmail.com';
+
+                var emailSender = 'mkakajey@kakajere.me'
+                var emailSenderb = " from " + 'mkakajey@kakajere.me';
+
+
+            //     // email's subject
+            //     alert(subject);
+
+            //     // email's body
+            //     alert(adminWhoSentTheRequest);
+            //     alert(problemType);
+            //     alert(personToEdit);
+            //     alert(correctedName);
+            //     alert(telNumber);
+            //     alert(emailAddress);
+
+            //     // receiver's address(Explain)
+            //     alert(myEmailb);
+            //     // sender's address(Explain)
+            //     alert(emailSenderb);
+
+            //     // receiver's address
+            //     alert(myEmail);
+            //     // sender's address
+            //     alert(emailSender);
+
+            // }
+        </script>
+    </div>
+    <!-- End Hire Me Dialog -->
+
+
+    <section id="headerTop" class="nav-list">
+        <marquee behavior="" direction="">
+            Karibu GBTC. Hii ni ngazi ya cheti ya Shule ya Huduma na inasomwa kwa muda wa miezi minne. Ngazi hii ina
+            masomo nane. Notsi za haya masomo yapo hapa kwenye menyu ya 'Downloads'. Pia unaweza kujifunza masomo haya
+            kwa njia ya video au sauti ambazo pia zipo hapa ndani kwenye menyu za 'Videos' na 'Audios'. Matokeo ya
+            mitihani
+            yataonekana kwenye menyu ya 'Academics' pindi yatakapotolewa na mhadhiri wetu Askofu E. S. Ekong. Kuona
+            vyote vya GBTC vilivyomo kwenye tovuti hii angalia kwenye menyu ya 'Snapshots'. Wewe kama mwanafunzi
+            tafadhali hakikisha picha yako ya paspoti na jina lako kwenye menyu ya 'Profiles' na ikiwa haviko sawa basi
+            bonyeza kitufe hiki <i class="fas fa-podcast"></i> chini ya picha yako kisha uandike hapo jina lako kama
+            unavyohitaji liandikwe katika rekodi zako katika chuo hiki. Tunakupenda.
+
+
+            Welcome to GBTC. This is the certificate level of the School of Ministry and is studied over a four months
+            period of time. This level has eight subjects. Notes for these lessons are here in the 'Downloads' menu. You
+            can also learn these lessons through video or audio that are also available here in the 'Videos' and
+            'Audios' menus. The results of the exams will appear in the 'Academics' menu when they are released by our
+            lecturer Bishop E. S. Ekong. To see all the GBTC content on this site look at the 'Snapshots' menu. You, as
+            a student, please check your passport photo and your name in the 'Profiles' menu and if they are not
+            correct, then press this button <i class="fas fa-podcast"></i> under your photo and then write your name
+            there
+            as you need it to be written in your records in this college. We love you.
+        </marquee>
+
         <style>
             #headerTop {
                 font-size: x-large;
@@ -310,8 +663,8 @@
 
                 /* end mobile audio */
 
-                    /* academic for mobile */
-                    body .snap2 {
+                /* academic for mobile */
+                body .snap2 {
                     display: flex;
                     flex-direction: column;
                     height: 150px;
@@ -323,7 +676,8 @@
                     margin: 10px;
                     margin-left: 2px !important;
                 }
-                    /* End of acaemic for mobile */
+
+                /* End of acaemic for mobile */
 
             }
         </style>
@@ -350,7 +704,17 @@
         <section id="sideMenu">
             <div class="userDet">
                 <img id="profImg" src="../GBTC Graphics/Logo_png.png" alt="" class="userPic">
-                <span class="userName">GBTC Arusha</span>
+                <span class="userName" id="ownerName">GBTC Arusha</span>
+
+                <span class="userName" id="codeep" style="display: none">
+                    <span id="passEnter"><input type="password" autocomplete="off" id="codee"> <button type="button"
+                            onclick="showThisCustTst()">Go</button></span>
+                </span>
+
+                <span class="userName" id="successEdit" type="button" style="display: none;">
+                    Good to go<i style="color: green;  margin-left: 5px;" class="fas fa-check-circle"></i>
+                </span>
+
             </div>
             <div class="sideMenBut">
                 <ul id="menuHolder">
@@ -372,6 +736,7 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
+                        <i class="fas fa-podcast" onplaying=" 1. Eligibo Kavishe" onclick="showThisCust(this)"></i>
                         <div class="descTxt">Eligibo Kavishe</div>
                     </div>
                 </div>
@@ -381,6 +746,7 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
+                        <i class="fas fa-podcast" onplaying=" 2. Jeremiah Joseph" onclick="showThisCust(this)"></i>
                         <div class="descTxt">Jeremiah Joseph</div>
                     </div>
                 </div>
@@ -390,6 +756,7 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
+                        <i class="fas fa-podcast" onplaying=" 3. Dorcas Eligibo" onclick="showThisCust(this)"></i>
                         <div class="descTxt">Dorcas Eligibo</div>
                     </div>
                 </div>
@@ -399,6 +766,8 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
+                        <i class="fas fa-podcast" onplaying=" 4. Joseph Mushi" onclick="showThisCust(this)"></i>
+
                         <div class="descTxt">Joseph Mushi</div>
                     </div>
                 </div>
@@ -408,6 +777,7 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
+                        <i class="fas fa-podcast" onplaying=" 5. Judith Mushi" onclick="showThisCust(this)"></i>
                         <div class="descTxt">Judith Mushi</div>
                     </div>
                 </div>
@@ -417,6 +787,7 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
+                        <i class="fas fa-podcast" onplaying=" 6. Alex Kiuko" onclick="showThisCust(this)"></i>
                         <div class="descTxt">Alex Kiuko</div>
                     </div>
                 </div>
@@ -426,6 +797,7 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
+                        <i class="fas fa-podcast" onplaying=" 7. Aminieli Mgonja" onclick="showThisCust(this)"></i>
                         <div class="descTxt">Aminieli Mgonja</div>
                     </div>
                 </div>
@@ -435,6 +807,7 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
+                        <i class="fas fa-podcast" onplaying=" 8. Anderson Mathayo" onclick="showThisCust(this)"></i>
                         <div class="descTxt">Anderson Mathayo</div>
                     </div>
                 </div>
@@ -444,6 +817,7 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
+                        <i class="fas fa-podcast" onplaying=" 9. Angela Duwey" onclick="showThisCust(this)"></i>
                         <div class="descTxt">Angela Duwey</div>
                     </div>
                 </div>
@@ -453,6 +827,7 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
+                        <i class="fas fa-podcast" onplaying=" 10. Daniel Yohana" onclick="showThisCust(this)"></i>
                         <div class="descTxt">Daniel Yohana</div>
                     </div>
                 </div>
@@ -462,6 +837,7 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
+                        <i class="fas fa-podcast" onplaying=" 11. Florence Joseph" onclick="showThisCust(this)"></i>
                         <div class="descTxt">Florence Joseph</div>
                     </div>
                 </div>
@@ -471,6 +847,7 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
+                        <i class="fas fa-podcast" onplaying=" 12. Godliving James" onclick="showThisCust(this)"></i>
                         <div class="descTxt">Godliving James</div>
                     </div>
                 </div>
@@ -480,6 +857,7 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
+                        <i class="fas fa-podcast" onplaying=" 13. Innocent" onclick="showThisCust(this)"></i>
                         <div class="descTxt">Innocent</div>
                     </div>
                 </div>
@@ -489,6 +867,7 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
+                        <i class="fas fa-podcast" onplaying=" 14. Irene Leonard" onclick="showThisCust(this)"></i>
                         <div class="descTxt">Irene Leonard</div>
                     </div>
                 </div>
@@ -498,6 +877,7 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
+                        <i class="fas fa-podcast" onplaying=" 15. Sabina Duwey" onclick="showThisCust(this)"></i>
                         <div class="descTxt">Sabina Duwey</div>
                     </div>
                 </div>
@@ -507,6 +887,7 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
+                        <i class="fas fa-podcast" onplaying="16. Laheri Machumbe" onclick="showThisCust(this)"></i>
                         <div class="descTxt">Laheri Machumbe</div>
                     </div>
                 </div>
@@ -620,6 +1001,9 @@
                         <span class="title">KakaJere Notices</span>
                     </div>
                 </div>
+                <br>
+                System Developed by KakaJere
+
                 <style>
                     body .snap {
                         display: flex;
@@ -682,6 +1066,17 @@
             <div style="display: none" id="downloads" class="hideFirst allThings">
 
                 <p>Download Notes</p>
+
+
+                <a class="sub0"
+                    href="../GBTC-Subjects/English.zip"
+                    download>All English Subjects (.zip)<i class="fas fa-download"></i></a>
+                <a class="sub0"
+                    href="../GBTC-Subjects/Swahili.zip"
+                    download>All Swahili Subjects (.zip)<i class="fas fa-download"></i></a>
+                <a class="sub0"
+                    href="../GBTC-Subjects/GBTC-Subjects.zip"
+                    download>All Subjects (Eng & Swh)  (.zip)<i class="fas fa-download"></i></a>
 
 
                 <!-- Basic Christian Doctrine -->
@@ -844,7 +1239,7 @@
                 <a class="sub7" href="../GBTC-Subjects/English/Introduction & Course Overview .pdf"
                     download>Introduction & Course Overview<i class="fas fa-download"></i></a>
                 <a class="sub7" href="../GBTC-Subjects/English/The Bible.pdf" download>The Bible<i
-                    class="fas fa-download"></i></a>
+                        class="fas fa-download"></i></a>
                 <!-- End Course outline -->
 
                 <!-- Course outline Swh-->
@@ -861,7 +1256,8 @@
 
 
                 <!-- Timetable Swh -->
-                <a class="sub8" href="../GBTC-Subjects/Swahili/Lecture Time Table - Arusha_Batch 1_June 2022 Swahili.pdf"
+                <a class="sub8"
+                    href="../GBTC-Subjects/Swahili/Lecture Time Table - Arusha_Batch 1_June 2022 Swahili.pdf"
                     download>Lecture Time Table (Swh)<i class="fas fa-download"></i></a>
                 <!-- End Timetable Swh-->
 
@@ -885,9 +1281,11 @@
 
                 <!-- Prayer and intercession Swh-->
 
-                <a class="sub9" href="../GBTC-Subjects/Swahili/Prayer & Intercession/Prayer & Intercession - Lesson 1 Swahili_edit.pdf"
+                <a class="sub9"
+                    href="../GBTC-Subjects/Swahili/Prayer & Intercession/Prayer & Intercession - Lesson 1 Swahili_edit.pdf"
                     download>Prayer & Intercession - Lesson 1 (Swh)<i class="fas fa-download"></i></a>
-                <a class="sub9" href="../GBTC-Subjects/Swahili/Prayer & Intercession/Prayer & Intercession - Lesson 2 Swahili_edit.pdf"
+                <a class="sub9"
+                    href="../GBTC-Subjects/Swahili/Prayer & Intercession/Prayer & Intercession - Lesson 2 Swahili_edit.pdf"
                     download>Prayer & Intercession - Lesson 2 (Swh)<i class="fas fa-download"></i></a>
                 <a class="sub9"
                     href="../GBTC-Subjects/Swahili/Prayer & Intercession/Prayer & Intercession - Lesson 3 Swahili_edit.pdf"
@@ -909,7 +1307,8 @@
                     download>Spiritual Gifts - Lesson 3<i class="fas fa-download"></i></a>
                 <a class="sub10" href="../GBTC-Subjects/English/Spiritual Gifts/Spiritual Gifts - Lesson 4.pdf"
                     download>Spiritual Gifts - Lesson 4<i class="fas fa-download"></i></a>
-                <a class="sub10" href="../GBTC-Subjects/English/Spiritual Gifts/Spiritual Gifts Questionnaire - Lesson 5.pdf"
+                <a class="sub10"
+                    href="../GBTC-Subjects/English/Spiritual Gifts/Spiritual Gifts Questionnaire - Lesson 5.pdf"
                     download>Spiritual Gifts Questionnaire - Lesson 5<i class="fas fa-download"></i></a>
                 <!-- End Spiritual gifts -->
 
@@ -923,9 +1322,12 @@
                     download>Spiritual Gifts - Lesson 3 (Swh)<i class="fas fa-download"></i></a>
                 <a class="sub10" href="../GBTC-Subjects/Swahili/Spiritual Gifts/Spiritual Gifts - Lesson 4 Swahili.pdf"
                     download>Spiritual Gifts - Lesson 4 (Swh)<i class="fas fa-download"></i></a>
-                <a class="sub10" href="../GBTC-Subjects/Swahili/Spiritual Gifts/Spiritual Gifts Questionnaire - Lesson 5 Swahili.pdf"
+                <a class="sub10"
+                    href="../GBTC-Subjects/Swahili/Spiritual Gifts/Spiritual Gifts Questionnaire - Lesson 5 Swahili.pdf"
                     download>Spiritual Gifts Questionnaire-Lesson 5(Swh)<i class="fas fa-download"></i></a>
                 <!-- End Spiritual gifts Swh-->
+                <br>
+                System Developed by KakaJere
 
                 <style>
                     #downloads a {
@@ -956,6 +1358,11 @@
                     #downloads a * {
                         font-size: 1.8rem;
                         color: green;
+                    }
+
+                    #downloads .sub0 {
+                        background-color: rgb(255, 255, 255)!important;
+                        color: black!important;
                     }
 
                     #downloads .sub1 {
@@ -1006,30 +1413,11 @@
                         background-color: purple;
                     }
                 </style>
-
-                <!-- <a class="pict" href="../Passports/Adam.jpg" download>adam</a>
-                <a class="pict" href="../Passports/Jeremiah.png" download>jeremiah</a>
-                <a class="pict" href="../Passports/Joseph.png" download>jeremiah</a>
-                <button type="button" onclick="filess()"> Zote tatu</button>
-            </div>
-            <script>
-                var fileA = "../Passports/Jeremiah"
-                var fileA = "../Passports/Joseph"
-                var fileA = "../Passports/Judith"
-                function filess() {
-                    var fil = document.querySelectorAll('.pict');
-                    fil.forEach((elt)=>{
-                        elt.click()
-                    })
-                }
-
-            </script> -->
             </div>
             <div style="display: none" id="academics" class="hideFirst allThings">
                 <div class="snap2">
                     <div class="upper">
                         <p>No results yet</p>
-                        <!-- <p>No results yet</p> -->
                     </div>
                     <div class="lower">
                         <i class="iconn fas fa-sticky-note"></i>
@@ -1062,7 +1450,6 @@
                         width: 100%;
                         background-color: white;
                         color: var(--color1);
-                        /* padding: 10px; */
                     }
 
                     body .snap2 .upper p {
@@ -1075,7 +1462,6 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
-
                     }
 
                     body .snap2 .lower .iconn {
@@ -1131,6 +1517,9 @@
                         <a href="../Video/Songs/You are My All in All.mp4" download>You are My All in All<i
                                 class="fas fa-download"></i></a></span>
                 </div>
+                <br>
+                System Developed by KakaJere
+
 
                 <style>
                     body #videos .videoCont {
@@ -1187,8 +1576,6 @@
                         justify-content: center !important;
                         align-items: center;
                         text-align: center;
-
-
                     }
                 </style>
                 <script>
@@ -1251,7 +1638,8 @@
                         <a href="../Audio/enock jonas   baraka.mp3" download>Enock Jonas (Baraka)<i
                                 class="fas fa-download"></i></a></span>
                 </div>
-                enock jonas baraka.mp3
+                <br>
+                System Developed by KakaJere
                 <script>
                     var audioss = document.querySelectorAll('#audios audio');
                     audioss.forEach((audd) => {
@@ -1339,6 +1727,11 @@
             }
         }
     </style>
+
+    <div class="thankss" id="thankss">
+        Mapendendekezo ya mabadilisho yametumwa kwa uongozi husika
+    </div>
+
     <script src="script.js"></script>
     <script src="fontawasome5/js/all.js"></script>
     <script src="jquery-3.6.0.js"></script>
