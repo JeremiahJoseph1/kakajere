@@ -146,20 +146,20 @@
                 <p class="descTxt">Describe your service request</p>
                 <i class="icon fas fa-window-close" onclick="(hideThis2())"></i>
             </div>
-            <form id="formm" class="formm">
+            <form id="formm" action="https://formspree.io/f/xpznrdqk" method="POST" class="formm">
                 <label for="servCat">Choose the category of the service you want</label>
-                <select name="servCat" id="servCat">
+                <select name="Service Category" id="servCat">
                     <option value="Computing">Computing</option>
                     <option value="Finance">Finance</option>
                     <option value="Music">Music</option>
                     <option value="Language">Language</option>
                 </select>
                 <label for="servDesc">Shortly describe the service you need</label>
-                <input type="text" name="servDesc" id="servDesc" placeholder="eg. I wanted computer networking">
+                <input type="text" name="Service Description" id="servDesc" placeholder="eg. I wanted computer networking">
                 <label for="numberr">Provide your phone number</label>
-                <input type="tel" name="numberr" id="numberr" placeholder="eg. 0757835930" validate>
+                <input type="tel" name="Telephone Number" id="numberr" placeholder="eg. 0757835930" validate>
                 <label for="email">Provide your email here</label>
-                <input type="email" name="email" id="email" placeholder="eg. someone@domain.com" validate>
+                <input type="email" name="Email Address" id="email" placeholder="eg. someone@domain.com" validate>
 
                 <button id="serReq" type="button" onclick="sendReq()">Send Service Request</button>
             </form>
