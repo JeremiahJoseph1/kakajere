@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jeremiah Joseph(famously known as kaka jere) is A polymath...">
+    <meta name="description" content="Jeremiah Joseph(famously known as kaka jere) is A polymath, of-course it's okay to call him so. He provides services in three industries: Technology
+    (Computer Science), Entertainment (Music) and Finance (Accounting)">
     <meta name="keywords"
         content="kakajere, kaka jere, pp jere, graphic designer, web developer, software, computer hardware, software developer, teacher, accounting consultant">
     <meta name="author" content="Jeremiah Joseph">
@@ -135,9 +136,9 @@
     </div>
 
     <!-- End gallery pic -->
-        <div class="thankss" id="thankss">
-            Thank you, you will receive a respose after a short period of time
-        </div>
+    <div class="thankss" id="thankss">
+        Thank you, you will receive a respose after a short period of time
+    </div>
     <!-- Hire Me Dialog -->
     <div id="hireMeDialg">
         <div class="sendBox">
@@ -163,6 +164,10 @@
                 <button id="serReq" type="button" onclick="sendReq()">Send Service Request</button>
             </form>
             <style>
+                #hireMeDialg .sendBox #formm label {
+                    margin-top: 20px;
+                }
+
                 #hireMeDialg .sendBox .formm input,
                 #hireMeDialg .sendBox .formm select {
                     display: block;
@@ -179,8 +184,6 @@
                     height: 35px;
                     accent-color: crimson;
                     padding-right: 5px;
-                    margin-right: 20px;
-
                 }
 
                 #hireMeDialg .sendBox .formm select option {
@@ -253,8 +256,9 @@
                 font-size: 15px;
                 color: white;
                 display: flex;
-                align-items: center;
-                justify-content: center;
+                /* align-items: flex-start; */
+                /* justify-content: center; */
+                text-align: center;
                 flex-direction: column;
             }
 
@@ -263,6 +267,11 @@
                 color: crimson;
             }
 
+            #hireMeDialg .sendBox .heading .icon:hover {
+                    font-size: 40px;
+                    color: red;
+                }
+    
             @keyframes thanks {
                 0% {
                     display: flex;
@@ -321,13 +330,33 @@
             function sendReq() {
                 thanks();
                 hideThis2();
+
+                seeAll()
             }
             function removeUnwanted() {
-                document.getElementById('thankss').style.animationName = ''; 
+                document.getElementById('thankss').style.animationName = '';
             }
+            function seeAll() {
+
+                var subject = `Service request to Kaka Jere`;
+
+                var serviceCat = document.getElementById('servCat').value;
+
+                var descrptionss = document.getElementById('servDesc').value;
+
+                var telNumber = document.getElementById('numberr').value;
+
+                var emailAddress = document.getElementById('email').value; //client's address
+
+                var myEmail = 'jictoejeremiah@gmail.com'; //receiver's address
+
+                var emailSender = 'mkakajey@kakajere.me' //sender's address
+
+
+            }
+
         </script>
     </div>
-
     <!-- End Hire Me Dialog -->
 
 
@@ -543,7 +572,7 @@
             <p> <i class="icon fas fa-music"></i> <span>Music</span>Learn Keyboard | Learn Accoustic Guitar | Learn
                 Bass
                 Guitar | Learn
-                Drums |Learn Music Production</p>
+                Drums | Learn Music Production</p>
             <p> <i class="icon fas fa-language"></i> <span>Language</span>Learn Basic English | Intermediate English
                 |
                 Advanced English |
