@@ -23,19 +23,25 @@
             </div>
             <form id="formm" action="https://formspree.io/f/xpznrdqk" method="POST" class="formm">
                 <label for="servCat">Chagua aina ya marekebisho yako</label>
-                <select name="Service Category" id="servCat">
+                <select name="What to change" id="servCat">
                     <option value="picture">Picha ibadilishwe</option>
                     <option value="name">Jina libadilishwe</option>
                     <option value="picture and name">Picha na jina vibadilishwe</option>
                 </select>
+                <!-- <label for="servDesc">Andika jina lako kwa usahihi hapa</label> -->
+                <input type="text" name="The former name" id="formerNamee"
+                    hidden style="visibility: hidden; display: none;">
                 <label for="servDesc">Andika jina lako kwa usahihi hapa</label>
-                <input type="text" name="Service Descriptions" id="servDesc" placeholder="eg. I wanted computer networking">
+                <input type="text" name="The proposed name" id="servDesc"
+                    placeholder="eg. Badili jina kuwa James J. Joseph">
                 <label for="numberr">Andika simu itakayotafutwa kwa maelezo zaidi</label>
-                <input type="tel" name="Phone Number" id="numberr" placeholder="eg. 0757835930" validate>
+                <input type="tel" name="Student's phone number" id="numberr" placeholder="eg. 0757835930" validate>
                 <label for="email">Andika barua pepe yako hapa</label>
-                <input type="email" name="email" id="email" placeholder="eg. someone@domain.com" validate>
-
+                <input type="email" name="Student's email" id="email" placeholder="eg. someone@domain.com" validate>
+                <label for="theSentence" hidden>The single sentence</label>
+                <input type="text" id="theSentence" name="The subject sentence of this email" hidden style="visibility: hidden; display: none;">
                 <button id="serReq" type="submit" onclick="sendReq()">Send Service Request</button>
+
             </form>
             <!-- <script>
                 var problemType = document.getElementById('servCat').value;
@@ -294,24 +300,29 @@
                 var subject = `'This email refer's to "Registration Details Change" of a GBTC(Arusha) student with the name ` + personToEdit;
 
                 var codee = document.getElementById('codee').value;
-                adminWhoSentTheRequest = "The GBTC(Arusha) leader who sent this request is " + codee + ". ";
+                adminWhoSentTheRequest = ". The GBTC(Arusha) leader who sent this request is " + codee + ". ";
 
                 var problemType = "I am hereby requesting that you please edit the " + pT;
 
                 var pT = document.getElementById('servCat').value;
+
                 var personToEdit = " of " + targetPerson;
 
-                var correctedName = " to " + document.getElementById('servDesc').value + ". You may please call this student if there is any detail that you need further via phone number:";
+                var correctedName = " to " + document.getElementById('servDesc').value + ". You may please call this student if there is any detail that you need further via phone number: ";
 
                 var telNumber = document.getElementById('numberr').value + " or email address: ";
 
                 var emailAddress = document.getElementById('email').value;
 
-                var myEmail = 'jictoejeremiah@gmail.com';
-                var myEmailb = "This email is sent to you " + 'jictoejeremiah@gmail.com';
+                var myEmailb = ". This email is sent to you " + `God's loved servant`;
 
-                var emailSender = 'mkakajey@kakajere.me'
-                var emailSenderb = " from " + 'mkakajey@kakajere.me';
+                var emailSenderb = " from " + 'www.kakajere.me';
+
+                // var myEmail = 'jictoejeremiah@gmail.com';
+                // var myEmailb = ". This email is sent to you " + 'jictoejeremiah@gmail.com';
+
+                // var emailSender = 'mkakajey@kakajere.me'
+                // var emailSenderb = " from " + 'mkakajey@kakajere.me';
 
 
 
@@ -336,6 +347,17 @@
                 // alert(myEmail);
                 // // sender's address
                 // alert(emailSender);
+
+                var sentenceSend = subject + adminWhoSentTheRequest + problemType + personToEdit + correctedName + telNumber + emailAddress + myEmailb + emailSenderb;
+
+                document.getElementById('theSentence').value = sentenceSend;
+                // alert(sentenceSend);
+                // alert(document.getElementById('theSentence').value);
+
+                document.getElementById('formerNamee').value = targetPerson;
+                // alert(targetPerson);
+                // alert(document.getElementById('formerNamee').value);
+
 
             }
         </script>
@@ -1070,15 +1092,12 @@
                 <p>Download Notes</p>
 
 
-                <a class="sub0"
-                    href="../GBTC-Subjects/English.zip"
-                    download>All English Subjects (.zip)<i class="fas fa-download"></i></a>
-                <a class="sub0"
-                    href="../GBTC-Subjects/Swahili.zip"
-                    download>All Swahili Subjects (.zip)<i class="fas fa-download"></i></a>
-                <a class="sub0"
-                    href="../GBTC-Subjects/GBTC-Subjects.zip"
-                    download>All Subjects (Eng & Swh)  (.zip)<i class="fas fa-download"></i></a>
+                <a class="sub0" href="../GBTC-Subjects/English.zip" download>All English Subjects (.zip)<i
+                        class="fas fa-download"></i></a>
+                <a class="sub0" href="../GBTC-Subjects/Swahili.zip" download>All Swahili Subjects (.zip)<i
+                        class="fas fa-download"></i></a>
+                <a class="sub0" href="../GBTC-Subjects/GBTC-Subjects.zip" download>All Subjects (Eng & Swh) (.zip)<i
+                        class="fas fa-download"></i></a>
 
 
                 <!-- Basic Christian Doctrine -->
@@ -1363,8 +1382,8 @@
                     }
 
                     #downloads .sub0 {
-                        background-color: rgb(255, 255, 255)!important;
-                        color: black!important;
+                        background-color: rgb(255, 255, 255) !important;
+                        color: black !important;
                     }
 
                     #downloads .sub1 {
@@ -1737,6 +1756,102 @@
     <script src="script.js"></script>
     <script src="fontawasome5/js/all.js"></script>
     <script src="jquery-3.6.0.js"></script>
+
+
+    <!-- <form id="my-form" action="https://formspree.io/f/xpznrdqk" method="POST">
+        <label>Email:</label>
+        <input type="email" name="email" />
+        <label>Message:</label>
+        <input type="text" name="message" />
+        <button id="my-form-button">Submit</button>
+        <p id="my-form-status"></p>
+      </form> -->
+    <!-- Place this script at the end of the body tag -->
+    <!-- <script>
+        var form = document.getElementById("formm");
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            var status = document.getElementById("my-form-status");
+            // var data = new FormData(event.target);
+
+
+
+
+
+
+            var pT = document.getElementById('servCat').value;
+            var personToEdit = " of " + targetPerson;
+
+            var subject = `'This email refer's to "Registration Details Change" of a GBTC(Arusha) student with the name ` + personToEdit;
+
+            var codee = document.getElementById('codee').value;
+            adminWhoSentTheRequest = "The GBTC(Arusha) leader who sent this request is " + codee + ". ";
+
+            var problemType = "I am hereby requesting that you please edit the " + pT;
+
+            var pT = document.getElementById('servCat').value;
+            var personToEdit = " of " + targetPerson;
+
+            var correctedName = " to " + document.getElementById('servDesc').value + ". You may please call this student if there is any detail that you need further via phone number:";
+
+            var telNumber = document.getElementById('numberr').value + " or email address: ";
+
+            var emailAddress = document.getElementById('email').value;
+
+            var myEmail = 'jictoejeremiah@gmail.com';
+            var myEmailb = "This email is sent to you " + 'jictoejeremiah@gmail.com';
+
+            var emailSender = 'mkakajey@kakajere.me'
+            var emailSenderb = " from " + 'mkakajey@kakajere.me';
+
+
+
+            fetch(event.target.action, {
+                method: form.method,
+                body: {
+
+                    // email's subject
+                    subject: subject,
+
+                    // email's body
+                    The_code_name_of_the_leader: adminWhoSentTheRequest,
+                    problem_Type: problemType,
+                    Person_To_Edit: personToEdit,
+                    CorrectedName: correctedName,
+                    Student_s__phone_number: telNumber,
+                    Email_Address: emailAddress,
+
+                    // receiver's address(Explain)
+                    Receiver_s_address: myEmailb,
+                    // sender's address(Explain)
+                    Sender_s_address: emailSenderb
+
+
+
+                },
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    status.innerHTML = "Thanks for your submission!";
+                    form.reset()
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                        } else {
+                            status.innerHTML = "Oops! There was a problem submitting your form"
+                        }
+                    })
+                }
+            }).catch(error => {
+                status.innerHTML = "Oops! There was a problem submitting your form"
+            });
+        }
+        form.addEventListener("submit", handleSubmit)
+    </script> -->
 </body>
 
 </html>
