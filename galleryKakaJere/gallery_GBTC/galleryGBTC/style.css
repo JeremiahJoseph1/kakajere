@@ -32,10 +32,10 @@ body {
     /* var(--actCol);  action color for active actions  */
 
 
-
-
     --image_dimensions: 280px;
     /* var(--image_dimensions); */
+
+
 }
 
 body *::-webkit-scrollbar {
@@ -48,7 +48,10 @@ body *::-webkit-scrollbar-thumb {
     border: .5px solid var(--color4);
     border-radius: 10px;
 }
-
+body *{
+    word-break: normal;
+    text-align: center;
+}
 #headerTop {
     height: 57.5px;
     width: 79.9vw;

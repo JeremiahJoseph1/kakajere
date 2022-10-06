@@ -14,7 +14,6 @@
     <!-- Hire Me Dialog -->
 
 
-
     <div id="hireMeDialg">
         <div class="sendBox">
             <div id="heading" class="heading">
@@ -29,8 +28,8 @@
                     <option value="Picture and Name">Picha na jina vibadilishwe</option>
                 </select>
                 <!-- <label for="servDesc">Andika jina lako kwa usahihi hapa</label> -->
-                <input type="text" name="The former name" id="formerNamee"
-                    hidden style="visibility: hidden; display: none;">
+                <input type="text" name="The former name" id="formerNamee" hidden
+                    style="visibility: hidden; display: none;">
                 <label for="servDesc">Andika jina lako kwa usahihi hapa</label>
                 <input type="text" name="The proposed name" id="servDesc"
                     placeholder="eg. Badili jina kuwa James J. Joseph">
@@ -39,16 +38,11 @@
                 <label for="email">Andika barua pepe yako hapa</label>
                 <input type="email" name="Student's email" id="email" placeholder="eg. someone@domain.com" validate>
                 <label for="theSentence" hidden>The single sentence</label>
-                <input type="text" id="theSentence" name="The subject sentence of this email" hidden style="visibility: hidden; display: none;">
-                <button id="serReq" type="submit" onclick="sendReq()">Send Service Request</button>
+                <input type="text" id="theSentence" name="The subject sentence of this email" hidden
+                    style="visibility: hidden; display: none;">
+                <button id="serReq" type="submit" onclick="sendReq()">Tuma Maombi Yako</button>
 
             </form>
-            <!-- <script>
-                var problemType = document.getElementById('servCat').value;
-                var correctedName = document.getElementById('servDesc').value;
-                var telNumber = document.getElementById('numberr').value;
-                var emailAddress = document.getElementById('email').value;
-            </script> -->
             <style>
                 #hireMeDialg .sendBox #formm label {
                     margin-top: 20px;
@@ -230,7 +224,21 @@
             function hideThis2() {
                 dlg2.style.animationName = 'disappear';
             }
+
+
+
+            function showThisCustTsti() {
+                let codee = document.getElementById('codee').value;
+                if (codee == 'Eligibo Kavishe' || codee == 'Joseph Safisha' || codee == 'Jeremiah Joseph' || codee == 'Bishop Ekong') {
+                    alert('You are logged in already!')
+                } else {
+                    showThisCustTst()
+                }
+
+
+            }
             function showThisCustTst() {
+
                 var ownerName = document.getElementById('ownerName');
                 var codeep = document.getElementById('codeep');
                 var passEnter = document.getElementById('passEnter');
@@ -243,18 +251,38 @@
 
                 document.getElementById('codee').focus({ focusVisible: true })
 
-                if (codee == '1594_Kavishe' || codee == '2450_Jeremiah' || codee == '8976_Safisha') {
+                if (codee == '1594Kaaaav' || codee == '2450Jjjjjj' || codee == '8976Sssaf' || codee == '9876Ekkkkg') {
+
+                    if (codee == '1594Kaaaav') {
+                        document.getElementById('codee').value = 'Eligibo Kavishe';
+                    } else if (codee == '8976Sssaf') {
+                        document.getElementById('codee').value = 'Joseph Safisha';
+                    } else if (codee == '2450Jjjjjj') {
+                        document.getElementById('codee').value = 'Jeremiah Joseph';
+                    } else if (codee == '9876Ekkkkg') {
+                        document.getElementById('codee').value = 'Bishop Ekong';
+                    } else {
+                        alert('an error occured in your login, please consult KakaJere via phone number 0757835930 to fetch a solution from him');
+                    };
+
+
                     var codeep = document.getElementById('codeep');
+                    $('#serReq2').css('display', 'block');
                     var successEdit = document.getElementById('successEdit');
                     successEdit.style.display = '';
                     codeep.style.display = 'none';
                 } else {
+                    var successEdit = document.getElementById('successEdit');
+                    var codee = document.getElementById('codee');
+
+                    codee.value = '';
+                    successEdit.style.display = 'none';
                     alert(`Please provide the password to send the modification request`)
                 }
             }
             function showThisCust(cust) {
-                var codee = document.getElementById('codee').value;
-                if (codee == '1594_Kavishe' || codee == '2450_Jeremiah' || codee == '8976_Safisha') {
+                let codee = document.getElementById('codee').value;
+                if (codee == 'Eligibo Kavishe' || codee == 'Joseph Safisha' || codee == 'Jeremiah Joseph' || codee == 'Bishop Ekong') {
                     removAnim()
                     // alert(codee)
                     var personID = $(cust).attr('onplaying');
@@ -325,8 +353,6 @@
                 // var emailSenderb = " from " + 'mkakajey@kakajere.me';
 
 
-
-
                 // // email's subject
                 // alert(subject);
 
@@ -351,14 +377,12 @@
                 var sentenceSend = subject + adminWhoSentTheRequest + problemType + personToEdit + correctedName + telNumber + emailAddress + myEmailb + emailSenderb;
 
                 document.getElementById('theSentence').value = sentenceSend;
-                // alert(sentenceSend);
+                alert(sentenceSend);
                 // alert(document.getElementById('theSentence').value);
 
                 document.getElementById('formerNamee').value = targetPerson;
                 // alert(targetPerson);
                 // alert(document.getElementById('formerNamee').value);
-
-
             }
         </script>
     </div>
@@ -366,13 +390,12 @@
 
 
     <section id="headerTop" class="nav-list">
-        <marquee behavior="" direction="">
+        <marquee behavior="" direction="" id="ownerName">
             Karibu GBTC. Hii ni ngazi ya cheti ya Shule ya Huduma na inasomwa kwa muda wa miezi minne. Ngazi hii ina
             masomo nane. Notsi za haya masomo yapo hapa kwenye menyu ya 'Downloads'. Pia unaweza kujifunza masomo haya
             kwa njia ya video au sauti ambazo pia zipo hapa ndani kwenye menyu za 'Videos' na 'Audios'. Matokeo ya
-            mitihani
-            yataonekana kwenye menyu ya 'Academics' pindi yatakapotolewa na mhadhiri wetu Askofu E. S. Ekong. Kuona
-            vyote vya GBTC vilivyomo kwenye tovuti hii angalia kwenye menyu ya 'Snapshots'. Wewe kama mwanafunzi
+            mitihani yataonekana kwenye menyu ya 'Academics' pindi yatakapotolewa na mhadhiri wetu Askofu E. S. Ekong.
+            Kuona vyote vya GBTC vilivyomo kwenye tovuti hii angalia kwenye menyu ya 'Snapshots'. Wewe kama mwanafunzi
             tafadhali hakikisha picha yako ya paspoti na jina lako kwenye menyu ya 'Profiles' na ikiwa haviko sawa basi
             bonyeza kitufe hiki <i class="fas fa-podcast"></i> chini ya picha yako kisha uandike hapo jina lako kama
             unavyohitaji liandikwe katika rekodi zako katika chuo hiki. Tunakupenda.
@@ -385,9 +408,31 @@
             lecturer Bishop E. S. Ekong. To see all the GBTC content on this site look at the 'Snapshots' menu. You, as
             a student, please check your passport photo and your name in the 'Profiles' menu and if they are not
             correct, then press this button <i class="fas fa-podcast"></i> under your photo and then write your name
-            there
-            as you need it to be written in your records in this college. We love you.
+            there as you need it to be written in your records in this college. We love you.
         </marquee>
+        <span class="userName" id="codeep" style="display: none">
+            <span id="passEnter" style="
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+                "><input type="password" autocomplete="off" id="codee"> <button type="button"
+                    onclick="showThisCustTst()" id="goPassword">Go</button></span>
+        </span>
+
+        <span class="userName" id="successEdit" style="
+        display: none;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        text-align: center;   
+        ">
+            Good to go<i style="color: green;  margin-left: 5px;" class="fas fa-check-circle"></i>
+        </span>
 
         <style>
             #headerTop {
@@ -395,6 +440,33 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                text-align: center;
+                padding: 0;
+            }
+
+            #codeep {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+            }
+
+            #codee {
+                width: 70%;
+            }
+
+            #goPassword {
+                font-family: cambria;
+                text-align: center;
+                font-size: 1.5rem;
+                height: 70%;
+                width: 10%;
+                text-align: center;
+                padding: 3px !important;
+                /* color: red; */
             }
 
             @media only screen and (max-width: 1200px) {
@@ -580,6 +652,10 @@
 
 
                 /* mobile video*/
+                body #videos {
+                    gap: 0;
+                }
+
                 body #videos .videoCont {
                     width: 90% !important;
                     height: 300px;
@@ -710,45 +786,85 @@
         function cclass(elem) {
             $(elem).addClass('active').siblings().removeClass('active');
             var ky = $(elem).attr('data-part');
-            var kyz = '#' + ky
+            var kyz = '#' + ky;
             $(kyz).css('display', 'flex').siblings().css('display', 'none');
 
             var elt = document.querySelector('body #mainContent');
-            elt.scrollTo(0, 0)
+            elt.scrollTo(0, 0);
         }
+
+        function cclassWait(eleme) {
+            const codeet = codee.value;
+            var welcomeNote = 'Welcome ' + codeet;
+
+            if (codee.value == 'Eligibo Kavishe' || codee.value == 'Joseph Safisha' || codee.value == 'Jeremiah Joseph' || codee.value == 'Bishop Ekong') {
+                alert(welcomeNote);
+                cclass(eleme)
+            } else {
+
+                alert('Please log in first');
+            }
+        }
+
+
+        function lgo() {
+            codee.value = '';
+            document.getElementById('defaultMenu').click();
+        }
+
+
+
     </script>
     <style>
         .hideFirst {
             display: none;
         }
     </style>
-
+    <script>
+    </script>
 
     <section id="centerContent">
         <section id="sideMenu">
             <div class="userDet">
-                <img id="profImg" src="../GBTC Graphics/Logo_png.png" alt="" class="userPic">
-                <span class="userName" id="ownerName">GBTC Arusha</span>
-
-                <span class="userName" id="codeep" style="display: none">
-                    <span id="passEnter"><input type="password" autocomplete="off" id="codee"> <button type="button"
-                            onclick="showThisCustTst()">Go</button></span>
-                </span>
-
-                <span class="userName" id="successEdit" type="button" style="display: none;">
-                    Good to go<i style="color: green;  margin-left: 5px;" class="fas fa-check-circle"></i>
-                </span>
-
+                <img id="profImg" src="../GBTC Graphics/Logo_png.png" onclick="lgo()" alt="" class="userPic">
+                <span class="userName" onclick="showThisCustTsti()">GBTC Arusha</span>
             </div>
-            <div class="sideMenBut">
+            <div id="sideMenBut" class="sideMenBut">
                 <ul id="menuHolder">
-                    <li data-part="snapshots" onclick="cclass(this)"> <i class="fas fa-chart-bar"></i> Snapshots</li>
-                    <li data-part="everyKitu" onclick="cclass(this)" class="active"><i class="fas fa-image"></i>Profiles
+                    <li data-part="snapshots" id="idsnapshots" onclick="cclass(this)"> <i class="fas fa-chart-bar"></i> Snapshots</li>
+                    <li data-part="everyKitu" id="defaultMenu" onclick="cclass(this)" class="active"><i
+                            class="fas fa-user-circle"></i>Profiles
                     </li>
-                    <li data-part="downloads" onclick="cclass(this)"> <i class="fas fa-download"></i> Downloads</li>
-                    <li data-part="academics" onclick="cclass(this)"> <i class="fas fa-pen"></i>Academics</li>
-                    <li data-part="videos" onclick="cclass(this)"> <i class="fas fa-play"></i>Videos</li>
-                    <li data-part="audios" onclick="cclass(this)"> <i class="fas fa-music"></i> Audios</li>
+                    <li data-part="downloads" id="iddownloads" onclick="cclass(this)"> <i class="fas fa-download"></i> Downloads</li>
+                    <li data-part="academics" id="idacademics" onclick="cclass(this)"> <i class="fas fa-pen"></i>Academics</li>
+                    <li data-part="videos" id="idvideos" onclick="cclass(this)"> <i class="fas fa-play"></i>Education Videos</li>
+                    <li data-part="audios" id="idaudios" onclick="cclass(this)"> <i class="fas fa-music"></i> Audios</li>
+                    <li data-part="questions" id="idquestions" onclick="cclassWait(this)"> <i class="fas fa-question"></i> Questions</li>
+                    <li data-part="ordination" id="idordination" onclick="cclassWait(this)"> <i class="fas fa-cross"></i> Ordination</li>
+                    <li data-part="leadership" id="idleadership" onclick="cclass(this)"> <i class="fas fa-user"></i> Leadership Positions
+                    </li>
+                    <li data-part="finRep" id="idfinRep" onclick="cclass(this)"> <i class="fas fa-coins"></i> Financial Reports</li>
+                    <li data-part="picGal" id="idpicGal" onclick="cclass(this)"> <i class="fas fa-image"></i> Our Picture Gallery</li>
+                    <li data-part="vidGal" id="idvidGal" onclick="cclass(this)"> <i class="fas fa-play"></i> Our Video gallery</li>
+                    <li data-part="charProg" id="idcharProg" onclick="cclass(this)"> <i class="fas fa-hand-holding-heart"></i> Our
+                        Charity Programs
+                    </li>
+                    <script>
+                        var menu1 = document.getElementById('idsnapshots');
+                        var menu2 = document.getElementById('defaultMenu');
+                        var menu3 = document.getElementById('iddownloads');
+                        var menu4 = document.getElementById('idacademics');
+                        var menu5 = document.getElementById('idvideos');
+                        var menu6 = document.getElementById('idaudios');
+                        var menu7 = document.getElementById('idquestions');
+                        var menu8 = document.getElementById('idordination');
+                        var menu9 = document.getElementById('idleadership');
+                        var menu10 = document.getElementById('idfinRep');
+                        var menu11 = document.getElementById('idpicGal');
+                        var menu12 = document.getElementById('idvidGal');
+                        var menu13 = document.getElementById('idcharProg');
+                        var sideMenBut = document.getElementById('sideMenBut');
+                    </script>
                 </ul>
             </div>
         </section>
@@ -760,18 +876,29 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
-                        <i class="fas fa-podcast" onplaying=" 1. Eligibo Kavishe" onclick="showThisCust(this)"></i>
-                        <div class="descTxt">Eligibo Kavishe</div>
+                        <i class="fas fa-podcast" onplaying="Eligibo Leodigard Kavishe"
+                            onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Eligibo Leodigard Kavishe</div>
                     </div>
                 </div>
-                <div class="imageContainer" data-poze="Class Coordinator">
+                <div class="imageContainer" data-poze="Class President">
                     <img src="icon1.png" alt="">
                     <div class="desc">
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
-                        <i class="fas fa-podcast" onplaying=" 2. Jeremiah Joseph" onclick="showThisCust(this)"></i>
-                        <div class="descTxt">Jeremiah Joseph</div>
+                        <i class="fas fa-podcast" onplaying="Jeremiah Joseph Mushi" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Jeremiah Joseph Mushi</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Class Vice President">
+                    <img src="icon.png" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Joseph Safisha Mnyankal" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Joseph Safisha Mnyankal</div>
                     </div>
                 </div>
                 <div class="imageContainer" data-poze="Class Secretary">
@@ -780,8 +907,8 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
-                        <i class="fas fa-podcast" onplaying=" 3. Dorcas Eligibo" onclick="showThisCust(this)"></i>
-                        <div class="descTxt">Dorcas Eligibo</div>
+                        <i class="fas fa-podcast" onplaying="Dorcas Eligibo Kavishe" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Dorcas Eligibo Kavishe</div>
                     </div>
                 </div>
                 <div class="imageContainer" data-poze="Time Keeper">
@@ -790,9 +917,20 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
-                        <i class="fas fa-podcast" onplaying=" 4. Joseph Mushi" onclick="showThisCust(this)"></i>
+                        <i class="fas fa-podcast" onplaying="Joseph Mariatabu Kyameli Mushi"
+                            onclick="showThisCust(this)"></i>
 
-                        <div class="descTxt">Joseph Mushi</div>
+                        <div class="descTxt" style="width: 70%">Joseph Mariatabu Kyameli Mushi</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Tresurer">
+                    <img src="../Passports/" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying=" Ester Abel Laizer" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Ester Abel Laizer</div>
                     </div>
                 </div>
                 <div class="imageContainer" data-poze="Student">
@@ -801,8 +939,8 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
-                        <i class="fas fa-podcast" onplaying=" 5. Judith Mushi" onclick="showThisCust(this)"></i>
-                        <div class="descTxt">Judith Mushi</div>
+                        <i class="fas fa-podcast" onplaying="Judith Joseph Mushi " onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Judith Joseph Mushi</div>
                     </div>
                 </div>
                 <div class="imageContainer" data-poze="Student">
@@ -811,8 +949,8 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
-                        <i class="fas fa-podcast" onplaying=" 6. Alex Kiuko" onclick="showThisCust(this)"></i>
-                        <div class="descTxt">Alex Kiuko</div>
+                        <i class="fas fa-podcast" onplaying="Alex Samson Kiuko" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Alex Samson Kiuko</div>
                     </div>
                 </div>
                 <div class="imageContainer" data-poze="Student">
@@ -821,8 +959,8 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
-                        <i class="fas fa-podcast" onplaying=" 7. Aminieli Mgonja" onclick="showThisCust(this)"></i>
-                        <div class="descTxt">Aminieli Mgonja</div>
+                        <i class="fas fa-podcast" onplaying="Aminieli David Mgonja" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Aminieli David Mgonja</div>
                     </div>
                 </div>
                 <div class="imageContainer" data-poze="Student">
@@ -831,8 +969,8 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
-                        <i class="fas fa-podcast" onplaying=" 8. Anderson Mathayo" onclick="showThisCust(this)"></i>
-                        <div class="descTxt">Anderson Mathayo</div>
+                        <i class="fas fa-podcast" onplaying="Anderson Julius Mathayo" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Anderson Julius Mathayo</div>
                     </div>
                 </div>
                 <div class="imageContainer" data-poze="Student">
@@ -841,8 +979,8 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
-                        <i class="fas fa-podcast" onplaying=" 9. Angela Duwey" onclick="showThisCust(this)"></i>
-                        <div class="descTxt">Angela Duwey</div>
+                        <i class="fas fa-podcast" onplaying="Angela Amami Luter" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Angela Amami Luter</div>
                     </div>
                 </div>
                 <div class="imageContainer" data-poze="Student">
@@ -851,8 +989,8 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
-                        <i class="fas fa-podcast" onplaying=" 10. Daniel Yohana" onclick="showThisCust(this)"></i>
-                        <div class="descTxt">Daniel Yohana</div>
+                        <i class="fas fa-podcast" onplaying="Daniel Yohana Vaneth" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Daniel Yohana Vaneth</div>
                     </div>
                 </div>
                 <div class="imageContainer" data-poze="Student">
@@ -861,8 +999,8 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
-                        <i class="fas fa-podcast" onplaying=" 11. Florence Joseph" onclick="showThisCust(this)"></i>
-                        <div class="descTxt">Florence Joseph</div>
+                        <i class="fas fa-podcast" onplaying="Florence Joseph Mollel" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Florence Joseph Mollel</div>
                     </div>
                 </div>
                 <div class="imageContainer" data-poze="Student">
@@ -871,18 +1009,18 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
-                        <i class="fas fa-podcast" onplaying=" 12. Godliving James" onclick="showThisCust(this)"></i>
-                        <div class="descTxt">Godliving James</div>
+                        <i class="fas fa-podcast" onplaying="Godliving James Urassa" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Godliving James Urassa</div>
                     </div>
                 </div>
                 <div class="imageContainer" data-poze="Student">
-                    <img src="../Passports/Innocent.jpeg" alt="">
+                    <img src="../Passports/" alt="">
                     <div class="desc">
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
-                        <i class="fas fa-podcast" onplaying=" 13. Innocent" onclick="showThisCust(this)"></i>
-                        <div class="descTxt">Innocent</div>
+                        <i class="fas fa-podcast" onplaying="Patrick Veriani Kiwango" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Patrick Veriani Kiwango</div>
                     </div>
                 </div>
                 <div class="imageContainer" data-poze="Student">
@@ -891,8 +1029,8 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
-                        <i class="fas fa-podcast" onplaying=" 14. Irene Leonard" onclick="showThisCust(this)"></i>
-                        <div class="descTxt">Irene Leonard</div>
+                        <i class="fas fa-podcast" onplaying="Irene Elias Menana " onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Irene Elias Menana</div>
                     </div>
                 </div>
                 <div class="imageContainer" data-poze="Student">
@@ -901,8 +1039,8 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
-                        <i class="fas fa-podcast" onplaying=" 15. Sabina Duwey" onclick="showThisCust(this)"></i>
-                        <div class="descTxt">Sabina Duwey</div>
+                        <i class="fas fa-podcast" onplaying="Sabina Peter Dunvey" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Sabina Peter Dunvey</div>
                     </div>
                 </div>
                 <div class="imageContainer" data-poze="Student">
@@ -911,49 +1049,196 @@
                         <div class="download">
                             <a download><i class="fas fa-download"></i></a>
                         </div>
-                        <i class="fas fa-podcast" onplaying="16. Laheri Machumbe" onclick="showThisCust(this)"></i>
-                        <div class="descTxt">Laheri Machumbe</div>
+                        <i class="fas fa-podcast" onplaying="Laheri Mailo Machumber" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Laheri Mailo Machumber</div>
                     </div>
                 </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Gloria Adamu Mkongwa " onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Gloria Adamu Mkongwa</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Beatrice Jastine Kimario" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Beatrice Jastine Kimario</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Lucy Elias Muhoma" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Lucy Elias Muhoma</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Beatrice Bryson Kiharuzi" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Beatrice Bryson Kiharuzi</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Joyce Nestory Mlacha " onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Joyce Nestory Mlacha </div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Dina Maullo Mbogo" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Dina Maullo Mbogo</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Rachel David Mfunanga" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Rachel David Mfunanga</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Laurent Enea Madeghe" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Laurent Enea Madeghe</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Joseph Emanuel Ayo" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Joseph Emanuel Ayo</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Seth Emmanuel Gundula " onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Seth Emmanuel Gundula</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Seth Emanuely Seth " onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Seth Emanuely Seth </div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Jacob Ayubu Urassa" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Jacob Ayubu Urassa</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Daniel Yohana Vaneth" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Daniel Yohana Vaneth</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Elisha John Mollel" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Elisha John Mollel</div>
+                    </div>
+                </div>
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere</div>
+
+
+
             </div>
             <div style="display: none" id="snapshots" class="hideFirst allThings">
                 <div class="snap">
-                    <div class="upper">
+                    <div class="upper" onclick="menu2.click()">
                         <i style="color: rgba(117, 173, 12, 0.788)" class="iconn fas fa-users"></i>
-                        <div class="number">37</div>
+                        <div class="number">32</div>
                     </div>
                     <div class="lower">
                         <span class="title">Registered</span>
                     </div>
                 </div>
-                <div class="snap">
+                <div class="snap" onclick="menu11.click()">
                     <div class="upper">
                         <i style="color: rgb(111, 18, 139)" class="iconn fas fa-image"></i>
-                        <div class="number">16</div>
+                        <div class="number">15</div>
                     </div>
                     <div class="lower">
                         <span class="title">Pictures</span>
                     </div>
                 </div>
-                <div class="snap">
+                <div class="snap" onclick="menu3.click()">
                     <div class="upper">
                         <i style="color: rgb(192, 5, 5)" class="iconn fas fa-file-pdf"></i>
-                        <div class="number">72</div>
+                        <div class="number">71</div>
                     </div>
                     <div class="lower">
                         <span class="title">PDF Files</span>
                     </div>
                 </div>
-                <div class="snap">
+                <div class="snap" onclick="menu3.click()">
                     <div class="upper">
                         <i style="color: blue" class="iconn fas fa-file-word"></i>
-                        <div class="number">0</div>
+                        <div class="number">1</div>
                     </div>
                     <div class="lower">
                         <span class="title">Word Files</span>
                     </div>
                 </div>
-                <div class="snap">
+                <div class="snap" onclick="menu3.click()">
                     <div class="upper">
                         <i style="color: green" class="iconn fas fa-file-excel"></i>
                         <div class="number">0</div>
@@ -962,7 +1247,7 @@
                         <span class="title">Excel Files</span>
                     </div>
                 </div>
-                <div class="snap">
+                <div class="snap" onclick="menu3.click()">
                     <div class="upper">
                         <i style="color: brown" class="iconn fas fa-file-powerpoint"></i>
                         <div class="number">0</div>
@@ -971,7 +1256,16 @@
                         <span class="title">P.Point Files</span>
                     </div>
                 </div>
-                <div class="snap">
+                <div class="snap" onclick="menu3.click()">
+                    <div class="upper">
+                        <i style="color: rgb(42, 140, 165)" class="iconn fas fa-archive"></i>
+                        <div class="number">3</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Compressed Files</span>
+                    </div>
+                </div>
+                <div class="snap" onclick="menu6.click()">
                     <div class="upper">
                         <i style="color: rgb(167, 164, 7)" class="iconn fas fa-music"></i>
                         <div class="number">8</div>
@@ -980,7 +1274,7 @@
                         <span class="title">Audios</span>
                     </div>
                 </div>
-                <div class="snap">
+                <div class="snap" onclick="menu12.click()">
                     <div class="upper">
                         <i style="color: rgb(10, 65, 78)" class="iconn fas fa-video"></i>
                         <div class="number">0</div>
@@ -989,7 +1283,7 @@
                         <span class="title">Movies</span>
                     </div>
                 </div>
-                <div class="snap">
+                <div class="snap" onclick="menu12.click()">
                     <div class="upper">
                         <i style="color: rgb(255, 115, 0)" class="iconn fas fa-tv"></i>
                         <div class="number">0</div>
@@ -998,7 +1292,7 @@
                         <span class="title">Documentaries</span>
                     </div>
                 </div>
-                <div class="snap">
+                <div class="snap" onclick="menu5.click()">
                     <div class="upper">
                         <i style="color: rgb(110, 40, 8)" class="iconn fas fa-film"></i>
                         <div class="number">5</div>
@@ -1007,7 +1301,7 @@
                         <span class="title">Video Songs</span>
                     </div>
                 </div>
-                <div class="snap">
+                <div class="snap" onclick="menu12.click()">
                     <div class="upper">
                         <i style="color: rgb(21, 32, 36)" class="iconn fas fa-file-video"></i>
                         <div class="number">0</div>
@@ -1016,17 +1310,19 @@
                         <span class="title">Clips</span>
                     </div>
                 </div>
-                <div class="snap">
+                <div class="snap" onclick="alert('KakaJere reminds you to be prepared for the exams that will take place on Saturday 5th, November - 2022'); alert(`Please complete your registration fees if you know you haven't`); alert('Please if you have any question related to or not related to our studies but that it is of faith then please see one of the top leader of our class and your question will be submitted to our lecturer Mr. Ekong')">
                     <div class="upper">
                         <i style="color: rgb(255, 0, 76)" class="iconn fas fa-bell"></i>
-                        <div class="number">0</div>
+                        <div class="number">3</div>
                     </div>
                     <div class="lower">
                         <span class="title">KakaJere Notices</span>
                     </div>
                 </div>
                 <br>
-                System Developed by KakaJere
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere</div>
 
                 <style>
                     body .snap {
@@ -1348,7 +1644,10 @@
                     download>Spiritual Gifts Questionnaire-Lesson 5(Swh)<i class="fas fa-download"></i></a>
                 <!-- End Spiritual gifts Swh-->
                 <br>
-                System Developed by KakaJere
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere</div>
+
 
                 <style>
                     #downloads a {
@@ -1445,6 +1744,7 @@
                         <span class="title">Examination Results</span>
                     </div>
                 </div>
+
                 <style>
                     body .snap2 {
                         display: flex;
@@ -1505,6 +1805,10 @@
                         color: white
                     }
                 </style>
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere</div>
 
             </div>
             <div style="display: none" id="videos" class="hideFirst allThings">
@@ -1538,11 +1842,18 @@
                         <a href="../Video/Songs/You are My All in All.mp4" download>You are My All in All<i
                                 class="fas fa-download"></i></a></span>
                 </div>
+
                 <br>
-                System Developed by KakaJere
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere</div>
 
 
                 <style>
+                    body #videos {
+                        gap: 2rem;
+                    }
+
                     body #videos .videoCont {
                         width: 45%;
                         height: 300px;
@@ -1579,7 +1890,6 @@
 
 
                     }
-
 
                     body #videos .download a {
                         color: var(--color4);
@@ -1660,7 +1970,10 @@
                                 class="fas fa-download"></i></a></span>
                 </div>
                 <br>
-                System Developed by KakaJere
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere</div>
+
                 <script>
                     var audioss = document.querySelectorAll('#audios audio');
                     audioss.forEach((audd) => {
@@ -1723,8 +2036,866 @@
                     }
                 </style>
             </div>
+            <div style="display: none" id="questions" class="hideFirst allThings">
+                <div class="title">Uliza Maswali Hapa</div>
+                <div class="subTitle">(Tafadhali kumbuka kuwa ni viongozi tu wanaweza kutuma swali)</div>
+                <!-- <hr> -->
+                <form id="formm2" action="https://formspree.io/f/xpznrdqk" method="POST" class="formm2">
+                    <hr>
+                    <input type="text" name="Title of this email" value="A question from a student of GBTC(Arusha)"
+                        style="display: none;">
+                    <label for="servCat2">Chagua jina la Mwanafunzi anayeuliza swali</label>
+                    <select name="Name of the student asking the question" id="servCat2">
+                        <option value="Student 1">Student 1</option>
+                        <option value="Student 2">Student 2</option>
+                        <option value="Student 3">Student 3</option>
+                    </select>
+                    <!-- <hr> -->
+                    <hr>
+
+                    <label for="servCat3">Chagua somo ambalo swali lake linatokea</label>
+                    <select name="Name of the subject that the question is from" id="servCat3">
+                        <option value="Subject 1">Somo la 1</option>
+                        <option value="Subject 2">Somo la 2</option>
+                        <option value="Subject 3">Somo la 3</option>
+                        <option value="Different from class subjects">Tofauti na masomo ya darasani</option>
+                    </select>
+                    <!-- <hr> -->
+                    <hr>
+
+                    <label for="servDesc2">Andika swali lake hapa</label>
+                    <textarea name="The question asked" id="servDesc2" cols="30" rows="10"
+                        placeholder="I have two questions. The first is ............. And the second is......................"></textarea>
+                    <!-- <hr> -->
+                    <hr>
+
+                    <label for="numberr2">Andika simu atakayotafuta kwayo kwa maelezo zaidi</label>
+                    <input type="tel" name="Student's phone number for further instructions" id="numberr2"
+                        placeholder="eg. 0757835930" validate>
+                    <!-- <hr> -->
+                    <hr>
+
+                    <label for="email2">Andika barua pepe yako hapa</label>
+                    <input type="email" name="Student's email for further instructions" id="email2"
+                        placeholder="eg. someone@domain.com" validate>
+                    <!-- <hr> -->
+                    <hr>
+
+                    <button id="serReq2" type="submit" style="display: none">Tuma swali</button>
+                </form>
+
+
+                <style>
+                    #questions {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 1rem;
+                        /* background-color: white; */
+                        align-content: flex-start;
+                    }
+
+                    #questions #formm2 {
+                        /* background-color: yellow; */
+                        font-size: 1.5rem;
+                        text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        /* align-items: center; */
+                        justify-content: center;
+                        align-self: center;
+                    }
+
+                    #questions #formm2 * {
+                        display: block;
+                        width: 100%;
+                        word-break: normal;
+                        border-radius: 15px;
+                        border: none;
+                        outline: none;
+                        padding: 5px;
+                        align-self: center;
+
+                    }
+
+                    #questions #formm2 *:not(textarea) {
+                        height: 3rem;
+
+                    }
+
+                    #questions #formm2 label {
+                        margin: 30px 2px 5px 10px;
+                        margin-bottom: 3px !important;
+                        padding: 1px;
+                        height: fit-content;
+                    }
+
+                    #questions #formm2 select {
+                        text-align: left;
+
+                    }
+
+                    #questions #formm2 select option {
+                        text-align: left;
+                        height: 3rem;
+                    }
+
+                    #questions #formm2 input {
+                        text-align: left;
+                    }
+
+                    #questions #formm2 textarea {
+                        text-align: left;
+                        margin-top: 2px !important;
+                        align-self: center;
+                    }
+
+                    #questions #formm2 button {
+                        margin: 30px 2px 10px 2px;
+                        transition: all .3s ease-in-out;
+                        height: 10rem;
+                        font-size: 3rem;
+                        user-select: none;
+                    }
+
+                    #questions #formm2 button:hover {
+                        border-radius: 20px;
+                        border: 1px solid white;
+                        background-color: var(--color1) !important;
+                        color: white;
+                    }
+
+
+                    #questions .title {
+                        display: block;
+                        width: 100%;
+                        font-size: 2rem;
+                        text-align: center;
+                        height: fit-content;
+                        margin: 1px auto !important;
+                        border-radius: 20px;
+                        padding: 10px;
+                        background-color: green;
+                    }
+
+                    #questions .subTitle {
+                        display: block;
+                        width: 100%;
+                        font-size: 1.2rem;
+                        text-align: center;
+                        height: fit-content;
+                        margin: 5px auto !important;
+                        border-radius: 20px;
+                        padding: 10px;
+                        background-color: purple;
+                        word-break: normal;
+                    }
+
+                    #mainContent .allThings {
+                        padding: 10px;
+                    }
+                </style>
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere</div>
+
+            </div>
+            <div style="display: none" id="ordination" class="hideFirst allThings">
+                <div class="theHeaders">
+                    <div class="title heading">NETWORK FOR WORLD MISSIONS [NWM]</div>
+                    <div class="subTitle heading">(Registered in England & Wales No. 08908992)</div>
+                    <div class="title heading">APPLICATION FOR MEMBERSHIP, ORDINATION, AND MINISTERIAL LICENCE</div>
+                    <div class="subTitle heading">Please send all completed application forms to:</div>
+                    <div class="subTitle heading">15 Andrews Lane, Cheshunt, Herts EN7 6LE, UK</div>
+                    <div class="subTitle heading">Email: Network4World.Missions@gmail.com; Ekongmissions4u@gmail.com
+                    </div>
+                </div>
+                <!-- <hr> -->
+                <form id="formm3" action="https://formspree.io/f/xpznrdqk" method="POST" class="formm2">
+                    <hr>
+                    <input type="text" name="Title of this email"
+                        value="An ordination request form from a GBTC(Arusha) student" style="display: none">
+
+
+                    <label for="nameApplicant">1. Name of Applicant</label>
+                    <input type="text" id="nameApplicant" name="1. Name of Applicant">
+
+                    <label for="nameOfChurch">2. Name of Church /Ministry</label>
+                    <input type="text" id="nameOfChurch" name="2. Name of Church /Ministry">
+
+                    <label for="Address">3. Address</label>
+                    <input name="Address Info" type="text" id="Address" name="3. Address details" style="display: none">
+
+                    <label for="homeAddress">3.1 Home Address</label>
+                    <input type="text" id="homeAddress" name="3.1 Home Address">
+
+                    <label for="postCode">3.2 Post Code</label>
+                    <input type="text" id="postCode" name="3.2 Post Code">
+
+                    <label for="telephone">4. Telephone</label>
+                    <input type="tel" id="telephone" name="4. Telephone numbers & details" style="display: none">
+
+                    <label for="workTele">4.1 Tel-Work</label>
+                    <input type="tel" id="workTele" name="4.1 Tel-Work">
+
+                    <label for="workTele">4.2 Tel-Home</label>
+                    <input type="tel" id="homeTele" name="4.2 Tel-Home">
+
+                    <label for="mobileTele">4.3 Tel-Mobile</label>
+                    <input type="tel" id="mobileTele" name="4.3 Tel-Mobile">
+
+                    <label for="emailTele">4.4 Email</label>
+                    <input type="email" id="emailTele" name="4.4 Email">
+
+                    <label for="isMember?">5.</label>
+                    <input type="text" id="isMember?" name="5. Member of NWM?" style="display: none">
+
+                    <label for="isMemberNWM-Wrapper">5.1 Is your Church a member of NWM?</label>
+                    <div class="radios" id="isMemberNWM-Wrapper" style="
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: white;  
+                            height: 70px;
+                            padding: 2px!important;
+                            gap: 1rem;
+                            font-size: 20px;
+                            color: black;
+                        ">
+                        <span style="
+                            display: flex;
+                            flex-direction: column;
+                        ">
+                            <label for="isMemberYes" style="margin: 0; padding: 0;">Yes [ ]</label>
+                            <input name='5.1 Is your Church a member of NWM?' type="radio" id="isMemberYes"
+                                value="Yes, it is a member of NWM Church">
+                        </span>
+                        <span style="
+                            display: flex;
+                            flex-direction: column;
+                        ">
+                            <label for="isMemberNo" style="margin: 0; padding: 0;">No [ ]</label>
+                            <input name='5.1 Is your Church a member of NWM?' type="radio" id="isMemberNo"
+                                value="No, it is not a member of NWM Church">
+                        </span>
+                    </div>
+
+
+                    <label for="memberJoinDate">5.2 If yes, give date of joining</label>
+                    <input type="date" id="memberJoinDate" name="5.2 If yes, give date of joining">
+
+
+                    <label for="instinctDetails">6.</label>
+                    <input type="text" id="instinctDetails" name="6. Instinct Details" style="display: none">
+                    <!-- Instinct means something binded to nature -->
+
+                    <label for="dateOfBirth">6.1 Date of Birth:</label>
+                    <input type="date" id="dateOfBirth" name="6.1 Date of Birth:">
+
+                    <label for="sexGender">6.2 Sex</label>
+                    <div class="radios" id="sexGender" style="
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: white;  
+                            height: 70px;
+                            padding: 2px!important;
+                            gap: 1rem;
+                            font-size: 20px;
+                            color: black;
+                        ">
+                        <span style="
+                            display: flex;
+                            flex-direction: column;
+                        ">
+                            <label for="isMale" style="margin: 0; padding: 0;">Male</label>
+                            <input name='6.2 Sex' type="radio" id="isMale" value="Male">
+                        </span>
+                        <span style="
+                            display: flex;
+                            flex-direction: column;
+                        ">
+                            <label for="isFemale" style="margin: 0; padding: 0;">Female</label>
+                            <input name='6.2 Sex' type="radio" id="isFemale" value="Female">
+                        </span>
+                    </div>
+
+                    <label for="nationality">6.3 Nationality</label>
+                    <input type="text" id="nationality" name="6.3 Nationality">
+
+                    <label for="maritalStatus">7.</label>
+                    <input type="maritalStatus" name="7. Marital status" style="display: none">
+
+                    <label for="isMarried?">7.1 Are you married?</label>
+                    <div class="radios" id="isMarried?" style="
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: white;  
+                            height: 70px;
+                            padding: 2px!important;
+                            gap: 1rem;
+                            font-size: 20px;
+                            color: black;
+                        ">
+                        <span style="
+                            display: flex;
+                            flex-direction: column;
+                        ">
+                            <label for="isMarriedYes" style="margin: 0; padding: 0;">Yes [ ]</label>
+                            <input name='7.1 Are you married?' type="radio" id="isMarriedYes" value="Yes, I am married">
+                        </span>
+                        <span style="
+                            display: flex;
+                            flex-direction: column;
+                        ">
+                            <label for="isMarriedNo" style="margin: 0; padding: 0;">No [ ]</label>
+                            <input name='7.1 Are you married?' type="radio" id="isMarriedNo"
+                                value="No, I am not married">
+                        </span>
+                    </div>
+
+
+                    <label for="spouseName">7.2 If Yes, what is your spouse's name:</label>
+                    <input type="text" id="spouseName" name="7.2 If Yes, what is your spouse's name:">
+
+                    <label for="ordStatus">8.</label>
+                    <input id="ordStatus" type="text" name="Ordination Status" style="display: none">
+
+                    <label for="isOrdained?">8.1 Are you ordained?</label>
+                    <div class="radios" id="isOrdained?" style="
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: white;  
+                            height: 70px;
+                            padding: 2px!important;
+                            gap: 1rem;
+                            font-size: 20px;
+                            color: black;
+                        ">
+                        <span style="
+                            display: flex;
+                            flex-direction: column;
+                        ">
+                            <label for="isOrdainedYes" style="margin: 0; padding: 0;">Yes [ ]</label>
+                            <input name='8.1 Are you ordained?' type="radio" id="isOrdainedYes"
+                                value="Yes, I am ordained">
+                        </span>
+                        <span style="
+                            display: flex;
+                            flex-direction: column;
+                        ">
+                            <label for="isOrdainedNo" style="margin: 0; padding: 0;">No [ ]</label>
+                            <input name='8.1 Are you ordained?' type="radio" id="isOrdainedNo"
+                                value="No, I am not ordained">
+                        </span>
+                    </div>
+
+
+                    <label for="ordainedDate">8.2 If Yes, please give date of ordination</label>
+                    <input type="date" id="ordainedDate" name="8.2 If Yes, please give date of ordination">
+
+                    <label for="whoOrdName">9. Who ordained you?</label>
+                    <input type="text" id="whoOrdName" name="9. Who ordained you?">
+
+                    <label for="ordChurch">10. In which Church / Organisation were you ordained?</label>
+                    <input type="text" id="ordChurch" name="10. In which Church / Organisation were you ordained?">
+
+                    <label for="isApplyForLicence">11. Are you applying for NWM Ministerial Licence?</label>
+                    <div class="radios" id="isApplyForLicence" style="
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: white;  
+                    height: 70px;
+                    padding: 2px!important;
+                    gap: 1rem;
+                    font-size: 20px;
+                    color: black;
+                ">
+                        <span style="
+                    display: flex;
+                    flex-direction: column;
+                ">
+                            <label for="isApplyForLicenceYes" style="margin: 0; padding: 0;">Yes [ ]</label>
+                            <input name='11. Are you applying for NWM Ministerial Licence?' type="radio"
+                                id="isApplyForLicenceYes" value="Yes, I am applying for licence">
+                        </span>
+                        <span style="
+                    display: flex;
+                    flex-direction: column;
+                ">
+                            <label for="isApplyForLicenceNo" style="margin: 0; padding: 0;">No [ ]</label>
+                            <input name='11. Are you applying for NWM Ministerial Licence?' type="radio"
+                                id="isApplyForLicenceNo" value="No, I am not applying for licence">
+                        </span>
+                    </div>
+
+
+                    <label for="isApplyForOrdinance">12. If you are not ordained, are you now applying to be
+                        ordained?</label>
+                    <div class="radios" id="isApplyForOrdinance" style="
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: white;  
+                    height: 70px;
+                    padding: 2px!important;
+                    gap: 1rem;
+                    font-size: 20px;
+                    color: black;
+                  ">
+                        <span style="
+                    display: flex;
+                    flex-direction: column;
+                  ">
+                            <label for="isApplyForOrdinanceYes" style="margin: 0; padding: 0;">Yes [ ]</label>
+                            <input name='12. If you are not ordained, are you now applying to be ordained?' type="radio"
+                                id="isApplyForOrdinanceYes" value="Yes, I am applying for ordinance">
+                        </span>
+                        <span style="
+                    display: flex;
+                    flex-direction: column;
+                ">
+                            <label for="isApplyForOrdinanceNo" style="margin: 0; padding: 0;">No [ ]</label>
+                            <input name='12. If you are not ordained, are you now applying to be ordained?' type="radio"
+                                id="isApplyForOrdinanceNo" value="No, I am not applying for ordinance">
+                        </span>
+                    </div>
+
+
+                    <label for="schoolTakenDetails">13. Please give details of the last two Schools/Colleges you
+                        attended with dates and
+                        qualifications. (School/ Seminary/ College/ University)</label>
+                    <input type="text" id="schoolTakenDetails"
+                        name="13. Please give details of the last two Schools/Colleges you attended with dates and qualifications."
+                        style="display: none">
+
+                    <label for="schoolNme1">School one: (i) Name</label>
+                    <input type="text" id="schoolNme1" name="School one: (i) Name">
+
+                    <label for="schoolStDt1">School one: (ii) Date of start (From)</label>
+                    <input type="date" id="schoolStDt1" name="School one: (ii) Date of start (From)">
+
+                    <label for="schoolEndDt1">School one: (iii) Date of finish (To)</label>
+                    <input type="date" id="schoolEndDt1" name="School one: (iii) Date of finish (To)">
+
+                    <label for="schoolQltObt1">School one: (iv) Qualification obtained</label>
+                    <input type="text" id="schoolQltObt1" name="School one: (iv) Qualification obtained">
+
+
+                    <label for="schoolNme2">School two: (i) Name</label>
+                    <input type="text" id="schoolNme2" name="School two: (i) Name">
+
+                    <label for="schoolStDt2">School two: (ii) Date of start (From)</label>
+                    <input type="date" id="schoolStDt2" name="School two: (ii) Date of start (From)">
+
+                    <label for="schoolEndDt2">School two: (iii) Date of finish (To)</label>
+                    <input type="date" id="schoolEndDt2" name="School two: (iii) Date of finish (To)">
+
+                    <label for="schoolQltObt2">School two: (iv) Qualification obtained</label>
+                    <input type="text" id="schoolQltObt2" name="School two: (iv) Qualification obtained">
+
+
+                    <label for="copyOfCerts">[Please supply copies of your qualifications(s)]</label>
+                    <input type="file" name="" id="copyOfCerts" name="[Please supply copies of your qualifications(s)]">
+
+                    <label for="servDesc3">
+                        14. Please supply information about yourself, your Christian life, your calling to the ministry,
+                        the churches you
+                        have served and the kind of service you have rendered:
+                    </label>
+                    <textarea name="14. Please supply information about yourself, your Christian life, your calling to the ministry,
+                    the churches you have served and the kind of service you have rendered:" id="servDesc3" cols="20"
+                        rows="10"
+                        placeholder="I was born again in year 19xx/20xx and began to serve the Lord as << ministry name >> in church named << church name >> "></textarea>
+
+
+
+                    <label for="sigStudent">Your signature</label>
+                    <input type="text" id="sigStudent" name="Your signature">
+
+                    <label for="dateSignStudentSubReq">Date of signing</label>
+                    <input type="date" name="" id="dateSignStudentSubReq" name="Date">
+
+                    <label for="approveApp">Name and signature of your church leader who approves your
+                        application:</label>
+                    <input type="text" id="approveApp"
+                        name="Name and signature of your church leader who approves your application:">
+
+
+                    <label for="nameChchLeaderApprov">Approving church leader name</label>
+                    <input type="text" name="" id="nameChchLeaderApprov" name="Approving church leader name">
+
+                    <label for="sigChchLeaderApprov">Approving church leader signature</label>
+                    <input type="text" name="" id="sigChchLeaderApprov" name="Approving church leader signature<">
+
+                    <label for="dateChchLeaderApprov">Date of approval by church leader</label>
+                    <input type="date" name="" id="dateChchLeaderApprov" name="Date of approval by church leader">
+
+
+                    <label for="ifChurchLeader">If you are a church leader, your three senior officers must sign
+                        below:</label>
+                    <input type="text" id="ifChurchLeader"
+                        name="If you are a church leader, your three senior officers must sign below:"
+                        style="display: none">
+
+                    <label for="senOf1">Senior Officer 1</label>
+                    <input type="text" id="senOf1" name="Senior Officer 1" style="display: none">
+
+                    <label for="nameSenOffrApprov1">Senior Officer 1: Name</label>
+                    <input type="text" id="nameSenOffrApprov1" name="Senior Officer 1: Name">
+
+                    <label for="sigSenOffrApprov1">Senior Officer 1: Signature</label>
+                    <input type="text" id="sigSenOffrApprov1" name="Senior Officer 1: Signature">
+
+                    <label for="dateSenOffrApprov1">Senior Officer 1: Date of senior officer sign</label>
+                    <input type="date" id="dateSenOffrApprov1" name="Senior Officer 1: Date">
+
+
+                    <label for="senOf2">Senior Officer 2</label>
+                    <input type="text" id="senOf2" name="Senior Officer 2" style="display: none">
+
+                    <label for="nameSenOffrApprov2">Senior Officer 2: Name</label>
+                    <input type="text" id="nameSenOffrApprov2" name="Senior Officer 2: Name">
+
+                    <label for="sigSenOffrApprov2">Senior Officer 2: Signature</label>
+                    <input type="text" id="sigSenOffrApprov2" name="Senior Officer 2: Signature">
+
+                    <label for="dateSenOffrApprov2">Senior Officer 2: Date of senior officer sign</label>
+                    <input type="date" id="dateSenOffrApprov2" name="Senior Officer 2: Date">
+
+
+                    <label for="senOf3">Senior Officer 3</label>
+                    <input type="text" id="senOf3" name="Senior Officer 3" style="display: none">
+
+                    <label for="nameSenOffrApprov3">Senior Officer 3: Name</label>
+                    <input type="text" id="nameSenOffrApprov3" name="Senior Officer 3: Name">
+
+                    <label for="sigSenOffrApprov3">Senior Officer 3: Signature</label>
+                    <input type="text" id="sigSenOffrApprov3" name="Senior Officer 3: Signature">
+
+                    <label for="dateSenOffrApprov3">Senior Officer 3: Date of senior officer sign</label>
+                    <input type="date" id="dateSenOffrApprov3" name="Senior Officer 3: Date">
+
+
+                    <label for="ordAttachSup">Please supply the following:</label>
+                    <input type="text" id="ordAttachSup" name="Attachments for the ordination certificate"
+                        style="display: none">
+
+                    <label for="ordCertCopiesIfPresent">i) A copy of your Ordination Certificate if already
+                        ordained</label>
+                    <input type="file" id="ordCertCopiesIfPresent"
+                        name="i) A copy of your Ordination Certificate if already ordained">
+
+                    <label for="ordFee">ii) The following is the ordination Fee if applying for ordination</label>
+                    <input type="text" id="ordFee"
+                        name="ii) The following is the ordination Fee I agree to pay for ordination application">
+
+                    <label for="recommendLetters">iii) Three letters of recommendation from three persons who can write
+                        about your
+                        character. They should include your tutor, church officials or pastors and /or community
+                        leaders. Please also supply two additional referees that we can independently obtain references
+                        on your behalf. Please note this will be investigated. They should include your current or
+                        previous employers or other places you either schooled or involved in Ministry.</label>
+                    <input type="file" id="recommendLetters" name="iii) Three letters of recommendation from three persons who can write about your character. They should include your tutor, church officials or pastors and /or community
+                    leaders. Please also supply two additional referees that we can independently obtain references
+                    on your behalf. Please note this will be investigated. They should include your current or
+                    previous employers or other places you either schooled or involved in Ministry." multiple>
+
+                    <label for="passPortAttach">iv) Please supply two passport size photographs of yourself</label>
+                    <input type="file" id="passPortAttach"
+                        name="iv) Please supply two passport size photographs of yourself" multiple>
+
+                    <label for="ministFee">v) Your Ministerial Licence Fee is</label>
+                    <input type="text" id="ministFee" name="v) Your Ministerial Licence Fee is">
+
+                    <label for="likeMemNWM">I would like to be a member of NWM. I do accept the Statement of Faith &
+                        Belief of NWM, and pledge to submit to the Code of Conduct of NWM, to live by the standards of
+                        the Holy
+                        Scriptures, and to support the Aims & Objectives of NWM.</label>
+                    <input type="text" id="likeMemNWM"
+                        name="I would like to be a member of NWM. I do accept the Statement of Faith & Belief of NWM, and pledge to submit to the Code of Conduct of NWM, to live by the standards of the Holy Scriptures, and to support the Aims & Objectives of NWM."
+                        style="display: none">
+
+                    <label for="nameAcceptFaith">Name</label>
+                    <input type="text" id="nameAcceptFaith" name="I">
+
+                    <label for="signAcceptFaith">Signature</label>
+                    <input type="text" id="signAcceptFaith" name="With my signature">
+
+                    <label for="dateAcceptFaith">Date</label>
+                    <input type="date" id="dateAcceptFaith" name="in the date">
+
+                    <label for="statOfFaith">STATEMENT OF FAITH & BELIEF OF NETWORK FOR WORLD MISSIONS (NWM)</label>
+                    <textArea cols="20" rows="20" id='statOfFaith'>
+
+The basis for our faith and doctrine is the Holy Bible, which is the Word of God.
+These are summarized herein as follows.
+
+We believe:
+                        
+1. In the Holy Trinity - One God in 3 Persons; the Father, the Son, and the Holy Spirit;
+2. In the authority and supremacy of the Word of God (the Holy Bible) in all matters of faith and conduct;
+3. In the universal sinfulness and guilt of fallen man, and the substitutionary sacrifice and death of the incarnate Son of God as the sole and all-sufficient ground of redemption from the guilt and power of sin and from its eternal consequences;
+4. In the justification of the sinner solely by the grace of God and through faith in Christ alone;
+5. In the sacraments of water baptism by immersion, and of the Holy Communion;
+6. In the baptism of the Holy Ghost with evidence of tongues and the manifestation of supernatural gifts;
+7. In the illuminating, regenerating, indwelling, and sanctifying work of the Holy Spirit in the life of the believer;
+8. In the virgin birth, death, and bodily resurrection of our Lord Jesus Christ, His ascension, exaltation, and imminent visible return in power and glory;
+9. In the imminent rapture of the Church, the resurrection of the body, eternal glory for believers in heaven, and everlasting punishment for unbelievers in the lake of fire.
+                        
+                    </textArea>
+
+                    <input type="text" id="acceptedFaith" name="Accepted Faith" style="display: none" value="
+                    STATEMENT OF FAITH & BELIEF OF NETWORK FOR WORLD MISSIONS (NWM)
+    The basis for our faith and doctrine is the Holy Bible, which is the Word of God. These are summarized herein as follows.
+    We believe:
+    1. In the Holy Trinity - One God in 3 Persons; the Father, the Son, and the Holy Spirit;
+    2. In the authority and supremacy of the Word of God (the Holy Bible) in all matters of faith and conduct;
+    3. In the universal sinfulness and guilt of fallen man, and the substitutionary sacrifice and death of the incarnate Son of God as the sole and all-sufficient ground of redemption from the guilt and power of sin and from its eternal consequences;
+    4. In the justification of the sinner solely by the grace of God and through faith in Christ alone;
+    5. In the sacraments of water baptism by immersion, and of the Holy Communion;
+    6. In the baptism of the Holy Ghost with evidence of tongues and the manifestation of supernatural gifts;
+    7. In the illuminating, regenerating, indwelling, and sanctifying work of the Holy Spirit in the life of the believer;
+    8. In the virgin birth, death, and bodily resurrection of our Lord Jesus Christ, His ascension, exaltation, and imminent visible return in power and glory;
+    9. In the imminent rapture of the Church, the resurrection of the body, eternal glory for believers in heaven, and everlasting punishment for unbelievers in the lake of fire.
+                    ">
+                    <button id="serReq3" type="submit">Tuma Maombi</button>
+
+
+                </form>
+
+                <!-- <input type="submit" value="Tuma Maombi"> -->
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere</div>
+
+                <style>
+                    #ordination {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-around;
+                        /* padding: 4rem; */
+                        /* background-color: white; */
+                        align-content: flex-start;
+                        margin-left: 0px !important;
+                        padding-left: 0px !important;
+
+                    }
+
+                    #mainContent .allThings {
+                        /* padding: 0px; */
+                    }
+
+
+                    #ordination #formm3 {
+                        /* background-color: yellow; */
+                        font-size: 1.5rem;
+                        text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        /* align-items: center; */
+                        justify-content: center;
+                        align-self: center;
+                        position: relative;
+                        width: 100%;
+                        /* margin-right: 0px !important; */
+
+                    }
+
+                    #ordination #formm3 * {
+                        display: block;
+                        width: 65%;
+                        word-break: normal;
+                        border-radius: 15px;
+                        border: none;
+                        outline: none;
+                        padding: 5px;
+                        align-self: center;
+                    }
+
+
+                    #ordination #formm3 *:not(textarea) {
+                        height: 3rem;
+
+                    }
+
+                    #ordination #formm3 label {
+                        margin: 30px 2px 5px 10px;
+                        margin-bottom: 3px !important;
+                        padding: 1px;
+                        height: fit-content;
+                    }
+
+                    #ordination #formm3 select {
+                        text-align: left;
+
+                    }
+
+                    #ordination #formm3 select option {
+                        text-align: left;
+                        height: 3rem;
+                    }
+
+                    #ordination #formm3 input {
+                        text-align: left;
+                    }
+
+                    #ordination #formm3 input[type='file'] {
+                        background-color: white;
+                        color: black;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        align-content: center;
+                        align-self: center;
+                        text-align: center;
+                        /* padding: 100px; */
+                        width: fit-content;
+                        padding-top: 30px;
+                        padding-left: 50px;
+                    }
+
+                    #ordination #formm3 textarea {
+                        text-align: left;
+                        margin-top: 2px !important;
+                        align-self: center;
+                    }
+
+                    #ordination #formm3 button {
+                        margin: 30px 2px 10px 2px;
+                        transition: all .3s ease-in-out;
+                        height: 10rem;
+                        font-size: 3rem;
+                        user-select: none;
+                    }
+
+                    #ordination #formm3 button:hover {
+                        border-radius: 20px;
+                        border: 1px solid white;
+                        background-color: var(--color1) !important;
+                        color: white;
+                    }
+
+
+                    #ordination .title {
+                        display: block;
+                        width: fit-content;
+                        font-size: 2rem;
+                        text-align: center;
+                        height: fit-content;
+                        margin: 1px auto !important;
+                        border-radius: 20px;
+                        padding: 10px;
+                        background-color: green;
+                    }
+
+                    #ordination .subTitle {
+                        display: block;
+                        width: fit-content;
+                        font-size: 1.2rem;
+                        text-align: center;
+                        height: fit-content;
+                        margin: 5px auto !important;
+                        border-radius: 20px;
+                        padding: 10px;
+                        background-color: purple;
+                        word-break: normal;
+                        padding: 10px;
+                    }
+
+                    #ordination .theHeaders {
+                        /* background-color: red; */
+                        margin-left: 0px !important;
+                        padding-left: 0px !important;
+                        width: 100%;
+                        text-align: center;
+
+                    }
+
+                    @media only screen and (max-width: 768px) {
+                        #ordination #formm3 label {
+                            margin: 30px 2px 5px 10px;
+                            margin-bottom: 3px !important;
+                            padding: 1px;
+                            height: fit-content;
+                            width: 90%;
+                        }
+
+                        #ordination #formm3 label {
+                            display: block;
+                            width: 98%;
+                            word-break: normal;
+                            border-radius: 15px;
+                            border: none;
+                            outline: none;
+                            padding: 5px;
+                            align-self: center;
+                        }
+
+                        #ordination #formm3 textarea {
+                            width: 90%;
+                        }
+
+
+
+                    }
+                </style>
+
+            </div>
+            <div style="display: none" id="leadership" class="hideFirst allThings">KakaJere didn't put something
+                here yet but he is working on it
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere
+                </div>
+            </div>
+            <div style="display: none" id="finRep" class="hideFirst allThings">KakaJere didn't put something here
+                yet but he is working on it
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere
+                </div>
+            </div>
+            <div style="display: none" id="picGal" class="hideFirst allThings">KakaJere didn't put something here
+                yet but he is working on it
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere
+                </div>
+            </div>
+            <div style="display: none" id="vidGal" class="hideFirst allThings">KakaJere didn't put something here
+                yet but he is working on it
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere
+                </div>
+            </div>
+            <div style="display: none" id="charProg" class="hideFirst allThings">KakaJere didn't put something here
+                yet but he is working on it
+                <br>
+                <div style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">System Developed by KakaJere
+                </div>
+</div>
 
         </section>
+
     </section>
     <section id="footer">
     </section>
@@ -1749,6 +2920,8 @@
         }
     </style>
 
+
+
     <div class="thankss" id="thankss">
         Mapendendekezo ya mabadilisho yametumwa kwa uongozi husika
     </div>
@@ -1757,101 +2930,15 @@
     <script src="fontawasome5/js/all.js"></script>
     <script src="jquery-3.6.0.js"></script>
 
+    <script>
+        $('#codee').keydown(function (e) {
+            if (e.keyCode == 13) {
+                // alert(e.which);
+                $('#goPassword').click()
+            }
+        });
+    </script>
 
-    <!-- <form id="my-form" action="https://formspree.io/f/xpznrdqk" method="POST">
-        <label>Email:</label>
-        <input type="email" name="email" />
-        <label>Message:</label>
-        <input type="text" name="message" />
-        <button id="my-form-button">Submit</button>
-        <p id="my-form-status"></p>
-      </form> -->
-    <!-- Place this script at the end of the body tag -->
-    <!-- <script>
-        var form = document.getElementById("formm");
-
-        async function handleSubmit(event) {
-            event.preventDefault();
-            var status = document.getElementById("my-form-status");
-            // var data = new FormData(event.target);
-
-
-
-
-
-
-            var pT = document.getElementById('servCat').value;
-            var personToEdit = " of " + targetPerson;
-
-            var subject = `'This email refer's to "Registration Details Change" of a GBTC(Arusha) student with the name ` + personToEdit;
-
-            var codee = document.getElementById('codee').value;
-            adminWhoSentTheRequest = "The GBTC(Arusha) leader who sent this request is " + codee + ". ";
-
-            var problemType = "I am hereby requesting that you please edit the " + pT;
-
-            var pT = document.getElementById('servCat').value;
-            var personToEdit = " of " + targetPerson;
-
-            var correctedName = " to " + document.getElementById('servDesc').value + ". You may please call this student if there is any detail that you need further via phone number:";
-
-            var telNumber = document.getElementById('numberr').value + " or email address: ";
-
-            var emailAddress = document.getElementById('email').value;
-
-            var myEmail = 'jictoejeremiah@gmail.com';
-            var myEmailb = "This email is sent to you " + 'jictoejeremiah@gmail.com';
-
-            var emailSender = 'mkakajey@kakajere.me'
-            var emailSenderb = " from " + 'mkakajey@kakajere.me';
-
-
-
-            fetch(event.target.action, {
-                method: form.method,
-                body: {
-
-                    // email's subject
-                    subject: subject,
-
-                    // email's body
-                    The_code_name_of_the_leader: adminWhoSentTheRequest,
-                    problem_Type: problemType,
-                    Person_To_Edit: personToEdit,
-                    CorrectedName: correctedName,
-                    Student_s__phone_number: telNumber,
-                    Email_Address: emailAddress,
-
-                    // receiver's address(Explain)
-                    Receiver_s_address: myEmailb,
-                    // sender's address(Explain)
-                    Sender_s_address: emailSenderb
-
-
-
-                },
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    status.innerHTML = "Thanks for your submission!";
-                    form.reset()
-                } else {
-                    response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-                        } else {
-                            status.innerHTML = "Oops! There was a problem submitting your form"
-                        }
-                    })
-                }
-            }).catch(error => {
-                status.innerHTML = "Oops! There was a problem submitting your form"
-            });
-        }
-        form.addEventListener("submit", handleSubmit)
-    </script> -->
 </body>
 
 </html>
