@@ -961,7 +961,9 @@ p {
     font-size: 50px;
 }
 
-
+#projects .project-img {
+    width: 100%;
+}
 
 
 /* end extra */
