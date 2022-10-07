@@ -107,6 +107,7 @@ p {
 .brand h1 span {
     color: crimson;
 }
+
 .brand h2 {
     font-size: 3rem;
     text-transform: uppercase;
@@ -720,7 +721,7 @@ p {
 /* hamburger_puls */
 
 /* Media Query For Tablet */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
     .cta {
         font-size: 2.5rem;
         padding: 20px 60px;
@@ -856,6 +857,7 @@ p {
     #contact .contact-items .contact-item {
         width: 30%;
     }
+
     #contact .icon {
         width: 70px;
         margin: 0 auto;
@@ -874,7 +876,7 @@ p {
 /* End Media Query For Tablet */
 
 /* Media Query For Desktop */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1024px) {
 
     #header .hamburger {
         display: none;
@@ -900,7 +902,7 @@ p {
         display: none;
     }
 
-    html  {
+    html {
         font-size: 12.5px;
         /* font-size: 17.5px; */
     }
@@ -948,10 +950,10 @@ p {
 #faIcon2,
 #faIcon3,
 #faIcon4 {
-align-items: center;
-justify-content: center;
-color: crimson;
-font-size: 50px;
+    align-items: center;
+    justify-content: center;
+    color: crimson;
+    font-size: 50px;
 }
 
 

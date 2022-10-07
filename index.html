@@ -155,7 +155,8 @@
                     <option value="Language">Language</option>
                 </select>
                 <label for="servDesc">Shortly describe the service you need</label>
-                <input type="text" name="Service Description" id="servDesc" placeholder="eg. I wanted computer networking">
+                <input type="text" name="Service Description" id="servDesc"
+                    placeholder="eg. I wanted computer networking">
                 <label for="numberr">Provide your phone number</label>
                 <input type="tel" name="Telephone Number" id="numberr" placeholder="eg. 0757835930" validate>
                 <label for="email">Provide your email here</label>
@@ -268,10 +269,10 @@
             }
 
             #hireMeDialg .sendBox .heading .icon:hover {
-                    font-size: 40px;
-                    color: red;
-                }
-    
+                font-size: 40px;
+                color: red;
+            }
+
             @keyframes thanks {
                 0% {
                     display: flex;
@@ -562,24 +563,28 @@
     <section id="hireMe">
         <h2 class="section-title" style="margin-left: 5px">Have a work to do? <span>Tell Me</span></h2>
         <div class="hire">
-            <p><i class="icon fas fa-laptop-code"></i> <span>Computing</span> Customized software for desktop &
+            <p onclick="document.getElementById('hireMeCta').click()"><i class="icon fas fa-laptop-code"></i>
+                <span>Computing</span> Customized software for desktop &
                 Mobile |
                 Computer networking |
                 Enhancing Computer Security | Computer Maintenance and Troubleshooting</p>
-            <p><i class="icon fas fa-chart-line"></i> <span>Finance</span> Preparing Financial Statements | Stock
+            <p onclick="document.getElementById('hireMeCta').click()"><i class="icon fas fa-chart-line"></i>
+                <span>Finance</span> Preparing Financial Statements | Stock
                 Valuation | Warehouse Management
                 | Filing Tax Returns </p>
-            <p> <i class="icon fas fa-music"></i> <span>Music</span>Learn Keyboard | Learn Accoustic Guitar | Learn
+            <p onclick="document.getElementById('hireMeCta').click()"> <i class="icon fas fa-music"></i>
+                <span>Music</span>Learn Keyboard | Learn Accoustic Guitar | Learn
                 Bass
                 Guitar | Learn
                 Drums | Learn Music Production</p>
-            <p> <i class="icon fas fa-language"></i> <span>Language</span>Learn Basic English | Intermediate English
+            <p onclick="document.getElementById('hireMeCta').click()"> <i class="icon fas fa-language"></i>
+                <span>Language</span>Learn Basic English | Intermediate English
                 |
                 Advanced English |
                 Communication English | Job English | Marketing English | Legal English
             </p>
         </div>
-        <a class="cta" style="text-align: center" onclick="showThisCust(this)">Hire me</a>
+        <a id="hireMeCta" class="cta" style="text-align: center" onclick="showThisCust(this)">Hire me</a>
     </section>
     <style>
         #hireMe {
@@ -611,6 +616,7 @@
             width: 95%;
             border-radius: 50px 0 50px 0;
             margin-bottom: 30px;
+            cursor: pointer;
         }
 
         #hireMe p:hover {
