@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
 html:not(.fa, .fas) {
     font-size: 10px;
     font-family: 'Montserrat', sans-serif;
