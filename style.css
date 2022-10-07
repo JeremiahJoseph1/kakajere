@@ -726,7 +726,7 @@ p {
 /* hamburger_puls */
 
 /* Media Query For Tablet */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+@media only screen and (min-width: 768px) {
     .cta {
         font-size: 2.5rem;
         padding: 20px 60px;
@@ -881,7 +881,7 @@ p {
 /* End Media Query For Tablet */
 
 /* Media Query For Desktop */
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1200px) {
 
     #header .hamburger {
         display: none;
@@ -961,9 +961,6 @@ p {
     font-size: 50px;
 }
 
-#projects .project-img {
-    width: 100%;
-}
 
 
 /* end extra */
