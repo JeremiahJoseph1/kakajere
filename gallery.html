@@ -137,6 +137,9 @@
     <div id="JPE" class="welcome">
         <p>Welcome JPE personnel</p>
     </div>
+    <div id="PLC" class="welcome">
+        <p>Welcome PALIHECA personnel</p>
+    </div>
     <script>
         function chkVal(e) {
             if (e == 'mtoveABC') {
@@ -157,6 +160,12 @@
                 setTimeout(() => {
                     document.location = 'galleryKakaJere/gallery_jpeConsult/index.html';
                 }, 3000);
+            } else if (e == 'Paliheca123#') {
+                document.querySelector('#uName').style.backgroundColor = 'green';
+                document.querySelector('#PLC').style.display = 'flex';
+                setTimeout(() => {
+                    document.location = 'galleryKakaJere/gallery_paliheca/index.html';
+                }, 3000);
             } else if (e == 'Yesuanaipendagbtc' || e == 'Godlovesgbtc') {
                 document.querySelector('#uName').style.backgroundColor = 'green';
                 document.querySelector('#GBTC').style.display = 'flex';
@@ -169,7 +178,7 @@
             document.querySelector('#uName').value = '';
 
             var welcomeBox = document.querySelectorAll('.welcome');
-                welcomeBox.forEach((elementt) => {
+            welcomeBox.forEach((elementt) => {
                 elementt.style.display = 'none';
             });
         })
