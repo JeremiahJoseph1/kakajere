@@ -288,7 +288,8 @@ header {
 }
 
 .course__image {
-    height: 40%;
+    /* height: 40%; */
+    height: 13.5rem;
     object-fit: cover !important;
     overflow: hidden;
     /* background-color: red; */

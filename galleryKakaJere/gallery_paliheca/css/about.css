@@ -13,6 +13,19 @@
             margin: 1.6rem 0 2.5rem;
         }
 
+        .about__achievements-left {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            object-fit: cover;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .about__achievements-left img {
+            border-radius: 1rem;
+        }
+
         .achievement__cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
