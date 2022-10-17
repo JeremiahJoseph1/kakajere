@@ -5,164 +5,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jeremiah Joseph(famously known as kaka jere) is A polymath, of-course it's okay to call him so. He provides services in three industries: Technology
-    (Computer Science), Entertainment (Music) and Finance (Accounting)">
-    <meta name="keywords"
-        content="kakajere, kaka jere, pp jere, graphic designer, web developer, software, computer hardware, software developer, teacher, accounting consultant">
-    <meta name="author" content="Jeremiah Joseph">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="fontawasome5/css/all.css">
-    <link rel="shortcut icon" href="images/icon2.png">
-    <title>Kaka Jere</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Gallery GBTC</title>
 </head>
 
-<body onpageshow="removeUnwanted()" onload="removeUnwanted()">
-    <!-- Gallery pic -->
-    <div id="galleryPic">
-        <div class="imgCont">
-            <div id="objDesc" class="objDesc">
-                <p class="descTxt">Nikiwa Tumaini</p>
-                <a id="dnld" download><i class="icon2 fas fa-download"></i></a>
-                <i class="icon fas fa-window-close" onclick="(hideThis())"></i>
-            </div>
-            <div id="objectt" class="object">
-                <img id="imgBigg" src="images/pic2.JPG" alt="Jeremiah Joseph">
-            </div>
-        </div>
-        <style>
-            #galleryPic {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                height: 100vh;
-                width: 100vw;
-                backdrop-filter: blur(4px);
-                z-index: 20000;
-                color: white;
-                justify-content: center;
-                align-items: center;
-                transition: all .3s ease;
-                animation-name: appear;
-                animation-fill-mode: forwards;
-                animation-duration: .3s;
-                animation-timing-function: ease-in-out;
-
-            }
-
-            #galleryPic .imgCont {
-                height: 95vh;
-                width: auto;
-                border-radius: 7px;
-                overflow: hidden;
-            }
-
-            #galleryPic .imgCont .object {
-                height: 85%;
-                min-width: 80%;
-                object-fit: cover;
-            }
-
-            #galleryPic .imgCont .objDesc {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 3%;
-                height: 15%;
-                min-width: 80%;
-                color: white;
-                background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-
-            }
-
-            #galleryPic .imgCont .objDesc .descTxt {
-                font-size: 20px;
-                color: white;
-
-            }
-
-            #galleryPic .imgCont .objDesc .icon {
-                font-size: 40px;
-                color: crimson;
-            }
-
-            #galleryPic .imgCont .objDesc .icon2 {
-                font-size: 40px;
-                color: green;
-            }
-
-            @keyframes appear {
-                0% {
-                    display: flex;
-                    transform: scale(0.1);
-                }
-
-                50% {}
-
-                100% {
-                    transform: scale(1);
-                }
-            }
-
-            @keyframes disappear {
-                0% {}
-
-                50% {}
-
-                100% {
-                    transform: scale(0);
-                    display: none;
-                }
-            }
-        </style>
-        <script>
-            var dlg = document.getElementById('galleryPic');
-            var imgSrc = document.getElementById('imgBigg');
-            function hideThis() {
-                dlg.style.animationName = 'disappear';
-            }
-            function showThis(imgNow) {
-                imgNowShow = $(imgNow).attr('src');
-                imgToSet = $(imgSrc).attr('src');
-                $(imgSrc).attr('src', imgNowShow);
-
-                var hrfAt = $('#imgBigg').attr('src');
-                $('#dnld').attr('href', hrfAt);
-
-                dlg.style.display = 'flex';
-                dlg.style.animationName = 'appear';
-            }
-        </script>
-    </div>
-
-    <!-- End gallery pic -->
-    <div class="thankss" id="thankss">
-        Thank you, you will receive a respose after a short period of time
-    </div>
+<body onload="removeUnwantedd()" onpageshow="removeUnwantedd()">
     <!-- Hire Me Dialog -->
+
+
     <div id="hireMeDialg">
         <div class="sendBox">
             <div id="heading" class="heading">
-                <p class="descTxt">Describe your service request</p>
+                <p class="descTxt">Elezea marekebisho yako hapa</p>
                 <i class="icon fas fa-window-close" onclick="(hideThis2())"></i>
             </div>
             <form id="formm" action="https://formspree.io/f/xpznrdqk" method="POST" class="formm">
-                <label for="servCat">Choose the category of the service you want</label>
-                <select name="Service Category" id="servCat">
-                    <option value="Computing">Computing</option>
-                    <option value="Finance">Finance</option>
-                    <option value="Music">Music</option>
-                    <option value="Language">Language</option>
+                <label for="servCat">Chagua aina ya marekebisho yako</label>
+                <select name="What to change" id="servCat">
+                    <option value="Picture">Picha ibadilishwe</option>
+                    <option value="Name">Jina libadilishwe</option>
+                    <option value="Picture and Name">Picha na jina vibadilishwe</option>
                 </select>
-                <label for="servDesc">Shortly describe the service you need</label>
-                <input type="text" name="Service Description" id="servDesc"
-                    placeholder="eg. I wanted computer networking">
-                <label for="numberr">Provide your phone number</label>
-                <input type="tel" name="Telephone Number" id="numberr" placeholder="eg. 0757835930" validate>
-                <label for="email">Provide your email here</label>
-                <input type="email" name="Email Address" id="email" placeholder="eg. someone@domain.com" validate>
+                <!-- <label for="servDesc">Andika jina lako kwa usahihi hapa</label> -->
+                <input type="text" name="The former name" id="formerNamee" hidden
+                    style="visibility: hidden; display: none;">
+                <label for="servDesc">Andika jina lako kwa usahihi hapa</label>
+                <input type="text" name="The proposed name" id="servDesc"
+                    placeholder="eg. Badili jina kuwa James J. Joseph">
+                <label for="numberr">Andika simu itakayotafutwa kwa maelezo zaidi</label>
+                <input type="tel" name="Student's phone number" id="numberr" placeholder="eg. 0757835930" validate>
+                <label for="email">Andika barua pepe yako hapa</label>
+                <input type="email" name="Student's email" id="email" placeholder="eg. someone@domain.com" validate>
+                <label for="theSentence" hidden>The single sentence</label>
+                <input type="text" id="theSentence" name="The subject sentence of this email" hidden
+                    style="visibility: hidden; display: none;">
+                <button id="serReq" type="submit" onclick="sendReq()">Tuma Maombi Yako</button>
 
-                <button id="serReq" type="submit" onclick="sendReq()">Send Service Request</button>
             </form>
             <style>
                 #hireMeDialg .sendBox #formm label {
@@ -183,14 +62,14 @@
                 #hireMeDialg .sendBox .formm select {
                     border-radius: 20px;
                     height: 35px;
-                    accent-color: crimson;
+                    accent-color: crimson !important;
                     padding-right: 5px;
                 }
 
                 #hireMeDialg .sendBox .formm select option {
-                    accent-color: crimson;
-                    accent-color: inherit;
-
+                    accent-color: crimson !important;
+                    margin: 10px;
+                    padding: 10px;
                 }
 
                 #hireMeDialg .sendBox .formm button {
@@ -226,7 +105,7 @@
             }
 
             #hireMeDialg .sendBox {
-                height: 500px;
+                height: 600px;
                 width: 400px;
                 border: 1px solid crimson;
                 border-radius: 7px;
@@ -273,6 +152,28 @@
                 color: red;
             }
 
+            #thankss {
+                display: none;
+                width: fit-content;
+                height: fit-content;
+                padding: 50px;
+                position: fixed;
+                /* top: 0;
+                    left: 0; */
+                z-index: 9000000;
+                background-color: rgba(220, 20, 60, .9);
+                align-items: center;
+                justify-content: center;
+                color: white;
+                border-radius: 20px;
+                font-size: 30px;
+                text-align: center;
+                /* animation-name: thanks; */
+                animation-duration: 2s;
+                animation-fill-mode: forwards;
+                transform: scale(0);
+            }
+
             @keyframes thanks {
                 0% {
                     display: flex;
@@ -290,625 +191,2775 @@
                 }
             }
 
-            #thankss {
-                /* display: none; */
-                width: fit-content;
-                height: fit-content;
-                padding: 50px;
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 9000000;
-                background-color: rgba(220, 20, 60, .9);
-                align-items: center;
-                justify-content: center;
-                color: white;
-                border-radius: 20px;
-                font-size: 30px;
-                text-align: center;
-                /* animation-name: thanks; */
-                animation-duration: 2s;
-                animation-fill-mode: forwards;
-                transform: scale(0);
+            @keyframes appear {
+                0% {
+                    display: flex;
+                    transform: scale(0.1);
+                }
+
+                50% {}
+
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+            @keyframes disappear {
+                0% {}
+
+                50% {}
+
+                100% {
+                    transform: scale(0);
+                    display: none;
+                }
             }
         </style>
         <script>
+            // codee = "sample";
+            let targetPerson = "";
+
             var dlg2 = document.getElementById('hireMeDialg');
+
             function hideThis2() {
                 dlg2.style.animationName = 'disappear';
             }
+
+
+
+            function showThisCustTsti() {
+                let codee = document.getElementById('codee').value;
+                if (codee == 'Eligibo Kavishe' || codee == 'Joseph Safisha' || codee == 'Jeremiah Joseph' || codee == 'Bishop Ekong') {
+                    alert('You are logged in already!')
+                } else {
+                    showThisCustTst()
+                }
+
+
+            }
+            function showThisCustTst() {
+
+                var ownerName = document.getElementById('ownerName');
+                var codeep = document.getElementById('codeep');
+                var passEnter = document.getElementById('passEnter');
+                var successEdit = document.getElementById('successEdit');
+
+                var codee = document.getElementById('codee').value;
+
+                ownerName.style.display = 'none';
+                codeep.style.display = '';
+
+                document.getElementById('codee').focus({ focusVisible: true })
+
+                if (codee == '1594Kaaaav' || codee == '2450Jjjjjj' || codee == '8976Sssaf' || codee == '9876Ekkkkg') {
+
+                    if (codee == '1594Kaaaav') {
+                        document.getElementById('codee').value = 'Eligibo Kavishe';
+                    } else if (codee == '8976Sssaf') {
+                        document.getElementById('codee').value = 'Joseph Safisha';
+                    } else if (codee == '2450Jjjjjj') {
+                        document.getElementById('codee').value = 'Jeremiah Joseph';
+                    } else if (codee == '9876Ekkkkg') {
+                        document.getElementById('codee').value = 'Bishop Ekong';
+                    } else {
+                        alert('an error occured in your login, please consult KakaJere via phone number 0757835930 to fetch a solution from him');
+                    };
+
+
+                    var codeep = document.getElementById('codeep');
+                    $('#serReq2').css('display', 'block');
+                    var successEdit = document.getElementById('successEdit');
+                    successEdit.style.display = '';
+                    codeep.style.display = 'none';
+                } else {
+                    var successEdit = document.getElementById('successEdit');
+                    var codee = document.getElementById('codee');
+
+                    codee.value = '';
+                    successEdit.style.display = 'none';
+                    alert(`Please provide the password to send the modification request`)
+                }
+            }
             function showThisCust(cust) {
-                dlg2.style.display = 'flex';
-                dlg2.style.animationName = 'appear';
-                removAnim()
+                let codee = document.getElementById('codee').value;
+                if (codee == 'Eligibo Kavishe' || codee == 'Joseph Safisha' || codee == 'Jeremiah Joseph' || codee == 'Bishop Ekong') {
+                    removAnim()
+                    // alert(codee)
+                    var personID = $(cust).attr('onplaying');
+
+                    dlg2.style.display = 'flex';
+                    dlg2.style.animationName = 'appear';
+
+                    var personID = $(cust).attr('onplaying');
+                    targetPerson = personID;
+                    // alert(personID)
+                } else {
+                    showThisCustTst()
+                }
             }
             function thanks() {
+                document.getElementById('thankss').style.display = 'flex';
                 document.getElementById('thankss').style.animationName = 'thanks';
             }
             function removAnim() {
                 document.getElementById('thankss').style.animationName = '';
+                document.getElementById('thankss').style.display = 'none';
             }
             function sendReq() {
                 thanks();
                 hideThis2();
+                // removAnim()
 
                 seeAll()
+                var ownerName = document.getElementById('ownerName');
+                var successEdit = document.getElementById('successEdit');
+
+                ownerName.style.display = '';
+                successEdit.style.display = 'none';
             }
-            function removeUnwanted() {
-                document.getElementById('thankss').style.animationName = '';
+
+            function removeUnwantedd() {
+                document.getElementById('thankss').style.display = 'none';
             }
             function seeAll() {
+                var pT = document.getElementById('servCat').value;
+                var personToEdit = " of " + targetPerson;
 
-                var subject = `Service request to Kaka Jere`;
+                var subject = `'This email refer's to "Registration Details Change" of a GBTC(Arusha) student with the name ` + personToEdit;
 
-                var serviceCat = document.getElementById('servCat').value;
+                var codee = document.getElementById('codee').value;
+                adminWhoSentTheRequest = ". The GBTC(Arusha) leader who sent this request is " + codee + ". ";
 
-                var descrptionss = document.getElementById('servDesc').value;
+                var problemType = "I am hereby requesting that you please edit the " + pT;
 
-                var telNumber = document.getElementById('numberr').value;
+                var pT = document.getElementById('servCat').value;
 
-                var emailAddress = document.getElementById('email').value; //client's address
+                var personToEdit = " of " + targetPerson;
 
-                var myEmail = 'jictoejeremiah@gmail.com'; //receiver's address
+                var correctedName = " to " + document.getElementById('servDesc').value + ". You may please call this student if there is any detail that you need further via phone number: ";
 
-                var emailSender = 'mkakajey@kakajere.me' //sender's address
+                var telNumber = document.getElementById('numberr').value + " or email address: ";
+
+                var emailAddress = document.getElementById('email').value;
+
+                var myEmailb = ". This email is sent to you " + `God's loved servant`;
+
+                var emailSenderb = " from " + 'www.kakajere.me';
+
+                // var myEmail = 'jictoejeremiah@gmail.com';
+                // var myEmailb = ". This email is sent to you " + 'jictoejeremiah@gmail.com';
+
+                // var emailSender = 'mkakajey@kakajere.me'
+                // var emailSenderb = " from " + 'mkakajey@kakajere.me';
 
 
+                // // email's subject
+                // alert(subject);
+
+                // // email's body
+                // alert(adminWhoSentTheRequest);
+                // alert(problemType);
+                // alert(personToEdit);
+                // alert(correctedName);
+                // alert(telNumber);
+                // alert(emailAddress);
+
+                // // receiver's address(Explain)
+                // alert(myEmailb);
+                // // sender's address(Explain)
+                // alert(emailSenderb);
+
+                // // receiver's address
+                // alert(myEmail);
+                // // sender's address
+                // alert(emailSender);
+
+                var sentenceSend = subject + adminWhoSentTheRequest + problemType + personToEdit + correctedName + telNumber + emailAddress + myEmailb + emailSenderb;
+
+                document.getElementById('theSentence').value = sentenceSend;
+                alert(sentenceSend);
+                // alert(document.getElementById('theSentence').value);
+
+                document.getElementById('formerNamee').value = targetPerson;
+                // alert(targetPerson);
+                // alert(document.getElementById('formerNamee').value);
             }
-
         </script>
     </div>
     <!-- End Hire Me Dialog -->
 
 
+    <section id="headerTop" class="nav-list">
+        <marquee behavior="" direction="" id="ownerName">
+            Karibu GBTC. Hii ni ngazi ya cheti ya Shule ya Huduma na inasomwa kwa muda wa miezi minne. Ngazi hii ina
+            masomo nane. Notsi za haya masomo yapo hapa kwenye menyu ya 'Downloads'. Pia unaweza kujifunza masomo haya
+            kwa njia ya video au sauti ambazo pia zipo hapa ndani kwenye menyu za 'Videos' na 'Audios'. Matokeo ya
+            mitihani yataonekana kwenye menyu ya 'Academics' pindi yatakapotolewa na mhadhiri wetu Askofu E. S. Ekong.
+            Kuona vyote vya GBTC vilivyomo kwenye tovuti hii angalia kwenye menyu ya 'Snapshots'. Wewe kama mwanafunzi
+            tafadhali hakikisha picha yako ya paspoti na jina lako kwenye menyu ya 'Profiles' na ikiwa haviko sawa basi
+            bonyeza kitufe hiki <i class="fas fa-podcast"></i> chini ya picha yako kisha uandike hapo jina lako kama
+            unavyohitaji liandikwe katika rekodi zako katika chuo hiki. Tunakupenda.
 
-    <!-- Header -->
-    <section id="header">
-        <dic class="header container">
-            <div class="nav-bar">
-                <div class="brand">
-                    <a href="#hero">
-                        <h1><span>J</span>eremiah <span>J</span>oseph</h1>
-                    </a>
-                </div>
-                <div class="nav-list">
-                    <div class="hamburger" style="user-select: none;">
-                        <div class="bar"></div>
-                    </div>
-                    <ul>
-                        <li><a href="#hero" data-after="Home">Home</a></li>
-                        <li><a href="#services" data-after="Services">Services</a></li>
-                        <li><a href="#projects" data-after="Projects">Projects</a></li>
-                        <li><a href="#about" data-after="About">About</a></li>
-                        <li><a href="#hireMe" data-after="Hire_Me">Hire Me</a></li>
-                        <li><a href="#gallery" data-after="Gallery">Gallery</a></li>
-                        <li><a href="#contact" data-after="Contact">Contact</a></li>
-                        <li><a href="gallery.html" data-after="E_Gate" target="_blank">E-Gate</a></li>
-                    </ul>
-                </div>
-            </div>
-        </dic>
-    </section>
 
-    <!-- End Header -->
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero container">
-            <div>
-                <h2>Hello,<span></span></h2>
-                <h2>my name is<span></span></h2>
-                <h2>Jeremiah<span></span></h2>
-                <a href="#projects" type="button" class="cta">Portfolio</a>
-                <!-- <a href="#" type="button" class="cta">Portfolio</a> -->
-            </div>
-        </div>
-    </section>
-    <!-- End Hero Section -->
-    <!-- Service Section -->
-    <section id="services">
-        <div class="services container">
-            <div class="service-top">
-                <h2 class="section-title">Serv<span>i</span>ces</h2>
-                <p>A polymath, of-course it's okay to call me so. I provide services in three industries: Technology
-                    (Computer Science), Entertainment (Music) and Finance (Accounting)</p>
-            </div>
-            <div class="service-bottom">
-                <div class="service-item">
-                    <div class="icon"><i class="fa fa-chalkboard-teacher"></i></div>
-                    <h3>Teacher</h3>
-                    <p>I teach computer, English and music lessons. I am a head of Trainers at J and P Consults.
-                        Teaching has been my thing since my early teen ages. I've written a book on Music(Piano made
-                        simple).
-                    </p>
-                </div>
-                <div class="service-item">
-                    <div class="icon"> <i class="fa fa-dice-d20"></i> </div>
-                    <h3>Graphic Designer</h3>
-                    <p>I design indoor and outdoor graphics with <b>BEAUTIFUL</b> visualizations that can be published
-                        on printed media such as brochures or electronic media such as social networks apps and also can
-                        be included in video adverts.
-                    </p>
-                </div>
-                <div class="service-item">
-                    <div class="icon"> <i class="fa fa-globe"></i> </div>
-                    <h3>Web Designer</h3>
-                    <p>Yes, a web like this and so much MORE. I design websites aimed at personal targets as this one is
-                        for me, organizational targets with hospital M.S as an instance and also for companies.
-                    </p>
-                </div>
-                <div class="service-item">
-                    <div class="icon"> <i class="fa fa-money-bill-wave-alt"></i> </div>
-                    <h3>Accounting consultant</h3>
-                    <p>I am a treasurer at our local church. I also help organizations and companies in keeping records
-                        also with preparing and interpreting financial reports. I do it for individual clients too.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Service Section -->
-    <!-- Project Section -->
-    <section id="projects">
-        <div class="projects container">
-            <div class="projects-header">
-                <h2 class="section-title" style="margin-left: 5px">Recent <span>Projects</span></h2>
-            </div>
-            <div class="all-projects">
-                <div class="project-item">
-                    <div class="project-info">
-                        <h2>Project 1</h2>
-                        <h3>A hospital MS</h3>
-                        <p>
-                            Currently in progress. I am making a hospital software management system. The software is
-                            full equipped with all the management features that a hospital needs in terms of therapeutic
-                            coordination systems, administration affairs and financial policies as well. There is so
-                            much more to wait for when this project is being completed. It's my hope that you will like
-                            it!
-                        </p>
-                    </div>
-                    <div class="project-img">
-                        <img src="images/hospitalMS.jpeg" alt="hospital MS">
-                    </div>
-                </div>
-                <div class="project-item">
-                    <div class="project-info">
-                        <h2>Project 2</h2>
-                        <h3>A Door Alarm</h3>
-                        <p>I made an electronic door alarm. A good thing about it is that it does not only sense when
-                            the door is opened but it also senses when someone passes through the door when the door is
-                            open. I am working to give it a best performance which include sensing someone who comes so
-                            slowly when the door is open (which can't be recognized by my current circuit design). I am
-                            processing the images on this project.
-                        </p>
-                    </div>
-                    <div class="project-img">
-                        <img src="images/doorAlarm.png" alt="door alarm">
-                    </div>
-                </div>
-                <div class="project-item">
-                    <div class="project-info">
-                        <h2>Project 3</h2>
-                        <h3>A calculator</h3>
-                        <p>I made two of them actually. One of them is a normal calculator. Another is a student-based
-                            calculator which can calculate the various student's grading based on inputs it has received
-                            such as assignment, quiz, test and final examination scores. I made the software based on
-                            the visual basic 6 programming language. There is a lot more software projects that I've
-                            done as well.
-                        </p>
-                    </div>
-                    <div class="project-img">
-                        <img src="images/calculator.png" alt="calculator">
-                    </div>
-                </div>
-                <div class="project-item">
-                    <div class="project-info">
-                        <h2>Project 4</h2>
-                        <h3>Piano Nocturnes</h3>
-                        <p>
-                            I have made a set of musical nocturnes. Some fit to be a musical background for
-                            inspirational talks, some fit for movies and some fit for advertisement purposes. I think
-                            it's a blessing to me that it has happened they have a lot of funs out there. I am working
-                            on their privacy policy before I can put their link here for you to see listen and download
-                            them if you want. KEEP COMING HERE.
-                        </p>
-                    </div>
-                    <div class="project-img">
-                        <img src="images/piano.jpg" alt="piano">
-                    </div>
-                </div>
-                <div class="project-item">
-                    <div class="project-info">
-                        <h2>Project 5</h2>
-                        <h3>Transposition Accounting</h3>
-                        <p>
-                            The ultimate part I like in accounting. I figured out the most affordable and quicker cargo
-                            transposition method based on the probability of purchase order items lead time period in
-                            RELATION to various factors affecting transportation at a given area. The project is still
-                            in progress in terms of linking it to the current system of our (TZ) transportation systems.
-                            You will see it here when it is done.
-                        </p>
-                    </div>
-                    <div class="project-img">
-                        <img src="images/accounting.jpg" alt="accounting">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Project Section -->
-    <!-- About Section -->
-    <section id="about">
-        <div class="about container">
-            <div class="col-left">
-                <div class="about-img">
-                    <img src="images/pic2.JPG" alt="Jeremiah Joseph">
-                </div>
-            </div>
-            <div class="col-right">
-                <h2 class="section-title">About <span>me</span></h2>
-                <h3>Computer Scientist</h3>
-                <p>As a title to me, a computer scientist specialized on financial management systems describes me
-                    easily. Computer science (CS) related projects are mostly what I am used to and it is what I shortly
-                    like to relate my skills on when expressing what I am capable of doing. Though, if required in
-                    person, I can talk about my exceptional accounting math techniques. My life history is bult in
-                    music, it is more like a culture rather than a career to me!.
-                </p>
-                <a href="Documents/jeremiah-cv.pdf" class="cta" download>Download Resume</a>
-            </div>
-        </div>
-    </section>
-    <!-- End About Section -->
-
-    <!-- Hire Me Section -->
-    <section id="hireMe">
-        <h2 class="section-title" style="margin-left: 5px">Have a work to do? <span>Tell Me</span></h2>
-        <div class="hire">
-            <p onclick="document.getElementById('hireMeCta').click()"><i class="icon fas fa-laptop-code"></i>
-                <span>Computing</span> Customized software for desktop &
-                Mobile |
-                Computer networking |
-                Enhancing Computer Security | Computer Maintenance and Troubleshooting</p>
-            <p onclick="document.getElementById('hireMeCta').click()"><i class="icon fas fa-chart-line"></i>
-                <span>Finance</span> Preparing Financial Statements | Stock
-                Valuation | Warehouse Management
-                | Filing Tax Returns </p>
-            <p onclick="document.getElementById('hireMeCta').click()"> <i class="icon fas fa-music"></i>
-                <span>Music</span>Learn Keyboard | Learn Accoustic Guitar | Learn
-                Bass
-                Guitar | Learn
-                Drums | Learn Music Production</p>
-            <p onclick="document.getElementById('hireMeCta').click()"> <i class="icon fas fa-language"></i>
-                <span>Language</span>Learn Basic English | Intermediate English
-                |
-                Advanced English |
-                Communication English | Job English | Marketing English | Legal English
-            </p>
-        </div>
-        <a id="hireMeCta" class="cta" style="text-align: center" onclick="showThisCust(this)">Hire me</a>
-    </section>
-    <style>
-        #hireMe {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            flex-direction: column;
-            padding: 70px 30px;
-            background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-            margin-bottom: 100px;
-        }
-
-        #hireMe h2 {
-            font-size: 3rem;
-            color: white;
-            margin-bottom: 50px;
-        }
-
-        #hireMe h2 span {
-            padding: 10px !important;
-        }
-
-        #hireMe p {
-            color: white;
-            border: 3px solid white;
-            padding: 20px;
-            width: 95%;
-            border-radius: 50px 0 50px 0;
-            margin-bottom: 30px;
-            cursor: pointer;
-        }
-
-        #hireMe p:hover {
-            box-shadow: 0 0 30px crimson;
-        }
-
-        #hireMe p .icon {
-            color: crimson;
-            display: block;
-            font-size: 40px;
-            width: 100%;
-        }
-
-        #hireMe p span {
-            color: crimson;
-            display: block;
-            width: 100%;
-        }
-
-        #hireMe .cta {
-            width: fit-content;
-            align-self: center;
-            margin: 50px 10px 10px 10px;
-            color: white;
-            background-color: crimson;
-            cursor: pointer;
-
-        }
-
-        #hireMe .cta:hover {
-            color: black;
-            background-color: white;
-
-        }
-
-        @media only screen and (min-width: 768px) {
-            #hireMe {
-                flex-direction: column;
-            }
-
-            #hireMe .hire {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-
-            #hireMe h2 {
-                display: block;
-                font-size: 3rem;
-                color: white;
-
-            }
-
-            #hireMe p:nth-child(even) {
-                color: white;
-                border: 3px solid white;
-                padding: 20px;
-                width: 45%;
-                border-radius: 0 50px 50px 0;
-                margin: 10px;
-            }
-
-            #hireMe p:nth-child(odd) {
-                color: white;
-                border: 3px solid white;
-                padding: 20px;
-                width: 45%;
-                border-radius: 50px 0 0 50px;
-                margin: 10px;
-            }
-        }
-
-        @media only screen and (min-width: 1200px) {
-            #hireMe {
-                flex-direction: column;
-            }
-
-            #hireMe .hire {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-
-            #hireMe h2 {
-                display: block;
-                font-size: 3rem;
-                color: white;
-
-            }
-
-            #hireMe p:nth-child(even) {
-                color: white;
-                border: 3px solid white;
-                padding: 20px;
-                width: 45%;
-                border-radius: 50px;
-                margin: 10px;
-            }
-
-            #hireMe p:nth-child(odd) {
-                color: white;
-                border: 3px solid white;
-                padding: 20px;
-                width: 45%;
-                border-radius: 50px;
-                margin: 10px;
-            }
-
-            #thankss {
-                display: flex;
-                width: fit-content;
-                height: fit-content;
-                padding: 50px;
-                position: fixed;
-                top: 0;
-                left: 0;
-                margin: 50vh;
-                /* top: 40%;
-                left: 22.12%; */
-                z-index: 9000000;
-                background-color: rgba(220, 20, 60, .9);
+            Welcome to GBTC. This is the certificate level of the School of Ministry and is studied over a four months
+            period of time. This level has eight subjects. Notes for these lessons are here in the 'Downloads' menu. You
+            can also learn these lessons through video or audio that are also available here in the 'Videos' and
+            'Audios' menus. The results of the exams will appear in the 'Academics' menu when they are released by our
+            lecturer Bishop E. S. Ekong. To see all the GBTC content on this site look at the 'Snapshots' menu. You, as
+            a student, please check your passport photo and your name in the 'Profiles' menu and if they are not
+            correct, then press this button <i class="fas fa-podcast"></i> under your photo and then write your name
+            there as you need it to be written in your records in this college. We love you.
+        </marquee>
+        <span class="userName" id="codeep" style="display: none">
+            <span id="passEnter" style="
                 align-items: center;
-                align-content: center;
-                align-self: center;
                 justify-content: center;
-                color: white;
-                border-radius: 20px;
-                font-size: 30px;
                 text-align: center;
-                /* animation-name: thanks; */
-                animation-duration: 7s;
-                animation-fill-mode: forwards;
-                transform: scale(0);
+                padding: 0;
+                margin: 0;
+                text-align: center;
+                "><input type="password" autocomplete="off" id="codee"> <button type="button"
+                    onclick="showThisCustTst()" id="goPassword">Go</button></span>
+        </span>
+
+        <span class="userName" id="successEdit" style="
+        display: none;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        text-align: center;   
+        ">
+            Good to go<i style="color: green;  margin-left: 5px;" class="fas fa-check-circle"></i>
+        </span>
+
+        <style>
+            #headerTop {
+                font-size: x-large;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 0;
             }
-        }
-    </style>
-    <!-- End of hire Me Section -->
 
-    <!-- About Section -->
-    <section id="gallery" style="margin-bottom: 30px">
-        <h2 id="heree" class="section-title">My<span>Gallery</span></h2>
+            #codeep {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+            }
 
-        <div class="galleryy">
-            <div data-src="./images/Commit1/Jere (1)" class="my-img portrait">
-                <img src="./images/Commit1/Jere (1).jpg" alt="Kaka Jere" onclick="showThis(this)">
-            </div>
-            <div data-src="./images/Commit1/Jere (2)" class="my-img portrait">
-                <img src="./images/Commit1/Jere (2).jpg" alt="Kaka Jere" onclick="showThis(this)">
-            </div>
-            <div data-src="./images/Commit1/Jere (3).jpg" class="my-img portrait">
-                <img src="./images/Commit1/Jere (3).jpg" alt="Kaka Jere" onclick="showThis(this)">
-            </div>
+            #codee {
+                width: 70%;
+            }
 
-            <div data-src="images/pic1.jpg" class="my-img  landscape" onclick="showThis(this)">
-                <img src="images/pic1.jpg" alt="Kaka Jere" onclick="showThis(this)">
-            </div>
-            <div data-src="images/Commit1/Jere_Land (3).jpg" class="my-img  landscape" onclick="showThis(this)">
-                <img src="images/Commit1/Jere_Land (3).jpg" alt="Kaka Jere" onclick="showThis(this)">
-            </div>
-            <div data-src="images/Commit1/Jere_Land (4).jpg" class="my-img  landscape" onclick="showThis(this)">
-                <img src="images/Commit1/Jere_Land (4).jpg" alt="Kaka Jere" onclick="showThis(this)">
-            </div>
-            <div data-src="images/Commit1/Jere_Land (1).jpg" class="my-img  landscape" onclick="showThis(this)">
-                <img src="images/Commit1/Jere_Land (1).jpg" alt="Kaka Jere" onclick="showThis(this)">
-            </div>
-            <div data-src="images/pic2.JPG" class="my-img portrait">
-                <img src="images/pic2.JPG" alt="Kaka Jere" onclick="showThis(this)">
-            </div>
-            <div data-src="images/Commit1/Jere_Port (1).jpg" class="my-img portrait">
-                <img src="images/Commit1/Jere_Port (1).jpg" alt="Kaka Jere" onclick="showThis(this)">
-            </div>
-            <div data-src="images/Commit1/Jere_Port (2).jpg" class="my-img portrait">
-                <img src="images/Commit1/Jere_Port (2).jpg" alt="Kaka Jere" onclick="showThis(this)">
-            </div>
+            #goPassword {
+                font-family: cambria;
+                text-align: center;
+                font-size: 1.5rem;
+                height: 70%;
+                width: 10%;
+                text-align: center;
+                padding: 3px !important;
+                /* color: red; */
+            }
 
-            <div data-src="images/Commit1/Jere_Land (5).jpg" class="my-img  landscape" onclick="showThis(this)">
-                <img src="images/Commit1/Jere_Land (5).jpg" alt="Kaka Jere" onclick="showThis(this)">
-            </div>
-            <div data-src="images/Commit1/Jere_Land (2).jpg" class="my-img  landscape" onclick="showThis(this)">
-                <img src="images/Commit1/Jere_Land (2).jpg" alt="Kaka Jere" onclick="showThis(this)">
-            </div>
-            <style>
-                #gallery {
-                    padding-top: 80px;
-                    min-height: 100vh;
+            @media only screen and (max-width: 1200px) {
+
+                /* @media only screen and (max-width: 768px) { */
+                #sideMenu .userDet {
+                    height: 30%;
+                    width: 100%;
                     display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
                     flex-direction: column;
-                    align-content: center;
+                    border-bottom: .5px solid var(--transparency);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    padding-bottom: 5%;
                 }
 
-                #gallery h2 {
+                #sideMenu .userDet img {
+                    background-image: url(imagePlaceholder.jpg);
+                    height: 25%;
+                    max-width: 100%;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    margin-bottom: 8%;
+                    margin-top: 1%;
+                }
+
+                #sideMenu .userDet .userName {
+                    margin-top: 3%;
+                    font-size: 1rem;
+                    color: var(--color4);
+                    padding: 5% 5%;
+                    background: var(--blur);
+                    border-left: 4px solid var(--color4);
+                    border-right: 4px solid var(--color4);
+                    user-select: none;
+                    cursor: pointer;
+                    border-top: .5px solid var(--color2);
+                    border-bottom: .5px solid var(--color2);
+                    box-shadow: 0 0 10px var(--color2);
+                }
+
+                #sideMenu .sideMenBut {
+                    color: var(--color4);
+                    width: 100%;
+                    background-color: var(--blur);
+                    position: absolute;
+                    top: 25vh;
+                    height: calc(100vh - 30vh);
+                    overflow-y: auto;
+                    z-index: -2;
+                    user-select: none;
+                    cursor: pointer;
+
+                }
+
+
+                #sideMenu .sideMenBut ul {
+                    margin-left: 0;
+                    padding-left: 0;
+                }
+
+                #sideMenu .sideMenBut ul li {
+                    padding-left: 1px;
+                    line-height: 25px;
+                    background-color: var(--blur);
+                    border-bottom: 1px solid var(--transparency2);
+                    font-size: 0.85rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    text-align: center;
+                    align-items: center;
+                }
+
+                #sideMenu .sideMenBut ul li:hover {
+                    background-color: var(--color1);
+                }
+
+                #sideMenu .sideMenBut ul li *:first-child {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    margin-left: 0px;
+                    padding-left: 0px;
+                    margin-right: 0px;
+                    padding-right: 0px;
+                    color: var(--color3);
+                    font-size: 7rem;
+                }
+
+                #sideMenu .sideMenBut ul li *:last-child {
+                    margin-top: 5px;
+                    margin-bottom: 10px;
+                    margin-left: 0px;
+                    padding-left: 0px;
+                    margin-right: 0;
+                    color: var(--color3);
+                    font-size: 3rem;
+                }
+
+                #menuHolder {
+                    cursor: none;
+                }
+
+                #sideMenu .sideMenBut ul li.active {
+                    border-right: 5px solid var(--color3);
+                    background-color: var(--color3);
+                }
+
+                #sideMenu .sideMenBut ul li.active *:first-child {
+                    border-right: 5px solid var(--color3);
+                    background-color: var(--color3);
+                    color: white;
+                }
+
+            }
+
+            @media only screen and (max-width: 768px) {
+
+                /* snapshot for mobile */
+                body .snap {
+                    display: flex;
+                    flex-direction: column;
+                    height: 150px;
+                    width: 300px;
+                    background-color: rgb(49, 45, 45);
+                    border-radius: 50px;
+                    position: relative;
+                    overflow: hidden;
+                    margin: 10px;
+                    margin-left: 2px !important;
+                }
+
+                body .snap .upper {
+                    display: flex;
+                    flex-direction: row;
+                    font-size: 60px;
+                    padding: 10% 10% 12% 10%;
+                    justify-content: center;
+                    height: 67%;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    background-color: white;
+                    color: var(--color1);
+
+                }
+
+                body .snap .upper .iconn {
+                    width: 50%;
+                    margin-left: 10px;
+                    font-size: 80px;
+
+
+                }
+
+                body .snap .upper .number {
+                    width: 50%;
+                    margin-right: 50px;
+                    margin-left: 10px;
+                }
+
+                body .snap .lower {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 30px;
+                    flex-direction: row;
+                    height: 33%;
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    background-color: rgb(49, 45, 45);
+                    color: white
+                }
+
+                /* end for mobile snapshot */
+
+
+                /* mobile video*/
+                body #videos {
+                    gap: 0;
+                }
+
+                body #videos .videoCont {
+                    width: 90% !important;
+                    height: 300px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                    margin: 30px 10px;
+
+                }
+
+
+                body #videos video {
+                    width: 100%;
+                    height: 300px;
+                    border-radius: 10px 10px 0 0;
+                    background-color: var(--blur);
+                }
+
+
+                body #videos .download {
+                    width: 100%;
+                    background-color: var(--blur);
+                    padding: 5px;
+                    display: flex;
+                    justify-content: center !important;
+                    align-items: center;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                    border-radius: 0 0 10px 10px;
+                }
+
+                body #videos .download a {
+                    color: var(--color4);
+                    font-size: 20px;
+                    text-decoration: none;
                     text-align: center;
                 }
 
-                #gallery .galleryy {
+                body #videos .download a * {
+                    margin: 5px 5px;
+                    font-size: 20px;
+                    float: right;
+                    width: 100%;
                     display: flex;
-                    flex-wrap: wrap;
-                    align-content: flex-start;
+                    justify-content: center !important;
+                    align-items: center;
+                    text-align: center;
                 }
 
-                #gallery .portrait {
-                    width: 30%;
-                    margin: 2% 1%;
-                    padding: 0;
+                /* end for mobile video */
+
+
+                /* mobile audio */
+
+                body #audios .audioCont {
+                    width: 90% !important;
+                    height: fit-content;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                    margin: 20px 10px;
+                    border-radius: 30px 30px 0 0;
                 }
 
-                #gallery .landscape {
-                    width: 45%;
-                    margin: 2% 1.99%;
+
+                body #audios audio {
+                    width: 100%;
+                    background-color: var(--blur);
+                    border-radius: 30px 30px 0 0;
                 }
 
-                #gallery img {
-                    border-radius: 20px;
+
+                body #audios .download {
+                    width: 100%;
+                    background-color: var(--blur);
+                    padding: 5px;
+                    display: flex;
+                    justify-content: center !important;
+                    align-items: center;
+                    flex-direction: column;
+                    box-sizing: border-box;
+                    border-radius: 0 0 10px 10px;
                 }
-            </style>
-        </div>
+
+                body #audios .download a {
+                    color: var(--color4);
+                    font-size: 20px;
+                    text-decoration: none;
+                }
+
+                body #audios .download a * {
+                    margin: 5px 5px;
+                    font-size: 20px;
+                    float: right;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center !important;
+                    align-items: center;
+                }
+
+
+                /* end mobile audio */
+
+                /* academic for mobile */
+                body .snap2 {
+                    display: flex;
+                    flex-direction: column;
+                    height: 150px;
+                    width: 300px;
+                    background-color: rgb(49, 45, 45);
+                    border-radius: 50px;
+                    position: relative;
+                    overflow: hidden;
+                    margin: 10px;
+                    margin-left: 2px !important;
+                }
+
+                /* End of acaemic for mobile */
+
+            }
+        </style>
     </section>
-    <!-- End About Section -->
+    <script>
+        function cclass(elem) {
+            $(elem).addClass('active').siblings().removeClass('active');
+            var ky = $(elem).attr('data-part');
+            var kyz = '#' + ky;
+            $(kyz).css('display', 'flex').siblings().css('display', 'none');
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="contact container">
-            <div>
-                <h2 class="section-title">Contact <span>Info</span></h2>
+            var elt = document.querySelector('body #mainContent');
+            elt.scrollTo(0, 0);
+        }
+
+        function cclassWait(eleme) {
+            const codeet = codee.value;
+            var welcomeNote = 'Welcome ' + codeet;
+
+            if (codee.value == 'Eligibo Kavishe' || codee.value == 'Joseph Safisha' || codee.value == 'Jeremiah Joseph' || codee.value == 'Bishop Ekong') {
+                alert(welcomeNote);
+                cclass(eleme)
+            } else {
+
+                alert('Please log in first');
+            }
+        }
+
+
+        function lgo() {
+            codee.value = '';
+            document.getElementById('defaultMenu').click();
+        }
+
+
+
+    </script>
+    <style>
+        .hideFirst {
+            display: none;
+        }
+    </style>
+    <script>
+    </script>
+
+    <section id="centerContent">
+        <section id="sideMenu">
+            <div class="userDet">
+                <img id="profImg" src="../GBTC Graphics/Logo_png.png" onclick="lgo()" alt="" class="userPic">
+                <span class="userName" onclick="showThisCustTsti()">GBTC Arusha</span>
             </div>
-            <div class="contact-items">
-                <div class="contact-item">
-                    <div class="icon"> <i class="fas fa-mobile"></i> </div>
-                    <div class="contact-info">
-                        <h2>Phone</h2>
-                        <h3><a href="tel:+255757835930">+255 (0) 757 835 930</a></h3>
-                        <h3><a href="tel:+255626499708">+255 (0) 626 499 708</a></h3>
+            <div id="sideMenBut" class="sideMenBut">
+                <ul id="menuHolder">
+                    <li data-part="snapshots" id="idsnapshots" onclick="cclass(this)"> <i class="fas fa-chart-bar"></i>
+                        Snapshots</li>
+                    <li data-part="everyKitu" id="defaultMenu" onclick="cclass(this)" class="active"><i
+                            class="fas fa-user-circle"></i>Profiles
+                    </li>
+                    <li data-part="downloads" id="iddownloads" onclick="cclass(this)"> <i class="fas fa-download"></i>
+                        Downloads</li>
+                    <li data-part="academics" id="idacademics" onclick="cclass(this)"> <i
+                            class="fas fa-pen"></i>Academics</li>
+                    <li data-part="videos" id="idvideos" onclick="cclass(this)"> <i class="fas fa-play"></i>Education
+                        Videos</li>
+                    <li data-part="audios" id="idaudios" onclick="cclass(this)"> <i class="fas fa-music"></i> Audios
+                    </li>
+                    <li data-part="questions" id="idquestions" onclick="cclassWait(this)"> <i
+                            class="fas fa-question"></i> Questions</li>
+                    <li data-part="ordination" id="idordination" onclick="cclassWait(this)"> <i
+                            class="fas fa-cross"></i> Ordination</li>
+                    <li data-part="leadership" id="idleadership" onclick="cclass(this)"> <i class="fas fa-user"></i>
+                        Leadership Positions
+                    </li>
+                    <li data-part="finRep" id="idfinRep" onclick="cclass(this)"> <i class="fas fa-coins"></i> Financial
+                        Reports</li>
+                    <li data-part="picGal" id="idpicGal" onclick="cclass(this)"> <i class="fas fa-image"></i> Our
+                        Picture Gallery</li>
+                    <li data-part="vidGal" id="idvidGal" onclick="cclass(this)"> <i class="fas fa-play"></i> Our Video
+                        gallery</li>
+                    <li data-part="charProg" id="idcharProg" onclick="cclass(this)"> <i
+                            class="fas fa-hand-holding-heart"></i> Our
+                        Charity Programs
+                    </li>
+                    <script>
+                        var menu1 = document.getElementById('idsnapshots');
+                        var menu2 = document.getElementById('defaultMenu');
+                        var menu3 = document.getElementById('iddownloads');
+                        var menu4 = document.getElementById('idacademics');
+                        var menu5 = document.getElementById('idvideos');
+                        var menu6 = document.getElementById('idaudios');
+                        var menu7 = document.getElementById('idquestions');
+                        var menu8 = document.getElementById('idordination');
+                        var menu9 = document.getElementById('idleadership');
+                        var menu10 = document.getElementById('idfinRep');
+                        var menu11 = document.getElementById('idpicGal');
+                        var menu12 = document.getElementById('idvidGal');
+                        var menu13 = document.getElementById('idcharProg');
+                        var sideMenBut = document.getElementById('sideMenBut');
+                    </script>
+                </ul>
+            </div>
+        </section>
+        <section id="mainContent">
+            <div id="everyKitu" class="allThings">
+                <div class="imageContainer" data-poze="National Coordinator">
+                    <img src="../Passports/Eligibo.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Eligibo Leodigard Kavishe"
+                            onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Eligibo Leodigard Kavishe</div>
                     </div>
                 </div>
-                <div class="contact-item">
-                    <div class="icon"> <i id="mailE" class="fa fa-envelope-open"></i> </div>
-                    <div class="contact-info">
-                        <h2>Email</h2>
-                        <h3><a href="mailto:jictoejeremiah@gmail.com">jictoejeremiah@gmail.com</a></h3>
-                        <h3><a href="mailto:josephjeremiah458@gmail.com">josephjeremiah458@gmail.com</a></h3>
+                <div class="imageContainer" data-poze="Class President">
+                    <img src="icon1.png" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Jeremiah Joseph Mushi " onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Jeremiah Joseph Mushi </div>
                     </div>
                 </div>
-                <div class="contact-item">
-                    <div class="icon"> <i class="fa fa-location-arrow"></i> </div>
-                    <div class="contact-info">
-                        <h2>Address</h2>
-                        <h3>Arusha, Tanzania</h3>
-                        <h3>Sanawari</h3>
+                <div class="imageContainer" data-poze="Class Vice President">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0078.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Joseph Safisha Mnyankal" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Joseph Safisha Mnyankal</div>
                     </div>
+                </div>
+                <div class="imageContainer" data-poze="Class Secretary">
+                    <img src="../Passports/Dorcas.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Dorcas Eligibo Kavishe" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Dorcas Eligibo Kavishe</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Time Keeper">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0006.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Joseph Mariatabu Kyameli Mushi"
+                            onclick="showThisCust(this)"></i>
+
+                        <div class="descTxt" style="width: 70%">Joseph Mariatabu Kyameli Mushi</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Tresurer">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0055.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Esther Abel Laizer" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Esther Abel Laizer</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/Judith.jpg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Judith Joseph Mushi" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Judith Joseph Mushi</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0019.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Alex Samson Kiuko" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Alex Samson Kiuko</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0004.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Aminieli David Mgonja" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Aminieli David Mgonja</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0010.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Anderson Julius Mathayo" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Anderson Julius Mathayo</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0027.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Angela Amami Luter" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Angela Amami Luter</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0074.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Daniel Yohana Vaneth" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Daniel Yohana Vaneth</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0060.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Florence Joseph Mollel" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Florence Joseph Mollel</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0048.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Godliving James Urassa" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Godliving James Urassa</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0051.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Patrick Veriani Kiwango" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Patrick Veriani Kiwango</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0068.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Irene Elias Menana " onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Irene Elias Menana</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/Sabina.jpg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Sabina Peter Dunvey" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Sabina Peter Dunvey</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0045.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Laheri Mailo Machumber" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Laheri Mailo Machumber</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0083.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Gloria Adamu Mkongwa " onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Gloria Adamu Mkongwa</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0065.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Beatrice Jastine Kimario" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Beatrice Jastine Kimario</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0043.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Lucy Elias Muhoma" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Lucy Elias Muhoma</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0041.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Beatrice Bryson Kiharuzi" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Beatrice Bryson Kiharuzi</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0029.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Joyce Nestory Mlacha " onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Joyce Nestory Mlacha </div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0025.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Dina Maullo Mbogo" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Dina Maullo Mbogo</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0070.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Rachel David Mfunanga" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Rachel David Mfunanga</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0076.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Speratus Kassa" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Speratus Kassa</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0039.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Laurent Enea Madeghe" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Laurent Enea Madeghe</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0033.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Joseph Emanuel Ayo" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Joseph Emanuel Ayo</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0021.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Seth Emmanuel Gundula " onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Seth Emmanuel Gundula</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0037.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Seth Emanuely Seth " onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Seth Emanuely Seth </div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Jacob Ayubu Urassa" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Jacob Ayubu Urassa</div>
+                    </div>
+                </div>
+                <div class="imageContainer" data-poze="Student">
+                    <img src="../Passports/added@17-10-2022/IMG-20221011-WA0053.jpeg" alt="">
+                    <div class="desc">
+                        <div class="download">
+                            <a download><i class="fas fa-download"></i></a>
+                        </div>
+                        <i class="fas fa-podcast" onplaying="Elisha John Mollel" onclick="showThisCust(this)"></i>
+                        <div class="descTxt">Elisha John Mollel</div>
+                    </div>
+                </div>
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere</div>
+
+
+
+            </div>
+            <div style="display: none" id="snapshots" class="hideFirst allThings">
+                <div class="snap">
+                    <div class="upper" onclick="menu2.click()">
+                        <i style="color: rgba(117, 173, 12, 0.788)" class="iconn fas fa-users"></i>
+                        <div class="number">32</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Registered</span>
+                    </div>
+                </div>
+                <div class="snap" onclick="menu11.click()">
+                    <div class="upper">
+                        <i style="color: rgb(111, 18, 139)" class="iconn fas fa-image"></i>
+                        <div class="number">31</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Pictures</span>
+                    </div>
+                </div>
+                <div class="snap" onclick="menu3.click()">
+                    <div class="upper">
+                        <i style="color: rgb(192, 5, 5)" class="iconn fas fa-file-pdf"></i>
+                        <div class="number">74</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">PDF Files</span>
+                    </div>
+                </div>
+                <div class="snap" onclick="menu3.click()">
+                    <div class="upper">
+                        <i style="color: blue" class="iconn fas fa-file-word"></i>
+                        <div class="number">1</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Word Files</span>
+                    </div>
+                </div>
+                <div class="snap" onclick="menu3.click()">
+                    <div class="upper">
+                        <i style="color: green" class="iconn fas fa-file-excel"></i>
+                        <div class="number">0</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Excel Files</span>
+                    </div>
+                </div>
+                <div class="snap" onclick="menu3.click()">
+                    <div class="upper">
+                        <i style="color: brown" class="iconn fas fa-file-powerpoint"></i>
+                        <div class="number">0</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">P.Point Files</span>
+                    </div>
+                </div>
+                <div class="snap" onclick="menu3.click()">
+                    <div class="upper">
+                        <i style="color: rgb(42, 140, 165)" class="iconn fas fa-archive"></i>
+                        <div class="number">3</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Compressed Files</span>
+                    </div>
+                </div>
+                <div class="snap" onclick="menu6.click()">
+                    <div class="upper">
+                        <i style="color: rgb(167, 164, 7)" class="iconn fas fa-music"></i>
+                        <div class="number">8</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Audios</span>
+                    </div>
+                </div>
+                <div class="snap" onclick="menu12.click()">
+                    <div class="upper">
+                        <i style="color: rgb(10, 65, 78)" class="iconn fas fa-video"></i>
+                        <div class="number">0</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Movies</span>
+                    </div>
+                </div>
+                <div class="snap" onclick="menu12.click()">
+                    <div class="upper">
+                        <i style="color: rgb(255, 115, 0)" class="iconn fas fa-tv"></i>
+                        <div class="number">0</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Documentaries</span>
+                    </div>
+                </div>
+                <div class="snap" onclick="menu5.click()">
+                    <div class="upper">
+                        <i style="color: rgb(110, 40, 8)" class="iconn fas fa-film"></i>
+                        <div class="number">5</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Video Songs</span>
+                    </div>
+                </div>
+                <div class="snap" onclick="menu12.click()">
+                    <div class="upper">
+                        <i style="color: rgb(21, 32, 36)" class="iconn fas fa-file-video"></i>
+                        <div class="number">0</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">Clips</span>
+                    </div>
+                </div>
+                <div class="snap"
+                    onclick="alert('KakaJere reminds you to be prepared for the exams that will take place on Saturday 5th, November - 2022'); alert(`Please complete your registration fees if you know you haven't`); alert('Please if you have any question related to or not related to our studies but that it is of faith then please see one of the top leader of our class and your question will be submitted to our lecturer Bishop Ekong')">
+                    <div class="upper">
+                        <i style="color: rgb(255, 0, 76)" class="iconn fas fa-bell"></i>
+                        <div class="number">3</div>
+                    </div>
+                    <div class="lower">
+                        <span class="title">KakaJere Notices</span>
+                    </div>
+                </div>
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere</div>
+
+                <style>
+                    body .snap {
+                        display: flex;
+                        flex-direction: column;
+                        height: 150px;
+                        width: 300px;
+                        background-color: rgb(49, 45, 45);
+                        border-radius: 50px;
+                        position: relative;
+                        overflow: hidden;
+                        margin: 10px;
+                    }
+
+                    body .snap .upper {
+                        display: flex;
+                        flex-direction: row;
+                        font-size: 60px;
+                        padding: 10% 10% 12% 10%;
+                        justify-content: center;
+                        height: 67%;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        background-color: white;
+                        color: var(--color1);
+
+                    }
+
+                    body .snap .upper .iconn {
+                        width: 50%;
+                        margin-left: 10px;
+                        font-size: 80px;
+
+
+                    }
+
+                    body .snap .upper .number {
+                        width: 50%;
+                        margin-right: 50px;
+                        margin-left: 10px;
+                    }
+
+                    body .snap .lower {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 30px;
+                        flex-direction: row;
+                        height: 33%;
+                        width: 100%;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        background-color: rgb(49, 45, 45);
+                        color: white
+                    }
+                </style>
+            </div>
+            <div style="display: none" id="downloads" class="hideFirst allThings">
+
+                <p>Download Notes</p>
+
+
+                <a class="sub0" href="../GBTC-Subjects/GBTC-English_Final.pdf" download>All English Subjects (.pdf)<i
+                        class="fas fa-download"></i></a>
+                <a class="sub0" href="../GBTC-Subjects/GBTC-Swahili_Final.pdf" download>All Swahili Subjects (.pdf)<i
+                        class="fas fa-download"></i></a>
+                <a class="sub0" href="../GBTC-Subjects/GBTC-English & Swahili_Final.pdf" download>All Subjects (Eng &
+                    Swh) (.pdf)<i class="fas fa-download"></i></a>
+                <a class="sub0" href="../GBTC-Subjects/English.zip" download>All English Subjects (.zip)<i
+                        class="fas fa-download"></i></a>
+                <a class="sub0" href="../GBTC-Subjects/Swahili.zip" download>All Swahili Subjects (.zip)<i
+                        class="fas fa-download"></i></a>
+                <a class="sub0" href="../GBTC-Subjects/GBTC-Subjects.zip" download>All Subjects (Eng & Swh) (.zip)<i
+                        class="fas fa-download"></i></a>
+
+
+                <!-- Basic Christian Doctrine -->
+                <a class="sub1"
+                    href="../GBTC-Subjects/English/Basic Christian Doctrine/Basic Christian Doctrine - Lesson 1.pdf"
+                    download>Basic Christian Doctrine - Lesson 1<i class="fas fa-download"></i></a>
+                <a class="sub1"
+                    href="../GBTC-Subjects/English/Basic Christian Doctrine/Basic Christian Doctrine - Lesson 2.pdf"
+                    download>Basic Christian Doctrine - Lesson 2<i class="fas fa-download"></i></a>
+                <a class="sub1"
+                    href="../GBTC-Subjects/English/Basic Christian Doctrine/Basic Christian Doctrine - Lesson 3.pdf"
+                    download>Basic Christian Doctrine - Lesson 3<i class="fas fa-download"></i></a>
+                <a class="sub1"
+                    href="../GBTC-Subjects/English/Basic Christian Doctrine/Basic Christian Doctrine - Lesson 4.pdf"
+                    download>Basic Christian Doctrine - Lesson 4<i class="fas fa-download"></i></a>
+                <a class="sub1"
+                    href="../GBTC-Subjects/English/Basic Christian Doctrine/Basic Christian Doctrine - Lesson 5.pdf"
+                    download>Basic Christian Doctrine - Lesson 5<i class="fas fa-download"></i></a>
+                <a class="sub1"
+                    href="../GBTC-Subjects/English/Basic Christian Doctrine/Basic Christian Doctrine - Lesson 6.pdf"
+                    download>Basic Christian Doctrine - Lesson 6<i class="fas fa-download"></i></a>
+                <!-- End Basic Christian Doctrine -->
+
+                <!-- Basic Christian Doctrine Swh -->
+                <a class="sub1"
+                    href="../GBTC-Subjects/Swahili/Basic Christian Doctrine/Basic Christian Doctrine - Lesson 1 Swahili_edit.pdf"
+                    download>Basic Christian Doctrine - Lesson 1 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub1"
+                    href="../GBTC-Subjects/Swahili/Basic Christian Doctrine/Basic Christian Doctrine - Lesson 2 Swahili_edit.pdf"
+                    download>Basic Christian Doctrine - Lesson 2 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub1"
+                    href="../GBTC-Subjects/Swahili/Basic Christian Doctrine/Basic Christian Doctrine - Lesson 3 Swahili_edit.pdf"
+                    download>Basic Christian Doctrine - Lesson 3 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub1"
+                    href="../GBTC-Subjects/Swahili/Basic Christian Doctrine/Basic Christian Doctrine - Lesson 4 Swahili_edit.pdf"
+                    download>Basic Christian Doctrine - Lesson 4 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub1"
+                    href="../GBTC-Subjects/Swahili/Basic Christian Doctrine/Basic Christian Doctrine - Lesson 5 Swahili_edit.pdf"
+                    download>Basic Christian Doctrine - Lesson 5 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub1"
+                    href="../GBTC-Subjects/Swahili/Basic Christian Doctrine/Basic Christian Doctrine - Lesson 6 Swahili_edit.pdf"
+                    download>Basic Christian Doctrine - Lesson 6 (Swh)<i class="fas fa-download"></i></a>
+                <!-- End Basic Christian Doctrine Swh-->
+
+                <!-- Bible study methods -->
+                <a class="sub2" href="../GBTC-Subjects/English/Bible Study Methods/Bible Study Methods - Lesson 1.pdf"
+                    download>Bible Study Methods - Lesson 1<i class="fas fa-download"></i></a>
+                <a class="sub2" href="../GBTC-Subjects/English/Bible Study Methods/Bible Study Methods - Lesson 2.pdf"
+                    download>Bible Study Methods - Lesson 2<i class="fas fa-download"></i></a>
+                <a class="sub2" href="../GBTC-Subjects/English/Bible Study Methods/Bible Study Methods - Lesson 3.pdf"
+                    download>Bible Study Methods - Lesson 3<i class="fas fa-download"></i></a>
+                <a class="sub2" href="../GBTC-Subjects/English/Bible Study Methods/Bible Study Methods - Lesson 4.pdf"
+                    download>Bible Study Methods - Lesson 4<i class="fas fa-download"></i></a>
+                <!-- End Bible study methods -->
+
+                <!-- Bible study methods Swh -->
+                <a class="sub2"
+                    href="../GBTC-Subjects/Swahili/Bible Study Methods/Bible Study Methods - Lesson 1 Swahili.pdf"
+                    download>Bible Study Methods - Lesson 1 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub2"
+                    href="../GBTC-Subjects/Swahili/Bible Study Methods/Bible Study Methods - Lesson 2 Swahili.pdf"
+                    download>Bible Study Methods - Lesson 2 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub2"
+                    href="../GBTC-Subjects/Swahili/Bible Study Methods/Bible Study Methods - Lesson 3 Swahili.pdf"
+                    download>Bible Study Methods - Lesson 3 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub2"
+                    href="../GBTC-Subjects/Swahili/Bible Study Methods/Bible Study Methods - Lesson 4 Swahili.pdf"
+                    download>Bible Study Methods - Lesson 4 (Swh)<i class="fas fa-download"></i></a>
+                <!-- End Bible study methods Swh-->
+
+                <!-- Bible survey -->
+                <a clas="sub3" href="../GBTC-Subjects/English/Bible Survey/Bible Survey - Lesson 1.pdf" download>Bible
+                    Survey - Lesson 1<i class="fas fa-download"></i></a>
+                <a clas="sub3" href="../GBTC-Subjects/English/Bible Survey/Bible Survey - Lesson 2.pdf" download>Bible
+                    Survey - Lesson 2<i class="fas fa-download"></i></a>
+                <a clas="sub3" href="../GBTC-Subjects/English/Bible Survey/Bible Survey - Lesson 3.pdf" download>Bible
+                    Survey - Lesson 3<i class="fas fa-download"></i></a>
+                <!-- End Bible survey -->
+
+                <!-- Bible survey Swh -->
+                <a clas="sub3" href="../GBTC-Subjects/Swahili/Bible Survey/Bible Survey - Lesson 1 Swahili_edit.pdf"
+                    download>Bible Survey - Lesson 1 (Swh)<i class="fas fa-download"></i></a>
+                <a clas="sub3" href="../GBTC-Subjects/Swahili/Bible Survey/Bible Survey - Lesson 2 Swahili_edit.pdf"
+                    download>Bible Survey - Lesson 2 (Swh)<i class="fas fa-download"></i></a>
+                <a clas="sub3" href="../GBTC-Subjects/Swahili/Bible Survey/Bible Survey - Lesson 3 Swahili_edit.pdf"
+                    download>Bible Survey - Lesson 3 (Swh)<i class="fas fa-download"></i></a>
+                <!-- End Bible survey Swh-->
+
+                <!-- Christian Character -->
+                <a class="sub4" href="../GBTC-Subjects/English/Christian Character/Christian Character - Lesson 1.pdf"
+                    download>Christian Character - Lesson 1<i class="fas fa-download"></i></a>
+                <a class="sub4" href="../GBTC-Subjects/English/Christian Character/Christian Character - Lesson 2.pdf"
+                    download>Christian Character - Lesson 2<i class="fas fa-download"></i></a>
+                <!-- End Christian Character --2
+
+                <!-- Christian Character Swh-->
+                <a class="sub4"
+                    href="../GBTC-Subjects/Swahili/Christian Character/Christian Character - Lesson 1 Swahili_edit.pdf"
+                    download>Christian Character - Lesson 1 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub4"
+                    href="../GBTC-Subjects/Swahili/Christian Character/Christian Character - Lesson 2 Swahili_edit.pdf"
+                    download>Christian Character - Lesson 2 (Swh)<i class="fas fa-download"></i></a>
+                <!-- End Christian Character Swh -->
+
+                <!-- Christian Leadership -->
+                <a class="sub5"
+                    href="../GBTC-Subjects/English/Christian Leadership/Leadership Principles - Lesson 1.pdf"
+                    download>Christian Leadership Principles - Lesson 1<i class="fas fa-download"></i></a>
+                <a class="sub5"
+                    href="../GBTC-Subjects/English/Christian Leadership/Leadership Principles - Lesson 2.pdf"
+                    download>Christian Leadership Principles - Lesson 2<i class="fas fa-download"></i></a>
+                <a class="sub5"
+                    href="../GBTC-Subjects/English/Christian Leadership/Leadership Principles - Lesson 3.pdf"
+                    download>Christian Leadership Principles - Lesson 3<i class="fas fa-download"></i></a>
+                <a class="sub5"
+                    href="../GBTC-Subjects/English/Christian Leadership/Leadership Principles - Lesson 4.pdf"
+                    download>Christian Leadership Principles - Lesson 4<i class="fas fa-download"></i></a>
+                <!-- End Christian Leadership -->
+
+                <!-- Christian Leadership Swh -->
+                <a class="sub5"
+                    href="../GBTC-Subjects/Swahili/Leadership Principles/Leadership Principles - Lesson 1 Swahili_edit.pdf"
+                    download>Christian Leadership Principles - Lesson 1 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub5"
+                    href="../GBTC-Subjects/Swahili/Leadership Principles/Leadership Principles - Lesson 2 Swahili_edit.pdf"
+                    download>Christian Leadership Principles - Lesson 2 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub5"
+                    href="../GBTC-Subjects/Swahili/Leadership Principles/Leadership Principles - Lesson 3 Swahili_edit.pdf"
+                    download>Christian Leadership Principles - Lesson 3 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub5"
+                    href="../GBTC-Subjects/Swahili/Leadership Principles/Leadership Principles - Lesson 4 Swahili_edit.pdf"
+                    download>Christian Leadership Principles - Lesson 4 (Swh)<i class="fas fa-download"></i></a>
+                <!-- End Christian Leadership Swh-->
+
+                <!-- Evangelism and Discipleship4-->
+                <a class="sub6"
+                    href="../GBTC-Subjects/English/Evangelism and Discipleship/Evangelism & Discipleship - Lesson 1.pdf"
+                    download>Evangelism & Discipleship - Lesson 1<i class="fas fa-download"></i></a>
+                <a class="sub6"
+                    href="../GBTC-Subjects/English/Evangelism and Discipleship/Evangelism & Discipleship - Lesson 2.pdf"
+                    download>Evangelism & Discipleship - Lesson 2<i class="fas fa-download"></i></a>
+                <a class="sub6"
+                    href="../GBTC-Subjects/English/Evangelism and Discipleship/Evangelism & Discipleship - Lesson 3.pdf"
+                    download>Evangelism & Discipleship - Lesson 3<i class="fas fa-download"></i></a>
+                <!-- End Evangelism and Discipleship -->
+
+                <!-- Evangelism and Discipleship Swh-->
+                <a class="sub6"
+                    href="../GBTC-Subjects/Swahili/Evangelism & Discipleship/Evangelism & Discipleship - Lesson 1 Swahili.pdf"
+                    download>Evangelism & Discipleship - Lesson 1 Swh<i class="fas fa-download"></i></a>
+                <a class="sub6"
+                    href="../GBTC-Subjects/Swahili/Evangelism & Discipleship/Evangelism & Discipleship - Lesson 2 Swahili.pdf"
+                    download>Evangelism & Discipleship - Lesson 2 Swh<i class="fas fa-download"></i></a>
+                <a class="sub6"
+                    href="../GBTC-Subjects/Swahili/Evangelism & Discipleship/Evangelism & Discipleship - Lesson 3 Swahili.pdf"
+                    download>Evangelism & Discipleship - Lesson 3 Swh<i class="fas fa-download"></i></a>
+                <!-- End Evangelism and Discipleship Swh-->
+
+                <!-- Course outline -->
+                <a class="sub7" href="../GBTC-Subjects/English/Introduction & Course Overview .pdf"
+                    download>Introduction & Course Overview<i class="fas fa-download"></i></a>
+                <a class="sub7" href="../GBTC-Subjects/English/The Bible.pdf" download>The Bible<i
+                        class="fas fa-download"></i></a>
+                <!-- End Course outline -->
+
+                <!-- Course outline Swh-->
+                <a class="sub7" href="../GBTC-Subjects/Swahili/Introduction & Course Overview .pdf"
+                    download>Introduction & Course Overview (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub7" href="../GBTC-Subjects/Swahili/The Bible - Swahili.pdf" download>The Bible
+                    (Swh)<i class="fas fa-download"></i></a>
+                <!-- End Course outline Swh-->
+
+                <!-- Timetable -->
+                <a class="sub8" href="../GBTC-Subjects/English/Lecture Time Table - Arusha_Batch 1_June 2022 .pdf"
+                    download>Lecture Time Table<i class="fas fa-download"></i></a>
+                <!-- End Timetable -->
+
+
+                <!-- Timetable Swh -->
+                <a class="sub8"
+                    href="../GBTC-Subjects/Swahili/Lecture Time Table - Arusha_Batch 1_June 2022 Swahili.pdf"
+                    download>Lecture Time Table (Swh)<i class="fas fa-download"></i></a>
+                <!-- End Timetable Swh-->
+
+                <!-- Prayer and intercession -->
+
+                <a class="sub9" href="../GBTC-Subjects/English/Prayer Intercession/Prayer & Intercession - Lesson 1.pdf"
+                    download>Prayer & Intercession - Lesson 1<i class="fas fa-download"></i></a>
+                <a class="sub9" href="../GBTC-Subjects/English/Prayer Intercession/Prayer & Intercession - Lesson 2.pdf"
+                    download>Prayer & Intercession - Lesson 2<i class="fas fa-download"></i></a>
+                <a class="sub9"
+                    href="../GBTC-Subjects/English/Prayer Intercession/Prayer & Intercession - Lesson 3_Postures.pdf"
+                    download>Prayer & Intercession - Lesson 3<i class="fas fa-download"></i></a>
+                <a class="sub9"
+                    href="../GBTC-Subjects/English/Prayer Intercession/Prayer & Intercession - Lesson 4_Levels.pdf"
+                    download>Prayer & Intercession - Lesson 4<i class="fas fa-download"></i></a>
+                <a class="sub9"
+                    href="../GBTC-Subjects/English/Prayer Intercession/Prayer & Intercession - Lesson 5_Fasting.pdf"
+                    download>Prayer & Intercession - Lesson 5<i class="fas fa-download"></i></a>
+                <!-- End of Prayer and intercession -->
+
+
+                <!-- Prayer and intercession Swh-->
+
+                <a class="sub9"
+                    href="../GBTC-Subjects/Swahili/Prayer & Intercession/Prayer & Intercession - Lesson 1 Swahili_edit.pdf"
+                    download>Prayer & Intercession - Lesson 1 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub9"
+                    href="../GBTC-Subjects/Swahili/Prayer & Intercession/Prayer & Intercession - Lesson 2 Swahili_edit.pdf"
+                    download>Prayer & Intercession - Lesson 2 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub9"
+                    href="../GBTC-Subjects/Swahili/Prayer & Intercession/Prayer & Intercession - Lesson 3 Swahili_edit.pdf"
+                    download>Prayer & Intercession - Lesson 3 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub9"
+                    href="../GBTC-Subjects/Swahili/Prayer & Intercession/Prayer & Intercession - Lesson 4 Swahili_edit.pdf"
+                    download>Prayer & Intercession - Lesson 4 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub9"
+                    href="../GBTC-Subjects/Swahili/Prayer & Intercession/Prayer & Intercession - Lesson 5 Swahili_edit.pdf"
+                    download>Prayer & Intercession - Lesson 5 (Swh)<i class="fas fa-download"></i></a>
+                <!-- End of Prayer and intercession Swh-->
+
+                <!-- Spiritual gifts -->
+                <a class="sub10" href="../GBTC-Subjects/English/Spiritual Gifts/Spiritual Gifts - Lesson 1.pdf"
+                    download>Spiritual Gifts - Lesson 1<i class="fas fa-download"></i></a>
+                <a class="sub10" href="../GBTC-Subjects/English/Spiritual Gifts/Spiritual Gifts - Lesson 2.pdf"
+                    download>Spiritual Gifts - Lesson 2<i class="fas fa-download"></i></a>
+                <a class="sub10" href="../GBTC-Subjects/English/Spiritual Gifts/Spiritual Gifts - Lesson 3.pdf"
+                    download>Spiritual Gifts - Lesson 3<i class="fas fa-download"></i></a>
+                <a class="sub10" href="../GBTC-Subjects/English/Spiritual Gifts/Spiritual Gifts - Lesson 4.pdf"
+                    download>Spiritual Gifts - Lesson 4<i class="fas fa-download"></i></a>
+                <a class="sub10"
+                    href="../GBTC-Subjects/English/Spiritual Gifts/Spiritual Gifts Questionnaire - Lesson 5.pdf"
+                    download>Spiritual Gifts Questionnaire - Lesson 5<i class="fas fa-download"></i></a>
+                <!-- End Spiritual gifts -->
+
+
+                <!-- Spiritual gifts Swh -->
+                <a class="sub10" href="../GBTC-Subjects/Swahili/Spiritual Gifts/Spiritual Gifts - Lesson 1 Swahili.pdf"
+                    download>Spiritual Gifts - Lesson 1 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub10" href="../GBTC-Subjects/Swahili/Spiritual Gifts/Spiritual Gifts - Lesson 2 Swahili.pdf"
+                    download>Spiritual Gifts - Lesson 2 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub10" href="../GBTC-Subjects/Swahili/Spiritual Gifts/Spiritual Gifts - Lesson 3 Swahili.pdf"
+                    download>Spiritual Gifts - Lesson 3 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub10" href="../GBTC-Subjects/Swahili/Spiritual Gifts/Spiritual Gifts - Lesson 4 Swahili.pdf"
+                    download>Spiritual Gifts - Lesson 4 (Swh)<i class="fas fa-download"></i></a>
+                <a class="sub10"
+                    href="../GBTC-Subjects/Swahili/Spiritual Gifts/Spiritual Gifts Questionnaire - Lesson 5 Swahili.pdf"
+                    download>Spiritual Gifts Questionnaire-Lesson 5(Swh)<i class="fas fa-download"></i></a>
+                <!-- End Spiritual gifts Swh-->
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere</div>
+
+
+                <style>
+                    #downloads a {
+                        padding: 20px;
+                        background-color: rgb(49, 45, 45);
+                        color: white;
+                        border-radius: 10px;
+                        height: 50px;
+                        width: 250px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin: 2px;
+                        font-size: 1rem;
+                        flex-wrap: wrap;
+                        text-decoration: none;
+                        flex-direction: column;
+                    }
+
+                    #downloads p {
+
+                        display: block;
+                        width: 100%;
+                        font-size: 3rem;
+                        text-align: center;
+                    }
+
+                    #downloads a * {
+                        font-size: 1.8rem;
+                        color: green;
+                    }
+
+                    #downloads .sub0 {
+                        background-color: rgb(255, 255, 255) !important;
+                        color: black !important;
+                    }
+
+                    #downloads .sub1 {
+                        background-color: rgb(10, 10, 51);
+                    }
+
+                    #downloads .sub2 {
+                        background-color: purple;
+                    }
+
+                    #downloads .sub3 {
+                        background-color: rgb(49, 45, 45);
+                    }
+
+                    #downloads .sub4 {
+                        background-color: green;
+                    }
+
+                    #downloads .sub4 * {
+                        color: rgb(10, 10, 51);
+                    }
+
+                    #downloads .sub5 {
+                        background-color: rgb(10, 10, 51);
+                    }
+
+                    #downloads .sub6 {
+                        background-color: purple;
+                    }
+
+                    #downloads .sub7 {
+                        background-color: rgb(49, 45, 45);
+                    }
+
+                    #downloads .sub8 {
+                        background-color: green;
+                    }
+
+                    #downloads .sub8 * {
+                        color: rgb(10, 10, 51);
+                    }
+
+                    #downloads .sub9 {
+                        background-color: rgb(10, 10, 51);
+                    }
+
+                    #downloads .sub10 {
+                        background-color: purple;
+                    }
+                </style>
+            </div>
+            <div style="display: none" id="academics" class="hideFirst allThings">
+                <div class="snap2">
+                    <div class="upper">
+                        <p>No results yet</p>
+                    </div>
+                    <div class="lower">
+                        <i class="iconn fas fa-sticky-note"></i>
+                        <span class="title">Examination Results</span>
+                    </div>
+                </div>
+
+                <style>
+                    body .snap2 {
+                        display: flex;
+                        flex-direction: column;
+                        height: 150px;
+                        width: 300px;
+                        background-color: white;
+                        border-radius: 50px;
+                        position: relative;
+                        overflow: hidden;
+                        margin: 10px;
+                    }
+
+                    body .snap2 .upper {
+                        display: flex;
+                        flex-direction: row;
+                        font-size: 20px;
+                        justify-content: center;
+                        height: 67%;
+                        position: absolute;
+                        bottom: 0;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        background-color: white;
+                        color: var(--color1);
+                    }
+
+                    body .snap2 .upper p {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        margin: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    body .snap2 .lower .iconn {
+                        margin-right: 5px;
+                        font-size: 20px;
+                    }
+
+                    body .snap2 .lower {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 20px;
+                        flex-direction: row;
+                        height: 33%;
+                        width: 100%;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        background-color: rgb(49, 45, 45);
+                        color: white
+                    }
+                </style>
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere</div>
+
+            </div>
+            <div style="display: none" id="videos" class="hideFirst allThings">
+                <div class="videoCont">
+                    <video src="../Video/Songs/You are My All in All.mp4" controls controlslist='download'> </video>
+                    <span class="download">
+                        <a href="../Video/Songs/You are My All in All.mp4" download>You are My All in All<i
+                                class="fas fa-download"></i></a></span>
+                </div>
+                <div class="videoCont">
+                    <video src="../Video/Songs/You are My All in All.mp4" controls controlslist='download'> </video>
+                    <span class="download">
+                        <a href="../Video/Songs/You are My All in All.mp4" download>You are My All in All<i
+                                class="fas fa-download"></i></a></span>
+                </div>
+                <div class="videoCont">
+                    <video src="../Video/Songs/You are My All in All.mp4" controls controlslist='download'> </video>
+                    <span class="download">
+                        <a href="../Video/Songs/You are My All in All.mp4" download>You are My All in All<i
+                                class="fas fa-download"></i></a></span>
+                </div>
+                <div class="videoCont">
+                    <video src="../Video/Songs/You are My All in All.mp4" controls controlslist='download'> </video>
+                    <span class="download">
+                        <a href="../Video/Songs/You are My All in All.mp4" download>You are My All in All<i
+                                class="fas fa-download"></i></a></span>
+                </div>
+                <div class="videoCont">
+                    <video src="../Video/Songs/You are My All in All.mp4" controls controlslist='download'> </video>
+                    <span class="download">
+                        <a href="../Video/Songs/You are My All in All.mp4" download>You are My All in All<i
+                                class="fas fa-download"></i></a></span>
+                </div>
+
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere</div>
+
+
+                <style>
+                    body #videos {
+                        gap: 2rem;
+                    }
+
+                    body #videos .videoCont {
+                        width: 45%;
+                        height: 300px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        box-sizing: border-box;
+                        margin: 30px 10px;
+
+                    }
+
+
+                    body #videos video {
+                        width: 100%;
+                        height: 300px;
+                        border-radius: 10px 10px 0 0;
+                        background-color: var(--blur);
+
+
+                    }
+
+
+                    body #videos .download {
+                        width: 100%;
+                        background-color: var(--blur);
+                        padding: 5px;
+                        display: flex;
+                        justify-content: center !important;
+                        align-items: center;
+                        flex-direction: column;
+                        box-sizing: border-box;
+                        border-radius: 0 0 10px 10px;
+
+
+                    }
+
+                    body #videos .download a {
+                        color: var(--color4);
+                        font-size: 20px;
+                        text-decoration: none;
+                        text-align: center;
+                    }
+
+                    body #videos .download a * {
+                        margin: 5px 5px;
+                        font-size: 20px;
+                        float: right;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center !important;
+                        align-items: center;
+                        text-align: center;
+                    }
+                </style>
+                <script>
+                    var videoss = document.querySelectorAll('#videos video');
+                    videoss.forEach((vidd) => {
+                        vidd.addEventListener('play', () => {
+                            var stp1 = $(vidd).parent().siblings().children('video');
+                            stp1.pause();
+                        })
+                    })
+                </script>
+
+            </div>
+            <div style="display: none" id="audios" class="hideFirst allThings">
+                <div class="audioCont">
+                    <audio src="../Audio/enock jonas   baraka.mp3" controls></audio>
+                    <span class="download">
+                        <a href="../Audio/enock jonas   baraka.mp3" download>Enock Jonas (Baraka)<i
+                                class="fas fa-download"></i></a></span>
+                </div>
+                <div class="audioCont">
+                    <audio src="../Audio/enock jonas   baraka.mp3" controls></audio>
+                    <span class="download">
+                        <a href="../Audio/enock jonas   baraka.mp3" download>Enock Jonas (Baraka)<i
+                                class="fas fa-download"></i></a></span>
+                </div>
+                <div class="audioCont">
+                    <audio src="../Audio/enock jonas   baraka.mp3" controls></audio>
+                    <span class="download">
+                        <a href="../Audio/enock jonas   baraka.mp3" download>Enock Jonas (Baraka)<i
+                                class="fas fa-download"></i></a></span>
+                </div>
+                <div class="audioCont">
+                    <audio src="../Audio/enock jonas   baraka.mp3" controls></audio>
+                    <span class="download">
+                        <a href="../Audio/enock jonas   baraka.mp3" download>Enock Jonas (Baraka)<i
+                                class="fas fa-download"></i></a></span>
+                </div>
+                <div class="audioCont">
+                    <audio src="../Audio/enock jonas   baraka.mp3" controls></audio>
+                    <span class="download">
+                        <a href="../Audio/enock jonas   baraka.mp3" download>Enock Jonas (Baraka)<i
+                                class="fas fa-download"></i></a></span>
+                </div>
+                <div class="audioCont">
+                    <audio src="../Audio/enock jonas   baraka.mp3" controls></audio>
+                    <span class="download">
+                        <a href="../Audio/enock jonas   baraka.mp3" download>Enock Jonas (Baraka)<i
+                                class="fas fa-download"></i></a></span>
+                </div>
+                <div class="audioCont">
+                    <audio src="../Audio/enock jonas   baraka.mp3" controls></audio>
+                    <span class="download">
+                        <a href="../Audio/enock jonas   baraka.mp3" download>Enock Jonas (Baraka)<i
+                                class="fas fa-download"></i></a></span>
+                </div>
+                <div class="audioCont">
+                    <audio src="../Audio/enock jonas   baraka.mp3" controls></audio>
+                    <span class="download">
+                        <a href="../Audio/enock jonas   baraka.mp3" download>Enock Jonas (Baraka)<i
+                                class="fas fa-download"></i></a></span>
+                </div>
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere</div>
+
+                <script>
+                    var audioss = document.querySelectorAll('#audios audio');
+                    audioss.forEach((audd) => {
+                        audd.addEventListener('play', (this) => {
+                            var stp = $(audd).parent().siblings().children('audio');
+                            stp.pause();
+                        })
+                    })
+                </script>
+                <style>
+                    body #audios .audioCont {
+                        width: 45%;
+                        height: fit-content;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        box-sizing: border-box;
+                        margin: 20px 10px;
+                        border-radius: 30px 30px 0 0;
+
+                    }
+
+
+                    body #audios audio {
+                        width: 100%;
+                        background-color: var(--blur);
+                        border-radius: 30px 30px 0 0;
+                    }
+
+
+                    body #audios .download {
+                        width: 100%;
+                        background-color: var(--blur);
+                        padding: 5px;
+                        display: flex;
+                        justify-content: center !important;
+                        align-items: center;
+                        flex-direction: column;
+                        box-sizing: border-box;
+                        border-radius: 0 0 10px 10px;
+                    }
+
+                    body #audios .download a {
+                        color: var(--color4);
+                        font-size: 20px;
+                        text-decoration: none;
+                        text-align: center;
+                    }
+
+                    body #audios .download a * {
+                        margin: 5px 5px;
+                        font-size: 20px;
+                        float: right;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center !important;
+                        align-items: center;
+                        text-align: center;
+                    }
+                </style>
+            </div>
+            <div style="display: none" id="questions" class="hideFirst allThings">
+                <div class="title">Uliza Maswali Hapa</div>
+                <div class="subTitle">(Tafadhali kumbuka kuwa ni viongozi tu wanaweza kutuma swali)</div>
+                <!-- <hr> -->
+                <form id="formm2" action="https://formspree.io/f/xpznrdqk" method="POST" class="formm2">
+                    <hr>
+                    <input type="text" name="Title of this email" value="A question from a student of GBTC(Arusha)"
+                        style="display: none;">
+                    <label for="servCat2">Chagua jina la Mwanafunzi anayeuliza swali</label>
+                    <select name="Name of the student asking the question" id="servCat2">
+                        <option value="Student 1">Student 1</option>
+                        <option value="Student 2">Student 2</option>
+                        <option value="Student 3">Student 3</option>
+                    </select>
+                    <!-- <hr> -->
+                    <hr>
+
+                    <label for="servCat3">Chagua somo ambalo swali lake linatokea</label>
+                    <select name="Name of the subject that the question is from" id="servCat3">
+                        <option value="Subject 1">Somo la 1</option>
+                        <option value="Subject 2">Somo la 2</option>
+                        <option value="Subject 3">Somo la 3</option>
+                        <option value="Different from class subjects">Tofauti na masomo ya darasani</option>
+                    </select>
+                    <!-- <hr> -->
+                    <hr>
+
+                    <label for="servDesc2">Andika swali lake hapa</label>
+                    <textarea name="The question asked" id="servDesc2" cols="30" rows="10"
+                        placeholder="I have two questions. The first is ............. And the second is......................"></textarea>
+                    <!-- <hr> -->
+                    <hr>
+
+                    <label for="numberr2">Andika simu atakayotafuta kwayo kwa maelezo zaidi</label>
+                    <input type="tel" name="Student's phone number for further instructions" id="numberr2"
+                        placeholder="eg. 0757835930" validate>
+                    <!-- <hr> -->
+                    <hr>
+
+                    <label for="email2">Andika barua pepe yako hapa</label>
+                    <input type="email" name="Student's email for further instructions" id="email2"
+                        placeholder="eg. someone@domain.com" validate>
+                    <!-- <hr> -->
+                    <hr>
+
+                    <button id="serReq2" type="submit" style="display: none">Tuma swali</button>
+                </form>
+
+
+                <style>
+                    #questions {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 1rem;
+                        /* background-color: white; */
+                        align-content: flex-start;
+                    }
+
+                    #questions #formm2 {
+                        /* background-color: yellow; */
+                        font-size: 1.5rem;
+                        text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        /* align-items: center; */
+                        justify-content: center;
+                        align-self: center;
+                    }
+
+                    #questions #formm2 * {
+                        display: block;
+                        width: 100%;
+                        word-break: normal;
+                        border-radius: 15px;
+                        border: none;
+                        outline: none;
+                        padding: 5px;
+                        align-self: center;
+
+                    }
+
+                    #questions #formm2 *:not(textarea) {
+                        height: 3rem;
+
+                    }
+
+                    #questions #formm2 label {
+                        margin: 30px 2px 5px 10px;
+                        margin-bottom: 3px !important;
+                        padding: 1px;
+                        height: fit-content;
+                    }
+
+                    #questions #formm2 select {
+                        text-align: left;
+
+                    }
+
+                    #questions #formm2 select option {
+                        text-align: left;
+                        height: 3rem;
+                    }
+
+                    #questions #formm2 input {
+                        text-align: left;
+                    }
+
+                    #questions #formm2 textarea {
+                        text-align: left;
+                        margin-top: 2px !important;
+                        align-self: center;
+                    }
+
+                    #questions #formm2 button {
+                        margin: 30px 2px 10px 2px;
+                        transition: all .3s ease-in-out;
+                        height: 10rem;
+                        font-size: 3rem;
+                        user-select: none;
+                    }
+
+                    #questions #formm2 button:hover {
+                        border-radius: 20px;
+                        border: 1px solid white;
+                        background-color: var(--color1) !important;
+                        color: white;
+                    }
+
+
+                    #questions .title {
+                        display: block;
+                        width: 100%;
+                        font-size: 2rem;
+                        text-align: center;
+                        height: fit-content;
+                        margin: 1px auto !important;
+                        border-radius: 20px;
+                        padding: 10px;
+                        background-color: green;
+                    }
+
+                    #questions .subTitle {
+                        display: block;
+                        width: 100%;
+                        font-size: 1.2rem;
+                        text-align: center;
+                        height: fit-content;
+                        margin: 5px auto !important;
+                        border-radius: 20px;
+                        padding: 10px;
+                        background-color: purple;
+                        word-break: normal;
+                    }
+
+                    #mainContent .allThings {
+                        padding: 10px;
+                    }
+                </style>
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere</div>
+
+            </div>
+            <div style="display: none" id="ordination" class="hideFirst allThings">
+                <div class="theHeaders">
+                    <div class="title heading">NETWORK FOR WORLD MISSIONS [NWM]</div>
+                    <div class="subTitle heading">(Registered in England & Wales No. 08908992)</div>
+                    <div class="title heading">APPLICATION FOR MEMBERSHIP, ORDINATION, AND MINISTERIAL LICENCE</div>
+                    <div class="subTitle heading">Please send all completed application forms to:</div>
+                    <div class="subTitle heading">15 Andrews Lane, Cheshunt, Herts EN7 6LE, UK</div>
+                    <div class="subTitle heading">Email: Network4World.Missions@gmail.com; Ekongmissions4u@gmail.com
+                    </div>
+                </div>
+                <!-- <hr> -->
+                <form id="formm3" action="https://formspree.io/f/xpznrdqk" method="POST" class="formm2">
+                    <hr>
+                    <input type="text" name="Title of this email"
+                        value="An ordination request form from a GBTC(Arusha) student" style="display: none">
+
+
+                    <label for="nameApplicant">1. Name of Applicant</label>
+                    <input type="text" id="nameApplicant" name="1. Name of Applicant">
+
+                    <label for="nameOfChurch">2. Name of Church /Ministry</label>
+                    <input type="text" id="nameOfChurch" name="2. Name of Church /Ministry">
+
+                    <label for="Address">3. Address</label>
+                    <input name="Address Info" type="text" id="Address" name="3. Address details" style="display: none">
+
+                    <label for="homeAddress">3.1 Home Address</label>
+                    <input type="text" id="homeAddress" name="3.1 Home Address">
+
+                    <label for="postCode">3.2 Post Code</label>
+                    <input type="text" id="postCode" name="3.2 Post Code">
+
+                    <label for="telephone">4. Telephone</label>
+                    <input type="tel" id="telephone" name="4. Telephone numbers & details" style="display: none">
+
+                    <label for="workTele">4.1 Tel-Work</label>
+                    <input type="tel" id="workTele" name="4.1 Tel-Work">
+
+                    <label for="workTele">4.2 Tel-Home</label>
+                    <input type="tel" id="homeTele" name="4.2 Tel-Home">
+
+                    <label for="mobileTele">4.3 Tel-Mobile</label>
+                    <input type="tel" id="mobileTele" name="4.3 Tel-Mobile">
+
+                    <label for="emailTele">4.4 Email</label>
+                    <input type="email" id="emailTele" name="4.4 Email">
+
+                    <label for="isMember?">5.</label>
+                    <input type="text" id="isMember?" name="5. Member of NWM?" style="display: none">
+
+                    <label for="isMemberNWM-Wrapper">5.1 Is your Church a member of NWM?</label>
+                    <div class="radios" id="isMemberNWM-Wrapper" style="
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: white;  
+                            height: 70px;
+                            padding: 2px!important;
+                            gap: 1rem;
+                            font-size: 20px;
+                            color: black;
+                        ">
+                        <span style="
+                            display: flex;
+                            flex-direction: column;
+                        ">
+                            <label for="isMemberYes" style="margin: 0; padding: 0;">Yes [ ]</label>
+                            <input name='5.1 Is your Church a member of NWM?' type="radio" id="isMemberYes"
+                                value="Yes, it is a member of NWM Church">
+                        </span>
+                        <span style="
+                            display: flex;
+                            flex-direction: column;
+                        ">
+                            <label for="isMemberNo" style="margin: 0; padding: 0;">No [ ]</label>
+                            <input name='5.1 Is your Church a member of NWM?' type="radio" id="isMemberNo"
+                                value="No, it is not a member of NWM Church">
+                        </span>
+                    </div>
+
+
+                    <label for="memberJoinDate">5.2 If yes, give date of joining</label>
+                    <input type="date" id="memberJoinDate" name="5.2 If yes, give date of joining">
+
+
+                    <label for="instinctDetails">6.</label>
+                    <input type="text" id="instinctDetails" name="6. Instinct Details" style="display: none">
+                    <!-- Instinct means something binded to nature -->
+
+                    <label for="dateOfBirth">6.1 Date of Birth:</label>
+                    <input type="date" id="dateOfBirth" name="6.1 Date of Birth:">
+
+                    <label for="sexGender">6.2 Sex</label>
+                    <div class="radios" id="sexGender" style="
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: white;  
+                            height: 70px;
+                            padding: 2px!important;
+                            gap: 1rem;
+                            font-size: 20px;
+                            color: black;
+                        ">
+                        <span style="
+                            display: flex;
+                            flex-direction: column;
+                        ">
+                            <label for="isMale" style="margin: 0; padding: 0;">Male</label>
+                            <input name='6.2 Sex' type="radio" id="isMale" value="Male">
+                        </span>
+                        <span style="
+                            display: flex;
+                            flex-direction: column;
+                        ">
+                            <label for="isFemale" style="margin: 0; padding: 0;">Female</label>
+                            <input name='6.2 Sex' type="radio" id="isFemale" value="Female">
+                        </span>
+                    </div>
+
+                    <label for="nationality">6.3 Nationality</label>
+                    <input type="text" id="nationality" name="6.3 Nationality">
+
+                    <label for="maritalStatus">7.</label>
+                    <input type="maritalStatus" name="7. Marital status" style="display: none">
+
+                    <label for="isMarried?">7.1 Are you married?</label>
+                    <div class="radios" id="isMarried?" style="
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: white;  
+                            height: 70px;
+                            padding: 2px!important;
+                            gap: 1rem;
+                            font-size: 20px;
+                            color: black;
+                        ">
+                        <span style="
+                            display: flex;
+                            flex-direction: column;
+                        ">
+                            <label for="isMarriedYes" style="margin: 0; padding: 0;">Yes [ ]</label>
+                            <input name='7.1 Are you married?' type="radio" id="isMarriedYes" value="Yes, I am married">
+                        </span>
+                        <span style="
+                            display: flex;
+                            flex-direction: column;
+                        ">
+                            <label for="isMarriedNo" style="margin: 0; padding: 0;">No [ ]</label>
+                            <input name='7.1 Are you married?' type="radio" id="isMarriedNo"
+                                value="No, I am not married">
+                        </span>
+                    </div>
+
+
+                    <label for="spouseName">7.2 If Yes, what is your spouse's name:</label>
+                    <input type="text" id="spouseName" name="7.2 If Yes, what is your spouse's name:">
+
+                    <label for="ordStatus">8.</label>
+                    <input id="ordStatus" type="text" name="Ordination Status" style="display: none">
+
+                    <label for="isOrdained?">8.1 Are you ordained?</label>
+                    <div class="radios" id="isOrdained?" style="
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: white;  
+                            height: 70px;
+                            padding: 2px!important;
+                            gap: 1rem;
+                            font-size: 20px;
+                            color: black;
+                        ">
+                        <span style="
+                            display: flex;
+                            flex-direction: column;
+                        ">
+                            <label for="isOrdainedYes" style="margin: 0; padding: 0;">Yes [ ]</label>
+                            <input name='8.1 Are you ordained?' type="radio" id="isOrdainedYes"
+                                value="Yes, I am ordained">
+                        </span>
+                        <span style="
+                            display: flex;
+                            flex-direction: column;
+                        ">
+                            <label for="isOrdainedNo" style="margin: 0; padding: 0;">No [ ]</label>
+                            <input name='8.1 Are you ordained?' type="radio" id="isOrdainedNo"
+                                value="No, I am not ordained">
+                        </span>
+                    </div>
+
+
+                    <label for="ordainedDate">8.2 If Yes, please give date of ordination</label>
+                    <input type="date" id="ordainedDate" name="8.2 If Yes, please give date of ordination">
+
+                    <label for="whoOrdName">9. Who ordained you?</label>
+                    <input type="text" id="whoOrdName" name="9. Who ordained you?">
+
+                    <label for="ordChurch">10. In which Church / Organisation were you ordained?</label>
+                    <input type="text" id="ordChurch" name="10. In which Church / Organisation were you ordained?">
+
+                    <label for="isApplyForLicence">11. Are you applying for NWM Ministerial Licence?</label>
+                    <div class="radios" id="isApplyForLicence" style="
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: white;  
+                    height: 70px;
+                    padding: 2px!important;
+                    gap: 1rem;
+                    font-size: 20px;
+                    color: black;
+                ">
+                        <span style="
+                    display: flex;
+                    flex-direction: column;
+                ">
+                            <label for="isApplyForLicenceYes" style="margin: 0; padding: 0;">Yes [ ]</label>
+                            <input name='11. Are you applying for NWM Ministerial Licence?' type="radio"
+                                id="isApplyForLicenceYes" value="Yes, I am applying for licence">
+                        </span>
+                        <span style="
+                    display: flex;
+                    flex-direction: column;
+                ">
+                            <label for="isApplyForLicenceNo" style="margin: 0; padding: 0;">No [ ]</label>
+                            <input name='11. Are you applying for NWM Ministerial Licence?' type="radio"
+                                id="isApplyForLicenceNo" value="No, I am not applying for licence">
+                        </span>
+                    </div>
+
+
+                    <label for="isApplyForOrdinance">12. If you are not ordained, are you now applying to be
+                        ordained?</label>
+                    <div class="radios" id="isApplyForOrdinance" style="
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: white;  
+                    height: 70px;
+                    padding: 2px!important;
+                    gap: 1rem;
+                    font-size: 20px;
+                    color: black;
+                  ">
+                        <span style="
+                    display: flex;
+                    flex-direction: column;
+                  ">
+                            <label for="isApplyForOrdinanceYes" style="margin: 0; padding: 0;">Yes [ ]</label>
+                            <input name='12. If you are not ordained, are you now applying to be ordained?' type="radio"
+                                id="isApplyForOrdinanceYes" value="Yes, I am applying for ordinance">
+                        </span>
+                        <span style="
+                    display: flex;
+                    flex-direction: column;
+                ">
+                            <label for="isApplyForOrdinanceNo" style="margin: 0; padding: 0;">No [ ]</label>
+                            <input name='12. If you are not ordained, are you now applying to be ordained?' type="radio"
+                                id="isApplyForOrdinanceNo" value="No, I am not applying for ordinance">
+                        </span>
+                    </div>
+
+
+                    <label for="schoolTakenDetails">13. Please give details of the last two Schools/Colleges you
+                        attended with dates and
+                        qualifications. (School/ Seminary/ College/ University)</label>
+                    <input type="text" id="schoolTakenDetails"
+                        name="13. Please give details of the last two Schools/Colleges you attended with dates and qualifications."
+                        style="display: none">
+
+                    <label for="schoolNme1">School one: (i) Name</label>
+                    <input type="text" id="schoolNme1" name="School one: (i) Name">
+
+                    <label for="schoolStDt1">School one: (ii) Date of start (From)</label>
+                    <input type="date" id="schoolStDt1" name="School one: (ii) Date of start (From)">
+
+                    <label for="schoolEndDt1">School one: (iii) Date of finish (To)</label>
+                    <input type="date" id="schoolEndDt1" name="School one: (iii) Date of finish (To)">
+
+                    <label for="schoolQltObt1">School one: (iv) Qualification obtained</label>
+                    <input type="text" id="schoolQltObt1" name="School one: (iv) Qualification obtained">
+
+
+                    <label for="schoolNme2">School two: (i) Name</label>
+                    <input type="text" id="schoolNme2" name="School two: (i) Name">
+
+                    <label for="schoolStDt2">School two: (ii) Date of start (From)</label>
+                    <input type="date" id="schoolStDt2" name="School two: (ii) Date of start (From)">
+
+                    <label for="schoolEndDt2">School two: (iii) Date of finish (To)</label>
+                    <input type="date" id="schoolEndDt2" name="School two: (iii) Date of finish (To)">
+
+                    <label for="schoolQltObt2">School two: (iv) Qualification obtained</label>
+                    <input type="text" id="schoolQltObt2" name="School two: (iv) Qualification obtained">
+
+
+                    <label for="copyOfCerts">[Please supply copies of your qualifications(s)]</label>
+                    <input type="file" name="" id="copyOfCerts" name="[Please supply copies of your qualifications(s)]">
+
+                    <label for="servDesc3">
+                        14. Please supply information about yourself, your Christian life, your calling to the ministry,
+                        the churches you
+                        have served and the kind of service you have rendered:
+                    </label>
+                    <textarea name="14. Please supply information about yourself, your Christian life, your calling to the ministry,
+                    the churches you have served and the kind of service you have rendered:" id="servDesc3" cols="20"
+                        rows="10"
+                        placeholder="I was born again in year 19xx/20xx and began to serve the Lord as << ministry name >> in church named << church name >> "></textarea>
+
+
+
+                    <label for="sigStudent">Your signature</label>
+                    <input type="text" id="sigStudent" name="Your signature">
+
+                    <label for="dateSignStudentSubReq">Date of signing</label>
+                    <input type="date" name="" id="dateSignStudentSubReq" name="Date">
+
+                    <label for="approveApp">Name and signature of your church leader who approves your
+                        application:</label>
+                    <input type="text" id="approveApp"
+                        name="Name and signature of your church leader who approves your application:">
+
+
+                    <label for="nameChchLeaderApprov">Approving church leader name</label>
+                    <input type="text" name="" id="nameChchLeaderApprov" name="Approving church leader name">
+
+                    <label for="sigChchLeaderApprov">Approving church leader signature</label>
+                    <input type="text" name="" id="sigChchLeaderApprov" name="Approving church leader signature<">
+
+                    <label for="dateChchLeaderApprov">Date of approval by church leader</label>
+                    <input type="date" name="" id="dateChchLeaderApprov" name="Date of approval by church leader">
+
+
+                    <label for="ifChurchLeader">If you are a church leader, your three senior officers must sign
+                        below:</label>
+                    <input type="text" id="ifChurchLeader"
+                        name="If you are a church leader, your three senior officers must sign below:"
+                        style="display: none">
+
+                    <label for="senOf1">Senior Officer 1</label>
+                    <input type="text" id="senOf1" name="Senior Officer 1" style="display: none">
+
+                    <label for="nameSenOffrApprov1">Senior Officer 1: Name</label>
+                    <input type="text" id="nameSenOffrApprov1" name="Senior Officer 1: Name">
+
+                    <label for="sigSenOffrApprov1">Senior Officer 1: Signature</label>
+                    <input type="text" id="sigSenOffrApprov1" name="Senior Officer 1: Signature">
+
+                    <label for="dateSenOffrApprov1">Senior Officer 1: Date of senior officer sign</label>
+                    <input type="date" id="dateSenOffrApprov1" name="Senior Officer 1: Date">
+
+
+                    <label for="senOf2">Senior Officer 2</label>
+                    <input type="text" id="senOf2" name="Senior Officer 2" style="display: none">
+
+                    <label for="nameSenOffrApprov2">Senior Officer 2: Name</label>
+                    <input type="text" id="nameSenOffrApprov2" name="Senior Officer 2: Name">
+
+                    <label for="sigSenOffrApprov2">Senior Officer 2: Signature</label>
+                    <input type="text" id="sigSenOffrApprov2" name="Senior Officer 2: Signature">
+
+                    <label for="dateSenOffrApprov2">Senior Officer 2: Date of senior officer sign</label>
+                    <input type="date" id="dateSenOffrApprov2" name="Senior Officer 2: Date">
+
+
+                    <label for="senOf3">Senior Officer 3</label>
+                    <input type="text" id="senOf3" name="Senior Officer 3" style="display: none">
+
+                    <label for="nameSenOffrApprov3">Senior Officer 3: Name</label>
+                    <input type="text" id="nameSenOffrApprov3" name="Senior Officer 3: Name">
+
+                    <label for="sigSenOffrApprov3">Senior Officer 3: Signature</label>
+                    <input type="text" id="sigSenOffrApprov3" name="Senior Officer 3: Signature">
+
+                    <label for="dateSenOffrApprov3">Senior Officer 3: Date of senior officer sign</label>
+                    <input type="date" id="dateSenOffrApprov3" name="Senior Officer 3: Date">
+
+
+                    <label for="ordAttachSup">Please supply the following:</label>
+                    <input type="text" id="ordAttachSup" name="Attachments for the ordination certificate"
+                        style="display: none">
+
+                    <label for="ordCertCopiesIfPresent">i) A copy of your Ordination Certificate if already
+                        ordained</label>
+                    <input type="file" id="ordCertCopiesIfPresent"
+                        name="i) A copy of your Ordination Certificate if already ordained">
+
+                    <label for="ordFee">ii) The following is the ordination Fee if applying for ordination</label>
+                    <input type="text" id="ordFee"
+                        name="ii) The following is the ordination Fee I agree to pay for ordination application">
+
+                    <label for="recommendLetters">iii) Three letters of recommendation from three persons who can write
+                        about your
+                        character. They should include your tutor, church officials or pastors and /or community
+                        leaders. Please also supply two additional referees that we can independently obtain references
+                        on your behalf. Please note this will be investigated. They should include your current or
+                        previous employers or other places you either schooled or involved in Ministry.</label>
+                    <input type="file" id="recommendLetters" name="iii) Three letters of recommendation from three persons who can write about your character. They should include your tutor, church officials or pastors and /or community
+                    leaders. Please also supply two additional referees that we can independently obtain references
+                    on your behalf. Please note this will be investigated. They should include your current or
+                    previous employers or other places you either schooled or involved in Ministry." multiple>
+
+                    <label for="passPortAttach">iv) Please supply two passport size photographs of yourself</label>
+                    <input type="file" id="passPortAttach"
+                        name="iv) Please supply two passport size photographs of yourself" multiple>
+
+                    <label for="ministFee">v) Your Ministerial Licence Fee is</label>
+                    <input type="text" id="ministFee" name="v) Your Ministerial Licence Fee is">
+
+                    <label for="likeMemNWM">I would like to be a member of NWM. I do accept the Statement of Faith &
+                        Belief of NWM, and pledge to submit to the Code of Conduct of NWM, to live by the standards of
+                        the Holy
+                        Scriptures, and to support the Aims & Objectives of NWM.</label>
+                    <input type="text" id="likeMemNWM"
+                        name="I would like to be a member of NWM. I do accept the Statement of Faith & Belief of NWM, and pledge to submit to the Code of Conduct of NWM, to live by the standards of the Holy Scriptures, and to support the Aims & Objectives of NWM."
+                        style="display: none">
+
+                    <label for="nameAcceptFaith">Name</label>
+                    <input type="text" id="nameAcceptFaith" name="I">
+
+                    <label for="signAcceptFaith">Signature</label>
+                    <input type="text" id="signAcceptFaith" name="With my signature">
+
+                    <label for="dateAcceptFaith">Date</label>
+                    <input type="date" id="dateAcceptFaith" name="in the date">
+
+                    <label for="statOfFaith">STATEMENT OF FAITH & BELIEF OF NETWORK FOR WORLD MISSIONS (NWM)</label>
+                    <textArea cols="20" rows="20" id='statOfFaith'>
+
+The basis for our faith and doctrine is the Holy Bible, which is the Word of God.
+These are summarized herein as follows.
+
+We believe:
+                        
+1. In the Holy Trinity - One God in 3 Persons; the Father, the Son, and the Holy Spirit;
+2. In the authority and supremacy of the Word of God (the Holy Bible) in all matters of faith and conduct;
+3. In the universal sinfulness and guilt of fallen man, and the substitutionary sacrifice and death of the incarnate Son of God as the sole and all-sufficient ground of redemption from the guilt and power of sin and from its eternal consequences;
+4. In the justification of the sinner solely by the grace of God and through faith in Christ alone;
+5. In the sacraments of water baptism by immersion, and of the Holy Communion;
+6. In the baptism of the Holy Ghost with evidence of tongues and the manifestation of supernatural gifts;
+7. In the illuminating, regenerating, indwelling, and sanctifying work of the Holy Spirit in the life of the believer;
+8. In the virgin birth, death, and bodily resurrection of our Lord Jesus Christ, His ascension, exaltation, and imminent visible return in power and glory;
+9. In the imminent rapture of the Church, the resurrection of the body, eternal glory for believers in heaven, and everlasting punishment for unbelievers in the lake of fire.
+                        
+                    </textArea>
+
+                    <input type="text" id="acceptedFaith" name="Accepted Faith" style="display: none" value="
+                    STATEMENT OF FAITH & BELIEF OF NETWORK FOR WORLD MISSIONS (NWM)
+    The basis for our faith and doctrine is the Holy Bible, which is the Word of God. These are summarized herein as follows.
+    We believe:
+    1. In the Holy Trinity - One God in 3 Persons; the Father, the Son, and the Holy Spirit;
+    2. In the authority and supremacy of the Word of God (the Holy Bible) in all matters of faith and conduct;
+    3. In the universal sinfulness and guilt of fallen man, and the substitutionary sacrifice and death of the incarnate Son of God as the sole and all-sufficient ground of redemption from the guilt and power of sin and from its eternal consequences;
+    4. In the justification of the sinner solely by the grace of God and through faith in Christ alone;
+    5. In the sacraments of water baptism by immersion, and of the Holy Communion;
+    6. In the baptism of the Holy Ghost with evidence of tongues and the manifestation of supernatural gifts;
+    7. In the illuminating, regenerating, indwelling, and sanctifying work of the Holy Spirit in the life of the believer;
+    8. In the virgin birth, death, and bodily resurrection of our Lord Jesus Christ, His ascension, exaltation, and imminent visible return in power and glory;
+    9. In the imminent rapture of the Church, the resurrection of the body, eternal glory for believers in heaven, and everlasting punishment for unbelievers in the lake of fire.
+                    ">
+                    <button id="serReq3" type="submit">Tuma Maombi</button>
+
+
+                </form>
+
+                <!-- <input type="submit" value="Tuma Maombi"> -->
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere</div>
+
+                <style>
+                    #ordination {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-around;
+                        /* padding: 4rem; */
+                        /* background-color: white; */
+                        align-content: flex-start;
+                        margin-left: 0px !important;
+                        padding-left: 0px !important;
+
+                    }
+
+                    #mainContent .allThings {
+                        /* padding: 0px; */
+                    }
+
+
+                    #ordination #formm3 {
+                        /* background-color: yellow; */
+                        font-size: 1.5rem;
+                        text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        /* align-items: center; */
+                        justify-content: center;
+                        align-self: center;
+                        position: relative;
+                        width: 100%;
+                        /* margin-right: 0px !important; */
+
+                    }
+
+                    #ordination #formm3 * {
+                        display: block;
+                        width: 65%;
+                        word-break: normal;
+                        border-radius: 15px;
+                        border: none;
+                        outline: none;
+                        padding: 5px;
+                        align-self: center;
+                    }
+
+
+                    #ordination #formm3 *:not(textarea) {
+                        height: 3rem;
+
+                    }
+
+                    #ordination #formm3 label {
+                        margin: 30px 2px 5px 10px;
+                        margin-bottom: 3px !important;
+                        padding: 1px;
+                        height: fit-content;
+                    }
+
+                    #ordination #formm3 select {
+                        text-align: left;
+
+                    }
+
+                    #ordination #formm3 select option {
+                        text-align: left;
+                        height: 3rem;
+                    }
+
+                    #ordination #formm3 input {
+                        text-align: left;
+                    }
+
+                    #ordination #formm3 input[type='file'] {
+                        background-color: white;
+                        color: black;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        align-content: center;
+                        align-self: center;
+                        text-align: center;
+                        /* padding: 100px; */
+                        width: fit-content;
+                        padding-top: 30px;
+                        padding-left: 50px;
+                    }
+
+                    #ordination #formm3 textarea {
+                        text-align: left;
+                        margin-top: 2px !important;
+                        align-self: center;
+                    }
+
+                    #ordination #formm3 button {
+                        margin: 30px 2px 10px 2px;
+                        transition: all .3s ease-in-out;
+                        height: 10rem;
+                        font-size: 3rem;
+                        user-select: none;
+                    }
+
+                    #ordination #formm3 button:hover {
+                        border-radius: 20px;
+                        border: 1px solid white;
+                        background-color: var(--color1) !important;
+                        color: white;
+                    }
+
+
+                    #ordination .title {
+                        display: block;
+                        width: fit-content;
+                        font-size: 2rem;
+                        text-align: center;
+                        height: fit-content;
+                        margin: 1px auto !important;
+                        border-radius: 20px;
+                        padding: 10px;
+                        background-color: green;
+                    }
+
+                    #ordination .subTitle {
+                        display: block;
+                        width: fit-content;
+                        font-size: 1.2rem;
+                        text-align: center;
+                        height: fit-content;
+                        margin: 5px auto !important;
+                        border-radius: 20px;
+                        padding: 10px;
+                        background-color: purple;
+                        word-break: normal;
+                        padding: 10px;
+                    }
+
+                    #ordination .theHeaders {
+                        /* background-color: red; */
+                        margin-left: 0px !important;
+                        padding-left: 0px !important;
+                        width: 100%;
+                        text-align: center;
+
+                    }
+
+                    @media only screen and (max-width: 768px) {
+                        #ordination #formm3 label {
+                            margin: 30px 2px 5px 10px;
+                            margin-bottom: 3px !important;
+                            padding: 1px;
+                            height: fit-content;
+                            width: 90%;
+                        }
+
+                        #ordination #formm3 label {
+                            display: block;
+                            width: 98%;
+                            word-break: normal;
+                            border-radius: 15px;
+                            border: none;
+                            outline: none;
+                            padding: 5px;
+                            align-self: center;
+                        }
+
+                        #ordination #formm3 textarea {
+                            width: 90%;
+                        }
+
+
+
+                    }
+                </style>
+
+            </div>
+            <div style="display: none" id="leadership" class="hideFirst allThings">KakaJere didn't put something
+                here yet but he is working on it
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere
                 </div>
             </div>
-        </div>
+            <div style="display: none" id="finRep" class="hideFirst allThings">KakaJere didn't put something here
+                yet but he is working on it
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere
+                </div>
+            </div>
+            <div style="display: none" id="picGal" class="hideFirst allThings">KakaJere didn't put something here
+                yet but he is working on it
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere
+                </div>
+            </div>
+            <div style="display: none" id="vidGal" class="hideFirst allThings">KakaJere didn't put something here
+                yet but he is working on it
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere
+                </div>
+            </div>
+            <div style="display: none" id="charProg" class="hideFirst allThings">KakaJere didn't put something here
+                yet but he is working on it
+                <br>
+                <div
+                    style="padding: 10px; height: 10px; width: 5px; display: block; width: 100%; border-top: 1px solid white">
+                    System Developed by KakaJere
+                </div>
+            </div>
+
+        </section>
+
     </section>
-    <!-- End Contact Section -->
-
-    <!-- Footer Section -->
     <section id="footer">
-        <div class="footer container">
-            <div class="brand">
-                <h2><span>J</span>eremiah <span>J</span>oseph</h2>
-            </div>
-            <h3>Your Software Solution</h3>
-            <div class="social-icon">
-                <div class="social-item">
-                    <a target="_blank" href="https://www.facebook.com/profile.php?id=100008888056910"> <i id="faIcon1"
-                            class="fab fa-facebook"></i> </a>
-                </div>
-                <div class="social-item">
-                    <a target="_blank" href="https://www.instagram.com/josephjeremiah54"> <i id="faIcon2"
-                            class="fab fa-instagram"></i> </a>
-                </div>
-                <div class="social-item">
-                    <a target="_blank" href="https://mobile.twitter.com/JictoeJ"><i id="faIcon3"
-                            class="fab fa-twitter"></i> </a>
-                </div>
-                <div class="social-item">
-                    <a target="_blank"
-                        href="https://api.whatsapp.com/send?phone=255713446429&text=Hello kakajere, I've liked your service titled">
-                        <i id="faIcon4" class="fab fa-whatsapp"></i> </a>
-                </div>
-            </div>
-            <p>Copyright (c) 2022. All rights reserved</p>
-        </div>
     </section>
+    <style>
+        body * {
+            transition: all .3s ease;
+            animation-name: njooAnime;
+            animation-duration: .5s;
+        }
 
-    <!-- dialog boxes -->
+        @keyframes njooAnime {
+            0% {
+                transform: scale(0.3);
+            }
 
-    <!-- End dialog boxes -->
-    <!-- End Footer Section -->
-    <script src="./app.js"></script>
+            50% {}
+
+            100% {
+                transform: scale(1);
+
+            }
+        }
+    </style>
+
+
+
+    <div class="thankss" id="thankss">
+        Mapendendekezo ya mabadilisho yametumwa kwa uongozi husika
+    </div>
+
+    <script src="script.js"></script>
     <script src="fontawasome5/js/all.js"></script>
-    <script src="./jquery-3.6.0.js"></script>
+    <script src="jquery-3.6.0.js"></script>
+
+    <script>
+        $('#codee').keydown(function (e) {
+            if (e.keyCode == 13) {
+                // alert(e.which);
+                $('#goPassword').click()
+            }
+        });
+    </script>
+
 </body>
 
 </html>
